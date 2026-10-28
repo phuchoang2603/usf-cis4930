@@ -1,0 +1,78 @@
+HloModule jit_model, entry_computation_layout={(f32[512,256]{1,0}, f32[256]{0}, f32[256,128]{1,0}, f32[256,128]{1,0}, f32[256,128]{1,0}, /*index=5*/f32[128,256]{1,0})->f32[512,256]{1,0}}
+
+region_0.1 {
+  reduce_sum.3 = f32[] parameter(0)
+  reduce_sum.4 = f32[] parameter(1)
+  ROOT reduce_sum.5 = f32[] add(reduce_sum.3, reduce_sum.4)
+}
+
+region_1.2 {
+  reduce_max.3 = f32[] parameter(0)
+  reduce_max.4 = f32[] parameter(1)
+  ROOT reduce_max.5 = f32[] maximum(reduce_max.3, reduce_max.4)
+}
+
+region_2.3 {
+  reduce_sum.10 = f32[] parameter(0)
+  reduce_sum.11 = f32[] parameter(1)
+  ROOT reduce_sum.12 = f32[] add(reduce_sum.10, reduce_sum.11)
+}
+
+ENTRY main.4 {
+  x0.1 = f32[512,256]{1,0} parameter(0)
+  mul.13 = f32[512,256]{1,0} multiply(x0.1, x0.1)
+  constant.11 = f32[] constant(0)
+  reduce_sum.14 = f32[512]{0} reduce(mul.13, constant.11), dimensions={1}, to_apply=region_0.1
+  broadcast_in_dim.4 = f32[512,1]{1,0} reshape(reduce_sum.14)
+  constant.9 = f32[] constant(256)
+  div.6 = f32[512,1]{1,0} broadcast(constant.9), dimensions={}
+  div.7 = f32[512,1]{1,0} divide(broadcast_in_dim.4, div.6)
+  constant.8 = f32[] constant(1e-06)
+  add.2 = f32[512,1]{1,0} broadcast(constant.8), dimensions={}
+  add.3 = f32[512,1]{1,0} add(div.7, add.2)
+  rsqrt.1 = f32[512,1]{1,0} rsqrt(add.3)
+  mul.14 = f32[512,1]{1,0} broadcast(rsqrt.1), dimensions={0,1}
+  mul.15 = f32[512]{0} reshape(mul.14)
+  mul.16 = f32[512,256]{1,0} broadcast(mul.15), dimensions={0}
+  mul.17 = f32[512,256]{1,0} multiply(x0.1, mul.16)
+  g1.1 = f32[256]{0} parameter(1)
+  broadcast_in_dim.5 = f32[1,256]{1,0} reshape(g1.1)
+  mul.18 = f32[1,256]{1,0} broadcast(broadcast_in_dim.5), dimensions={0,1}
+  mul.19 = f32[256]{0} reshape(mul.18)
+  mul.20 = f32[512,256]{1,0} broadcast(mul.19), dimensions={1}
+  mul.21 = f32[512,256]{1,0} multiply(mul.17, mul.20)
+  w2.1 = f32[256,128]{1,0} parameter(2)
+  dot_general.6 = f32[512,128]{1,0} dot(mul.21, w2.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  w3.1 = f32[256,128]{1,0} parameter(3)
+  dot_general.7 = f32[512,128]{1,0} dot(mul.21, w3.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  transpose.1 = f32[128,512]{0,1} transpose(dot_general.7), dimensions={1,0}
+  dot_general.9 = f32[512,512]{1,0} dot(dot_general.6, transpose.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  constant.7 = f32[] constant(0.088388)
+  mul.12 = f32[512,512]{1,0} broadcast(constant.7), dimensions={}
+  mul.22 = f32[512,512]{1,0} multiply(dot_general.9, mul.12)
+  constant.10 = f32[] constant(-inf)
+  reduce_max.7 = f32[512]{0} reduce(mul.22, constant.10), dimensions={1}, to_apply=region_1.2
+  constant.6 = f32[] constant(-inf)
+  max.2 = f32[512]{0} broadcast(constant.6), dimensions={}
+  max.3 = f32[512]{0} maximum(reduce_max.7, max.2)
+  broadcast_in_dim.6 = f32[512,1]{1,0} reshape(max.3)
+  sub.4 = f32[512,1]{1,0} broadcast(broadcast_in_dim.6), dimensions={0,1}
+  sub.5 = f32[512]{0} reshape(sub.4)
+  sub.6 = f32[512,512]{1,0} broadcast(sub.5), dimensions={0}
+  sub.7 = f32[512,512]{1,0} subtract(mul.22, sub.6)
+  exp.1 = f32[512,512]{1,0} exponential(sub.7)
+  reduce_sum.15 = f32[512]{0} reduce(exp.1, constant.11), dimensions={1}, to_apply=region_2.3
+  broadcast_in_dim.7 = f32[512,1]{1,0} reshape(reduce_sum.15)
+  div.8 = f32[512,1]{1,0} broadcast(broadcast_in_dim.7), dimensions={0,1}
+  div.9 = f32[512]{0} reshape(div.8)
+  div.10 = f32[512,512]{1,0} broadcast(div.9), dimensions={0}
+  div.11 = f32[512,512]{1,0} divide(exp.1, div.10)
+  w4.1 = f32[256,128]{1,0} parameter(4)
+  dot_general.8 = f32[512,128]{1,0} dot(mul.21, w4.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  dot_general.10 = f32[512,128]{1,0} dot(div.11, dot_general.8), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  w5.1 = f32[128,256]{1,0} parameter(5)
+  dot_general.11 = f32[512,256]{1,0} dot(dot_general.10, w5.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  tanh.1 = f32[512,256]{1,0} tanh(x0.1)
+  ROOT mul.23 = f32[512,256]{1,0} multiply(dot_general.11, tanh.1)
+}
+

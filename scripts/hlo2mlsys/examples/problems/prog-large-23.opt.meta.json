@@ -1,0 +1,352 @@
+{
+  "ops": [
+    {
+      "index": 0,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.9"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.9",
+      "is_transpose": false
+    },
+    {
+      "index": 1,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "max.4"
+      ],
+      "hlo_opcodes": [
+        "maximum"
+      ],
+      "xla_fusion": "broadcast_maximum_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 2,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.8"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.8",
+      "is_transpose": false
+    },
+    {
+      "index": 3,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.21"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "broadcast_add_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 4,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.7"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.7",
+      "is_transpose": false
+    },
+    {
+      "index": 5,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "neg.5",
+        "exp.5",
+        "add.20",
+        "div.5",
+        "mul.19"
+      ],
+      "hlo_opcodes": [
+        "negate",
+        "exponential",
+        "add",
+        "divide",
+        "multiply"
+      ],
+      "xla_fusion": "divide_multiply_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 6,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.6"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.6",
+      "is_transpose": false
+    },
+    {
+      "index": 7,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.18",
+        "add.17"
+      ],
+      "hlo_opcodes": [
+        "add",
+        "add"
+      ],
+      "xla_fusion": "add_add_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 8,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.5"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.5",
+      "is_transpose": false
+    },
+    {
+      "index": 9,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.15",
+        "neg.4",
+        "exp.4",
+        "add.14",
+        "div.4",
+        "mul.18"
+      ],
+      "hlo_opcodes": [
+        "add",
+        "negate",
+        "exponential",
+        "add",
+        "divide",
+        "multiply"
+      ],
+      "xla_fusion": "divide_multiply_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 10,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.4"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.4",
+      "is_transpose": false
+    },
+    {
+      "index": 11,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.23"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "wrapped_add",
+      "is_transpose": false
+    },
+    {
+      "index": 12,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.3"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.3",
+      "is_transpose": false
+    },
+    {
+      "index": 13,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "tanh.1"
+      ],
+      "hlo_opcodes": [
+        "tanh"
+      ],
+      "xla_fusion": "wrapped_tanh",
+      "is_transpose": false
+    },
+    {
+      "index": 14,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.2"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.2",
+      "is_transpose": false
+    },
+    {
+      "index": 15,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.11"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "broadcast_add_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 16,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.1"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 17,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "integer_pow.1",
+        "integer_pow.0",
+        "mul.9",
+        "add.10",
+        "mul.7",
+        "tanh.0",
+        "add.8",
+        "mul.3",
+        "mul.2"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "multiply",
+        "multiply",
+        "add",
+        "multiply",
+        "tanh",
+        "add",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "multiply_multiply_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 18,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.0"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 19,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.3",
+        "add.5",
+        "add.2"
+      ],
+      "hlo_opcodes": [
+        "add",
+        "add",
+        "add"
+      ],
+      "xla_fusion": "add_add_fusion",
+      "is_transpose": false
+    }
+  ],
+  "xla_fusion_groups": {
+    "ynn_fusion.9": [
+      0
+    ],
+    "broadcast_maximum_fusion": [
+      1
+    ],
+    "ynn_fusion.8": [
+      2
+    ],
+    "broadcast_add_fusion.1": [
+      3
+    ],
+    "ynn_fusion.7": [
+      4
+    ],
+    "divide_multiply_fusion.1": [
+      5
+    ],
+    "ynn_fusion.6": [
+      6
+    ],
+    "add_add_fusion.1": [
+      7
+    ],
+    "ynn_fusion.5": [
+      8
+    ],
+    "divide_multiply_fusion": [
+      9
+    ],
+    "ynn_fusion.4": [
+      10
+    ],
+    "wrapped_add": [
+      11
+    ],
+    "ynn_fusion.3": [
+      12
+    ],
+    "wrapped_tanh": [
+      13
+    ],
+    "ynn_fusion.2": [
+      14
+    ],
+    "broadcast_add_fusion": [
+      15
+    ],
+    "ynn_fusion.1": [
+      16
+    ],
+    "multiply_multiply_fusion": [
+      17
+    ],
+    "ynn_fusion": [
+      18
+    ],
+    "add_add_fusion": [
+      19
+    ]
+  },
+  "source_program": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/programs/prog-large-23.py",
+  "hlo_file": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/hlo/prog-large-23.opt.hlo",
+  "xla_stage": "opt",
+  "xla_platform": "cpu",
+  "family": "mlp",
+  "size": "large"
+}

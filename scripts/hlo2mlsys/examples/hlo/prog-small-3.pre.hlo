@@ -1,0 +1,49 @@
+HloModule jit_model, entry_computation_layout={(f32[128,256]{1,0}, f32[256,512]{1,0}, f32[512,256]{1,0}, f32[256,256]{1,0}, f32[256,256]{1,0})->f32[128,256]{1,0}}
+
+ENTRY main.1 {
+  x0.1 = f32[128,256]{1,0} parameter(0)
+  w1.1 = f32[256,512]{1,0} parameter(1)
+  dot_general.4 = f32[128,512]{1,0} dot(x0.1, w1.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  integer_pow.4 = f32[128,512]{1,0} multiply(dot_general.4, dot_general.4)
+  integer_pow.5 = f32[128,512]{1,0} multiply(integer_pow.4, dot_general.4)
+  constant.15 = f32[] constant(0.044715)
+  mul.19 = f32[128,512]{1,0} broadcast(constant.15), dimensions={}
+  mul.20 = f32[128,512]{1,0} multiply(integer_pow.5, mul.19)
+  add.9 = f32[128,512]{1,0} add(dot_general.4, mul.20)
+  constant.14 = f32[] constant(0.797884583)
+  mul.18 = f32[128,512]{1,0} broadcast(constant.14), dimensions={}
+  mul.21 = f32[128,512]{1,0} multiply(add.9, mul.18)
+  tanh.2 = f32[128,512]{1,0} tanh(mul.21)
+  constant.13 = f32[] constant(1)
+  add.8 = f32[128,512]{1,0} broadcast(constant.13), dimensions={}
+  add.10 = f32[128,512]{1,0} add(tanh.2, add.8)
+  constant.12 = f32[] constant(0.5)
+  mul.17 = f32[128,512]{1,0} broadcast(constant.12), dimensions={}
+  mul.22 = f32[128,512]{1,0} multiply(add.10, mul.17)
+  mul.23 = f32[128,512]{1,0} multiply(dot_general.4, mul.22)
+  w2.1 = f32[512,256]{1,0} parameter(2)
+  dot_general.5 = f32[128,256]{1,0} dot(mul.23, w2.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  add.11 = f32[128,256]{1,0} add(x0.1, dot_general.5)
+  w3.1 = f32[256,256]{1,0} parameter(3)
+  dot_general.6 = f32[128,256]{1,0} dot(add.11, w3.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  integer_pow.6 = f32[128,256]{1,0} multiply(dot_general.6, dot_general.6)
+  integer_pow.7 = f32[128,256]{1,0} multiply(integer_pow.6, dot_general.6)
+  constant.11 = f32[] constant(0.044715)
+  mul.16 = f32[128,256]{1,0} broadcast(constant.11), dimensions={}
+  mul.24 = f32[128,256]{1,0} multiply(integer_pow.7, mul.16)
+  add.12 = f32[128,256]{1,0} add(dot_general.6, mul.24)
+  constant.10 = f32[] constant(0.797884583)
+  mul.15 = f32[128,256]{1,0} broadcast(constant.10), dimensions={}
+  mul.25 = f32[128,256]{1,0} multiply(add.12, mul.15)
+  tanh.3 = f32[128,256]{1,0} tanh(mul.25)
+  constant.9 = f32[] constant(1)
+  add.7 = f32[128,256]{1,0} broadcast(constant.9), dimensions={}
+  add.13 = f32[128,256]{1,0} add(tanh.3, add.7)
+  constant.8 = f32[] constant(0.5)
+  mul.14 = f32[128,256]{1,0} broadcast(constant.8), dimensions={}
+  mul.26 = f32[128,256]{1,0} multiply(add.13, mul.14)
+  mul.27 = f32[128,256]{1,0} multiply(dot_general.6, mul.26)
+  w4.1 = f32[256,256]{1,0} parameter(4)
+  ROOT dot_general.7 = f32[128,256]{1,0} dot(mul.27, w4.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+}
+

@@ -1,0 +1,81 @@
+HloModule jit_model, entry_computation_layout={(f32[512,256]{1,0}, f32[256,1024]{1,0}, f32[1024,256]{1,0}, f32[256,1024]{1,0}, f32[1024]{0}, /*index=5*/f32[1024,256]{1,0}, f32[256]{0}, f32[256,4096]{1,0}, f32[4096,256]{1,0}, f32[256,4096]{1,0}, /*index=10*/f32[4096,256]{1,0}, f32[256]{0}, f32[256,2048]{1,0}, f32[2048]{0}, f32[2048,256]{1,0}, /*index=15*/f32[256]{0})->f32[512,256]{1,0}}
+
+silu.1 {
+  Arg_0.1 = f32[512,1024]{1,0} parameter(0)
+  constant.1 = f32[] constant(1)
+  broadcast.1 = f32[512,1024]{1,0} broadcast(constant.1), dimensions={}
+  neg.1 = f32[512,1024]{1,0} negate(Arg_0.1)
+  exp.1 = f32[512,1024]{1,0} exponential(neg.1)
+  add.1 = f32[512,1024]{1,0} add(exp.1, broadcast.1)
+  div.1 = f32[512,1024]{1,0} divide(broadcast.1, add.1)
+  ROOT mul.1 = f32[512,1024]{1,0} multiply(Arg_0.1, div.1)
+}
+
+relu.2 {
+  Arg_0.3 = f32[512,4096]{1,0} parameter(0)
+  constant.3 = f32[] constant(0)
+  max.2 = f32[512,4096]{1,0} broadcast(constant.3), dimensions={}
+  ROOT max.3 = f32[512,4096]{1,0} maximum(Arg_0.3, max.2)
+}
+
+ENTRY main.3 {
+  x0.1 = f32[512,256]{1,0} parameter(0)
+  w1.1 = f32[256,1024]{1,0} parameter(1)
+  dot_general.10 = f32[512,1024]{1,0} dot(x0.1, w1.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  jit_silu_.1 = f32[512,1024]{1,0} call(dot_general.10), to_apply=silu.1
+  w2.1 = f32[1024,256]{1,0} parameter(2)
+  dot_general.11 = f32[512,256]{1,0} dot(jit_silu_.1, w2.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  add.24 = f32[512,256]{1,0} add(x0.1, dot_general.11)
+  w3.1 = f32[256,1024]{1,0} parameter(3)
+  dot_general.12 = f32[512,1024]{1,0} dot(add.24, w3.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  b4.1 = f32[1024]{0} parameter(4)
+  broadcast_in_dim.5 = f32[1,1024]{1,0} reshape(b4.1)
+  add.25 = f32[1,1024]{1,0} broadcast(broadcast_in_dim.5), dimensions={0,1}
+  add.26 = f32[1024]{0} reshape(add.25)
+  add.27 = f32[512,1024]{1,0} broadcast(add.26), dimensions={1}
+  add.28 = f32[512,1024]{1,0} add(dot_general.12, add.27)
+  tanh.3 = f32[512,1024]{1,0} tanh(add.28)
+  w5.1 = f32[1024,256]{1,0} parameter(5)
+  dot_general.13 = f32[512,256]{1,0} dot(tanh.3, w5.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  b6.1 = f32[256]{0} parameter(6)
+  broadcast_in_dim.6 = f32[1,256]{1,0} reshape(b6.1)
+  add.29 = f32[1,256]{1,0} broadcast(broadcast_in_dim.6), dimensions={0,1}
+  add.30 = f32[256]{0} reshape(add.29)
+  add.31 = f32[512,256]{1,0} broadcast(add.30), dimensions={1}
+  add.32 = f32[512,256]{1,0} add(dot_general.13, add.31)
+  w7.1 = f32[256,4096]{1,0} parameter(7)
+  dot_general.14 = f32[512,4096]{1,0} dot(add.32, w7.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  tanh.4 = f32[512,4096]{1,0} tanh(dot_general.14)
+  w8.1 = f32[4096,256]{1,0} parameter(8)
+  dot_general.15 = f32[512,256]{1,0} dot(tanh.4, w8.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  w9.1 = f32[256,4096]{1,0} parameter(9)
+  dot_general.16 = f32[512,4096]{1,0} dot(dot_general.15, w9.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  jit_relu_.1 = f32[512,4096]{1,0} call(dot_general.16), to_apply=relu.2
+  w10.1 = f32[4096,256]{1,0} parameter(10)
+  dot_general.17 = f32[512,256]{1,0} dot(jit_relu_.1, w10.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  b11.1 = f32[256]{0} parameter(11)
+  broadcast_in_dim.7 = f32[1,256]{1,0} reshape(b11.1)
+  add.33 = f32[1,256]{1,0} broadcast(broadcast_in_dim.7), dimensions={0,1}
+  add.34 = f32[256]{0} reshape(add.33)
+  add.35 = f32[512,256]{1,0} broadcast(add.34), dimensions={1}
+  add.36 = f32[512,256]{1,0} add(dot_general.17, add.35)
+  add.37 = f32[512,256]{1,0} add(dot_general.15, add.36)
+  w12.1 = f32[256,2048]{1,0} parameter(12)
+  dot_general.18 = f32[512,2048]{1,0} dot(add.37, w12.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  b13.1 = f32[2048]{0} parameter(13)
+  broadcast_in_dim.8 = f32[1,2048]{1,0} reshape(b13.1)
+  add.38 = f32[1,2048]{1,0} broadcast(broadcast_in_dim.8), dimensions={0,1}
+  add.39 = f32[2048]{0} reshape(add.38)
+  add.40 = f32[512,2048]{1,0} broadcast(add.39), dimensions={1}
+  add.41 = f32[512,2048]{1,0} add(dot_general.18, add.40)
+  tanh.5 = f32[512,2048]{1,0} tanh(add.41)
+  w14.1 = f32[2048,256]{1,0} parameter(14)
+  dot_general.19 = f32[512,256]{1,0} dot(tanh.5, w14.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}
+  b15.1 = f32[256]{0} parameter(15)
+  broadcast_in_dim.9 = f32[1,256]{1,0} reshape(b15.1)
+  add.42 = f32[1,256]{1,0} broadcast(broadcast_in_dim.9), dimensions={0,1}
+  add.43 = f32[256]{0} reshape(add.42)
+  add.44 = f32[512,256]{1,0} broadcast(add.43), dimensions={1}
+  ROOT add.45 = f32[512,256]{1,0} add(dot_general.19, add.44)
+}
+

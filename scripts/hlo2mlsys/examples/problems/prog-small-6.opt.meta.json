@@ -1,0 +1,75 @@
+{
+  "ops": [
+    {
+      "index": 0,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.1"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 1,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.3",
+        "integer_pow.1",
+        "integer_pow.0",
+        "mul.5",
+        "add.2",
+        "mul.3",
+        "tanh.0",
+        "add.0",
+        "mul.1",
+        "mul.0"
+      ],
+      "hlo_opcodes": [
+        "add",
+        "multiply",
+        "multiply",
+        "multiply",
+        "add",
+        "multiply",
+        "tanh",
+        "add",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "multiply_multiply_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 2,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.0"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion",
+      "is_transpose": false
+    }
+  ],
+  "xla_fusion_groups": {
+    "ynn_fusion.1": [
+      0
+    ],
+    "multiply_multiply_fusion": [
+      1
+    ],
+    "ynn_fusion": [
+      2
+    ]
+  },
+  "source_program": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/programs/prog-small-6.py",
+  "hlo_file": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/hlo/prog-small-6.opt.hlo",
+  "xla_stage": "opt",
+  "xla_platform": "cpu",
+  "family": "mlp",
+  "size": "small"
+}
