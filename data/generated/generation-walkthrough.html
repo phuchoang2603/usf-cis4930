@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}body{margin:0;font:14px/1.55 var(--font-sans,system-ui);color:var(--foreground);background:transparent}
+h2{font-size:22px;line-height:1.25;margin:0 0 8px}h3{font-size:16px;margin:0 0 8px}p{margin:5px 0 12px}.muted,small{color:var(--muted-foreground)}small{font-size:12px}.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground);margin-bottom:8px}
+section{margin:22px 0}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.flow>div{border-top:2px solid var(--border);padding-top:10px;position:relative}.flow b{display:block;font-size:13px}.flow small{display:block;margin-top:4px}.step{color:var(--accent);font-family:var(--font-mono,monospace);font-size:12px}
+button{font:inherit;color:var(--foreground);cursor:pointer;background:transparent;border:1px solid var(--border);border-radius:6px;padding:6px 12px}button:hover{background:var(--secondary)}button[aria-pressed=true]{background:var(--accent-surface);color:var(--accent-surface-foreground);border-color:var(--accent)}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius,8px);padding:18px}.bar{display:flex;justify-content:space-between;align-items:center;gap:12px}.pill{font-size:11px;padding:3px 9px;border-radius:12px;background:var(--secondary);white-space:nowrap}.diagram{width:100%;height:205px;display:block}svg text{font-family:var(--font-sans,system-ui);fill:var(--foreground)}.controls{display:flex;align-items:center;gap:12px}.controls label{font-size:12px;white-space:nowrap}.controls input{flex:1;min-width:40px;accent-color:var(--accent)}.detail{padding-top:14px;margin-top:14px;border-top:1px solid var(--border);min-height:126px}.shape{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}.tensor{padding:5px 8px;background:var(--secondary);border-radius:5px;font:12px var(--font-mono,monospace)}.equation{font:13px var(--font-mono,monospace);margin:8px 0}.params{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:12px}.params div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--border);padding:7px 0}.params span{color:var(--muted-foreground)}.params b{font-weight:500}.checks{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.checks span{font-size:12px;padding:4px 8px;background:var(--secondary);border-radius:4px}.split{display:flex;height:10px;gap:3px;margin:12px 0 10px}.split i{background:var(--accent);display:block}.split i:nth-child(2){opacity:.55}.split i:nth-child(3){opacity:.25}.split-labels{display:grid;grid-template-columns:3fr 1fr 1fr;gap:12px;font-size:12px}.split-labels b{display:block}.split-labels span{color:var(--muted-foreground)}details{margin:16px 0}summary{cursor:pointer;color:var(--muted-foreground);font-size:12px}pre{max-height:270px;overflow:auto;padding:14px;background:var(--code-background);color:var(--code-foreground);border-radius:6px;font:11px/1.6 var(--font-mono,monospace);white-space:pre-wrap;overflow-wrap:anywhere}.note{border-left:2px solid var(--border);padding-left:12px;font-size:12px;color:var(--muted-foreground);margin-top:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.files{font:12px/1.9 var(--font-mono,monospace)}
+@media(max-width:500px){.flow{grid-template-columns:1fr 1fr}.two,.params{grid-template-columns:1fr}.panel{padding:16px}.split-labels{grid-template-columns:1fr 1fr 1fr;gap:8px}.diagram{height:180px}.bar{align-items:flex-start}}
+</style></head><body>
+<div class="eyebrow">Synthetic workload generator · MLSys 2026 format</div>
+<h2>From a random seed to a valid computation graph</h2>
+<p class="muted">The data is a description of work to schedule: tensor shapes, operation dependencies, costs, and hardware limits. Schedules and latency labels come later.</p>
+<div class="flow">
+<div><span class="step">01</span><b>Choose a structure</b><small>Cycle through five graph families; sample node count and a per-graph seed.</small></div>
+<div><span class="step">02</span><b>Build valid operations</b><small>Create tensors and dependencies while preserving operator shape rules.</small></div>
+<div><span class="step">03</span><b>Sample hardware</b><small>Add costs, fast-memory capacity, bandwidth, and native granularity.</small></div>
+<div><span class="step">04</span><b>Validate & export</b><small>Check the workload, assign its split, and write JSON plus metadata.</small></div>
+</div>
+<section>
+<div class="bar"><h3>Watch a graph being built</h3><small>Actual generator output · 8 ops · seed 4930</small></div>
+<div class="tabs" id="families"></div>
+<div class="panel">
+<div class="bar"><b id="family-title"></b><span class="pill" id="split"></span></div>
+<p class="muted" id="family-description" style="font-size:12px"></p>
+<div class="graph-scroll" style="overflow-x:auto"><svg id="graph" class="diagram" style="min-width:640px" viewBox="0 0 680 205" role="img" aria-label="Operation dependency graph"></svg></div>
+<small>PW = Pointwise · MM = MatMul. Arrows link producer operations to consumers.<br>External tensors are listed below; faded nodes have not been created yet.</small>
+<div class="controls" style="margin-top:12px"><label for="stage">Build step <b id="stage-label">8 / 8</b></label><input type="range" id="stage" min="1" max="8" value="8" aria-label="Number of operations created"></div>
+<div class="detail" id="detail" aria-live="polite"></div>
+<div class="note">Move the slider to follow construction, or click any created operation to inspect it. Dimensions below are rows × columns (height × width).</div>
+</div>
+<details><summary>Inspect the full competition-format JSON for this graph</summary><pre id="json"></pre></details>
+</section>
+<section>
+<h3>What varies between workloads?</h3>
+<p class="muted" style="font-size:12px">These are the current default sampling choices. They are synthetic settings, not a fitted model of real workloads.</p>
+<div class="params">
+<div><span>Operations per graph</span><b>8–152, uniformly sampled</b></div>
+<div><span>Tensor height / width</span><b>128, 256, 512, 1024, 2048</b></div>
+<div><span>Pointwise base cost</span><b>100, 200, 500, 1000</b></div>
+<div><span>MatMul base cost</span><b>500, 1000, 2000, 5000, 10000</b></div>
+<div><span>Fast memory, elements</span><b>25k, 50k, 150k, 300k, 600k</b></div>
+<div><span>Slow-memory bandwidth</span><b>10, 20, 40, 80, 100</b></div>
+<div><span>Native granularity</span><b>128 × 128</b></div>
+<div><span>Optional MM selection probability</span><b>0.45 in MatMul / mixed regions</b></div>
+</div>
+<p id="hardware" class="note"></p>
+</section>
+<section>
+<h3>Validation is a gate before writing data</h3>
+<div class="checks"><span>Parallel-array schema</span><span>Valid tensor IDs</span><span>Unique tensor producers</span><span>Acyclic dependencies</span><span>Compatible shapes</span><span>Positive costs & hardware</span><span>1 × 1 × 1 working set fits</span></div>
+<p class="muted" style="font-size:12px">Invalid workloads stop generation. Export also rejects duplicate workload hashes and identical recorded topologies assigned to different splits. This does not establish schedule validity or predict latency.</p>
+</section>
+<section>
+<h3>How the initial 100 workloads are separated</h3>
+<div class="split" aria-label="60 training, 20 validation, 20 test"><i style="flex:3"></i><i style="flex:1"></i><i style="flex:1"></i></div>
+<div class="split-labels"><div><b>60 training</b><span>Chain · Diamond · MatMul</span></div><div><b>20 validation</b><span>Branch</span></div><div><b>20 test</b><span>Mixed</span></div></div>
+<p class="note">The default holds out entire families rather than randomly splitting variants. Families can still share motifs; this is a preliminary generalization experiment. The 24 official benchmarks are not used by fresh generation.</p>
+</section>
+<section class="two">
+<div><h3>Files you receive</h3><div class="files">train/*.json<br>validation/*.json<br>test/*.json<br>manifest.json<br>statistics.csv</div><small>The manifest records seeds, splits, hashes, and configuration. CSV rows describe workload structure and tensor sizes.</small></div>
+<div><h3>Optional: augment a source graph</h3><p style="font-size:12px">Keep the topology; scale every tensor dimension by the same integer, jitter costs, and vary memory and bandwidth.</p><p class="muted" style="font-size:12px">Variants with the same recorded source topology stay together in an 80/10/10 hash-bucket split. A source used for training must be excluded from independent real-graph transfer tests.</p></div>
+</section>
+<small>Source: synthetic_data/workloads.py and synthetic_data/__main__.py. Graph examples were generated directly from the Python implementation; split counts are from the initial dataset manifest.</small>
+<script>
+const data={"chain":{"widths":[256,256,256,256,256,256,256,256,256],"heights":[2048,2048,2048,2048,2048,2048,2048,2048,2048],"inputs":[[0],[1],[2],[3],[4],[5],[6],[7]],"outputs":[[1],[2],[3],[4],[5],[6],[7],[8]],"base_costs":[500,500,200,200,500,1000,500,1000],"op_types":["Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise"],"fast_memory_capacity":600000,"slow_memory_bandwidth":10,"native_granularity":[128,128]},"branch":{"widths":[256,256,256,256,256,256,256,256,256],"heights":[2048,2048,2048,2048,2048,2048,2048,2048,2048],"inputs":[[0],[1],[1],[2],[3],[5],[4],[7]],"outputs":[[1],[2],[3],[4],[5],[6],[7],[8]],"base_costs":[500,500,200,500,500,1000,1000,1000],"op_types":["Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise"],"fast_memory_capacity":25000,"slow_memory_bandwidth":80,"native_granularity":[128,128]},"diamond":{"widths":[256,256,256,256,256,256,256,256,256],"heights":[2048,2048,2048,2048,2048,2048,2048,2048,2048],"inputs":[[0],[1],[1],[2,3],[4],[4],[5,6],[7,5]],"outputs":[[1],[2],[3],[4],[5],[6],[7],[8]],"base_costs":[500,500,200,200,500,1000,500,100],"op_types":["Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise","Pointwise"],"fast_memory_capacity":25000,"slow_memory_bandwidth":80,"native_granularity":[128,128]},"matmul":{"widths":[256,512,512,256,256,256,256,2048,2048,1024,1024,1024,256,256],"heights":[2048,256,2048,512,2048,2048,2048,256,2048,2048,2048,2048,1024,2048],"inputs":[[0,1],[2,3],[4],[5],[6,7],[8,9],[10],[11,12]],"outputs":[[2],[4],[5],[6],[8],[10],[11],[13]],"base_costs":[10000,2000,1000,500,500,2000,1000,5000],"op_types":["MatMul","MatMul","Pointwise","Pointwise","MatMul","MatMul","Pointwise","MatMul"],"fast_memory_capacity":600000,"slow_memory_bandwidth":40,"native_granularity":[128,128]},"mixed":{"widths":[256,256,256,256,256,512,512,1024,1024,128,128,256],"heights":[2048,2048,2048,2048,2048,256,2048,256,2048,256,2048,2048],"inputs":[[0],[1],[1],[2,3],[4,5],[4,7],[1,9],[2]],"outputs":[[1],[2],[3],[4],[6],[8],[10],[11]],"base_costs":[500,500,200,200,10000,10000,5000,1000],"op_types":["Pointwise","Pointwise","Pointwise","Pointwise","MatMul","MatMul","MatMul","Pointwise"],"fast_memory_capacity":600000,"slow_memory_bandwidth":40,"native_granularity":[128,128]}};
+const descriptions={
+chain:['Linear chain','A sequence of Pointwise operations. Each consumes the previous output; adjacent operations create potential fusion opportunities.'],
+branch:['Branching graph','One Pointwise root feeds two arms. Subsequent operations extend a randomly chosen arm; the two final tensors remain separate graph outputs.'],
+diamond:['Fork–join / diamond','A Pointwise root feeds two operations, then a Pointwise join consumes both outputs. Repeat the motif; append Pointwise operations to reach the requested size.'],
+matmul:['MatMul region','Start with a MatMul. Each later operation is MatMul with probability 0.45, otherwise Pointwise. Fresh weight tensors allow rectangular shapes and changes in output width.'],
+mixed:['Mixed DAG','Create a fork–join, then a required MatMul. Extend from a pool of prior outputs with optional compatible joins and additional MatMuls.']
+};
+const splits={chain:'Training family',branch:'Validation family',diamond:'Training family',matmul:'Training family',mixed:'Test family'};
+let family='diamond',stage=8,selected=7;
+const el=id=>document.getElementById(id);
+function tensor(p,id){return 'T'+id+' ['+p.heights[id]+' × '+p.widths[id]+']'}
+function showDetail(){
+ const p=data[family],i=selected,ins=p.inputs[i],out=p.outputs[i][0],mm=p.op_types[i]==='MatMul';
+ el('detail').innerHTML='<b>Operation '+i+' · '+p.op_types[i]+'</b><div class="shape">'+ins.map(t=>'<span class="tensor">'+tensor(p,t)+'</span>').join('<span>,</span>')+'<span>→</span><span class="tensor">'+tensor(p,out)+'</span></div><div class="equation">'+(mm?'('+p.heights[ins[0]]+' × '+p.widths[ins[0]]+') · ('+p.heights[ins[1]]+' × '+p.widths[ins[1]]+') = ('+p.heights[out]+' × '+p.widths[out]+')':'All inputs and the output have the same shape.')+'</div><small>'+ (mm?'The builder creates a new right-hand tensor whose height equals the left-hand width.':'No broadcasting: a join can only use tensors with matching shapes.')+' Base cost: '+p.base_costs[i]+'.</small>';
+}
+function draw(){
+ const p=data[family],producer={},parents=[],depth=[];
+ p.outputs.forEach((outs,i)=>outs.forEach(t=>producer[t]=i));
+ p.inputs.forEach((ins,i)=>{parents[i]=[...new Set(ins.filter(t=>t in producer).map(t=>producer[t]))];depth[i]=parents[i].length?Math.max(...parents[i].map(j=>depth[j]))+1:0});
+ const levels=Math.max(...depth)+1,groups=Array.from({length:levels},()=>[]);
+ depth.forEach((d,i)=>groups[d].push(i));
+ const coords=depth.map((d,i)=>({x:34+d*(612/Math.max(1,levels-1)),y:102+(groups[d].indexOf(i)-(groups[d].length-1)/2)*90}));
+ let svg='<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted-foreground)"/></marker></defs>';
+ parents.forEach((deps,i)=>deps.forEach(j=>{const a=coords[j],b=coords[i];svg+='<path d="M '+(a.x+28)+' '+a.y+' C '+((a.x+b.x)/2)+' '+a.y+', '+((a.x+b.x)/2)+' '+b.y+', '+(b.x-30)+' '+b.y+'" fill="none" stroke="var(--muted-foreground)" stroke-width="1.5" marker-end="url(#head)" opacity="'+(i<stage?'.8':'.15')+'"/>'}));
+ coords.forEach((pos,i)=>{const active=i<stage,sel=i===selected;svg+='<g data-op="'+i+'" role="button" tabindex="'+(active?'0':'-1')+'" aria-label="Inspect operation '+i+'" style="cursor:'+(active?'pointer':'default')+';opacity:'+(active?'1':'.23')+'"><rect x="'+(pos.x-28)+'" y="'+(pos.y-20)+'" width="56" height="40" rx="7" fill="'+(sel?'var(--accent-surface)':'var(--secondary)')+'" stroke="'+(sel?'var(--accent)':'var(--border)')+'" stroke-width="'+(sel?'2':'1')+'"/><text x="'+pos.x+'" y="'+(pos.y+5)+'" text-anchor="middle" font-size="12">'+i+' '+(p.op_types[i]==='MatMul'?'MM':'PW')+'</text></g>'});
+ el('graph').innerHTML=svg;
+ el('graph').querySelectorAll('[data-op]').forEach(g=>{function pick(){const i=+g.dataset.op;if(i<stage){selected=i;draw();showDetail()}}g.onclick=pick;g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}}});
+ el('stage-label').textContent=stage+' / 8';
+ showDetail();
+}
+function update(){
+ el('family-title').textContent=descriptions[family][0];
+ el('family-description').textContent=descriptions[family][1];
+ el('split').textContent=splits[family];
+ el('json').textContent=JSON.stringify(data[family],null,2);
+ const p=data[family];
+ el('hardware').textContent='Selected '+family+' example: fast memory = '+p.fast_memory_capacity.toLocaleString()+' elements; bandwidth = '+p.slow_memory_bandwidth+' model units; native granularity = '+p.native_granularity.join(' × ')+'. Hardware is sampled after the graph is built.';
+ el('families').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.family===family));
+ draw();
+}
+Object.keys(data).forEach(f=>{const b=document.createElement('button');b.textContent={chain:'Chain',branch:'Branch',diamond:'Diamond',matmul:'MatMul',mixed:'Mixed'}[f];b.dataset.family=f;b.onclick=()=>{family=f;selected=stage-1;update()};el('families').appendChild(b)});
+el('stage').oninput=e=>{stage=+e.target.value;selected=stage-1;draw()};
+update();
+console.log('Loaded 5 graph families, 8 actual operations per example.');
+</script></body></html>
