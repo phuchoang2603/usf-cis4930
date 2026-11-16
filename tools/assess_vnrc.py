@@ -1,7 +1,7 @@
 """Assess the unmodified VNRC CLI. Findings are data, not expected test failures.
 
 Exit 0 means the assessment completed, not that VNRC is safe as a reward oracle.
-Optional --compare-archive needs NumPy to run the existing ZIP's simulator.
+Optional --compare-compiler needs NumPy to run scripts/hlo2mlsys/sim.py.
 """
 import argparse
 import copy
@@ -11,13 +11,14 @@ import math
 from pathlib import Path
 import platform
 import re
+import runpy
 import subprocess
 import sys
-from zipfile import ZipFile
+import types
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from synthetic_data.workloads import validate
+from evaluator.problem import validate
 from tools.setup_vnrc import REVISION
 
 
@@ -159,7 +160,8 @@ class Assessment:
     def corpus(self):
         rows = []
         paths = sorted((ROOT / "benchmarks").glob("*.json"))
-        paths += sorted((ROOT / "data/generated/synthetic").glob("*/*.json"))
+        if len(paths) != 24:
+            raise ValueError("expected all 24 official benchmarks")
         for path in paths:
             p = json.loads(path.read_text())
             order = validate(p)
@@ -207,37 +209,33 @@ class Assessment:
         return rows
 
     def archive(self):
-        # Execute the requested repository's existing simulator without modifying it.
-        import types
-        sim = types.ModuleType("assessment_archive_sim")
+        # The former ZIP is unpacked under scripts/ in the current repository.
+        directory = ROOT / "scripts/hlo2mlsys"
+        sim = types.SimpleNamespace(**runpy.run_path(str(directory / "sim.py")))
         rows = []
-        with ZipFile(ROOT / "hlo2mlsys.zip") as z:
-            exec(compile(z.read("hlo2mlsys/sim.py"), "hlo2mlsys.zip/sim.py", "exec"), sim.__dict__)
-            for path in sorted(z.namelist()):
-                if not path.endswith(".solution.json"):
-                    continue
-                stem = Path(path).name.removesuffix(".solution.json")
-                p = json.loads(z.read(f"hlo2mlsys/examples/problems/{stem}.json"))
-                s = json.loads(z.read(path))
-                try:
-                    validate(p)
-                    strict_valid = True
-                except ValueError:
-                    strict_valid = False
-                total, errors = sim.evaluate_solution(sim.Problem(p), s)
-                row = self.evaluate(f"archive/{stem}", p, s)
-                row.update(strict_graph_valid=strict_valid, archive_total=total,
-                           archive_errors=errors)
-                actual = (row["result"] or {}).get("our_total")
-                row["relative_difference"] = abs(actual - total) / total if actual is not None and total else None
-                row["super_native_steps"] = sum(any(x > 128 for x in g) for g in s["granularities"])
-                normalized = self.evaluate(f"archive_explicit_raster/{stem}", p,
-                                           explicit_raster(p, s))
-                normalized_total = (normalized["result"] or {}).get("our_total")
-                row["explicit_raster_result"] = normalized
-                row["explicit_raster_relative_difference"] = (
-                    abs(normalized_total - total) / total if normalized_total is not None and total else None)
-                rows.append(row)
+        for path in sorted((directory / "examples/solutions").glob("*.solution.json")):
+            stem = path.name.removesuffix(".solution.json")
+            p = json.loads((directory / "examples/problems" / f"{stem}.json").read_text())
+            s = json.loads(path.read_text())
+            try:
+                validate(p)
+                strict_valid = True
+            except ValueError:
+                strict_valid = False
+            total, errors = sim.evaluate_solution(sim.Problem(p), s)
+            row = self.evaluate(f"archive/{stem}", p, s)
+            row.update(strict_graph_valid=strict_valid, archive_total=total,
+                       archive_errors=errors)
+            actual = (row["result"] or {}).get("our_total")
+            row["relative_difference"] = abs(actual - total) / total if actual is not None and total else None
+            row["super_native_steps"] = sum(any(x > 128 for x in g) for g in s["granularities"])
+            normalized = self.evaluate(f"archive_explicit_raster/{stem}", p,
+                                       explicit_raster(p, s))
+            normalized_total = (normalized["result"] or {}).get("our_total")
+            row["explicit_raster_result"] = normalized
+            row["explicit_raster_relative_difference"] = (
+                abs(normalized_total - total) / total if normalized_total is not None and total else None)
+            rows.append(row)
         return rows
 
 
@@ -245,7 +243,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--binary", type=Path, default=ROOT / "build/vnrc/evaluate")
     parser.add_argument("--output", type=Path, default=ROOT / "build/vnrc-assessment")
-    parser.add_argument("--compare-archive", action="store_true")
+    parser.add_argument("--compare-compiler", "--compare-archive", dest="compare_archive", action="store_true",
+                        help="compare scripts/hlo2mlsys examples (requires NumPy); --compare-archive is a compatibility alias")
     args = parser.parse_args()
     actual_revision = subprocess.check_output(
         ["git", "-C", str(ROOT / "external/vnrc"), "rev-parse", "HEAD"], text=True).strip()

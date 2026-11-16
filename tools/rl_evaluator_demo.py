@@ -10,11 +10,15 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from evaluator import Evaluator
-from synthetic_data.workloads import generate
 
 
 def demo():
-    problem = generate("chain", nodes=8, seed=4930)
+    # Explicit fixture preserves the earlier demo without requiring a generator.
+    problem = dict(widths=[256] * 9, heights=[2048] * 9,
+                   inputs=[[i] for i in range(8)], outputs=[[i + 1] for i in range(8)],
+                   base_costs=[500, 500, 200, 200, 500, 1000, 500, 1000],
+                   op_types=["Pointwise"] * 8, fast_memory_capacity=600000,
+                   slow_memory_bandwidth=10, native_granularity=[128, 128])
     with Evaluator(problem) as ev:
         baseline = ev.baseline()["schedule"]
         baseline.pop("subgraph_latencies")

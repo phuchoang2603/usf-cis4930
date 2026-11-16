@@ -1,0 +1,77 @@
+HloModule jit_model, is_scheduled=true, entry_computation_layout={(f32[128,256]{1,0}, f32[256,512]{1,0}, f32[512]{0}, f32[512,256]{1,0})->f32[128,256]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+FileNames
+1 "/home/claude/hlo2mlsys/pipeline.py"
+2 "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/programs/prog-small-6.py"
+
+FunctionNames
+1 "<module>"
+2 "main"
+3 "compile_program"
+4 "model"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=695 end_line=695 column=4 end_column=10}
+2 {file_name_id=1 function_name_id=2 line=662 end_line=662 column=29 end_column=81}
+3 {file_name_id=1 function_name_id=3 line=193 end_line=193 column=14 end_column=45}
+4 {file_name_id=2 function_name_id=4 line=17 end_line=17 column=9 end_column=42}
+5 {file_name_id=2 function_name_id=4 line=15 end_line=15 column=9 end_column=16}
+6 {file_name_id=2 function_name_id=4 line=16 end_line=16 column=9 end_column=16}
+7 {file_name_id=2 function_name_id=4 line=18 end_line=18 column=9 end_column=16}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+2 {file_location_id=2 parent_frame_id=2}
+3 {file_location_id=3 parent_frame_id=3}
+4 {file_location_id=4 parent_frame_id=4}
+5 {file_location_id=5 parent_frame_id=4}
+6 {file_location_id=6 parent_frame_id=4}
+7 {file_location_id=7 parent_frame_id=4}
+
+
+%fused_computation (param_0: f32[128,512], param_1: f32[512,256]) -> f32[128,256] {
+  %param_0 = f32[128,512]{1,0} parameter(0)
+  %param_1 = f32[512,256]{1,0} parameter(1)
+  ROOT %dot_general.0 = f32[128,256]{1,0} dot(%param_0, %param_1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=7}
+}
+
+%fused_computation.1 (param_0.1: f32[128,256], param_1.1: f32[256,512]) -> f32[128,512] {
+  %param_0.1 = f32[128,256]{1,0} parameter(0)
+  %param_1.1 = f32[256,512]{1,0} parameter(1)
+  ROOT %dot_general.1 = f32[128,512]{1,0} dot(%param_0.1, %param_1.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=5}
+}
+
+%fused_computation.2 (param_0.3: f32[128,512], param_1.11: f32[512]) -> f32[128,512] {
+  %param_0.3 = f32[128,512]{1,0} parameter(0)
+  %param_1.11 = f32[512]{0} parameter(1)
+  %add.4 = f32[128,512]{1,0} broadcast(%param_1.11), dimensions={1}, metadata={op_name="jit(model)/add" stack_frame_id=6}
+  %add.3 = f32[128,512]{1,0} add(%param_0.3, %add.4), metadata={op_name="jit(model)/add" stack_frame_id=6}
+  %integer_pow.1 = f32[128,512]{1,0} multiply(%add.3, %add.3), metadata={op_name="jit(model)/integer_pow" stack_frame_id=4}
+  %integer_pow.0 = f32[128,512]{1,0} multiply(%integer_pow.1, %add.3), metadata={op_name="jit(model)/integer_pow" stack_frame_id=4}
+  %constant.3 = f32[] constant(0.044715)
+  %mul.6 = f32[128,512]{1,0} broadcast(%constant.3), dimensions={}, metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  %mul.5 = f32[128,512]{1,0} multiply(%integer_pow.0, %mul.6), metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  %add.2 = f32[128,512]{1,0} add(%add.3, %mul.5), metadata={op_name="jit(model)/add" stack_frame_id=4}
+  %constant.2 = f32[] constant(0.797884583)
+  %mul.4 = f32[128,512]{1,0} broadcast(%constant.2), dimensions={}, metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  %mul.3 = f32[128,512]{1,0} multiply(%add.2, %mul.4), metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  %tanh.0 = f32[128,512]{1,0} tanh(%mul.3), metadata={op_name="jit(model)/tanh" stack_frame_id=4}
+  %constant.1 = f32[] constant(1)
+  %add.1 = f32[128,512]{1,0} broadcast(%constant.1), dimensions={}, metadata={op_name="jit(model)/add" stack_frame_id=4}
+  %add.0 = f32[128,512]{1,0} add(%tanh.0, %add.1), metadata={op_name="jit(model)/add" stack_frame_id=4}
+  %constant.0 = f32[] constant(0.5)
+  %mul.2 = f32[128,512]{1,0} broadcast(%constant.0), dimensions={}, metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  %mul.1 = f32[128,512]{1,0} multiply(%add.0, %mul.2), metadata={op_name="jit(model)/mul" stack_frame_id=4}
+  ROOT %mul.0 = f32[128,512]{1,0} multiply(%add.3, %mul.1), metadata={op_name="jit(model)/mul" stack_frame_id=4}
+}
+
+ENTRY %main.1 (x0.1: f32[128,256], w1.1: f32[256,512], b2.1: f32[512], w3.1: f32[512,256]) -> f32[128,256] {
+  %x0.1 = f32[128,256]{1,0} parameter(0), metadata={op_name="x0"}
+  %w1.1 = f32[256,512]{1,0} parameter(1), metadata={op_name="w1"}
+  %b2.1 = f32[512]{0} parameter(2), metadata={op_name="b2"}
+  %w3.1 = f32[512,256]{1,0} parameter(3), metadata={op_name="w3"}
+  %ynn_fusion.1 = f32[128,512]{1,0} fusion(%x0.1, %w1.1), kind=kCustom, calls=%fused_computation.1, metadata={op_name="jit(model)/dot_general" stack_frame_id=5}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %multiply_multiply_fusion = f32[128,512]{1,0} fusion(%ynn_fusion.1, %b2.1), kind=kLoop, calls=%fused_computation.2, metadata={op_name="jit(model)/mul" stack_frame_id=4}, backend_config={"outer_dimension_partitions":["2"]}
+  ROOT %ynn_fusion = f32[128,256]{1,0} fusion(%multiply_multiply_fusion, %w3.1), kind=kCustom, calls=%fused_computation, metadata={op_name="jit(model)/dot_general" stack_frame_id=7}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+}
+

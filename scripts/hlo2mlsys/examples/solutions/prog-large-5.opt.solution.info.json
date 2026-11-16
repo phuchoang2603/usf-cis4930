@@ -1,0 +1,8 @@
+{
+  "xla_latency": 17938139.4286,
+  "nofusion_latency": 17938139.4286,
+  "speedup_vs_nofusion": 1.0,
+  "xla_groups": 24,
+  "fused_groups": 0,
+  "split_fusions": []
+}

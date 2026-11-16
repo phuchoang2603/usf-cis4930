@@ -1,0 +1,842 @@
+{
+  "ops": [
+    {
+      "index": 0,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.8",
+        "reduce_sum.13"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.21",
+      "is_transpose": false
+    },
+    {
+      "index": 1,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.23",
+        "add.21",
+        "rsqrt.11"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "add",
+        "rsqrt"
+      ],
+      "xla_fusion": "add_rsqrt_fusion.3",
+      "is_transpose": false
+    },
+    {
+      "index": 2,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.28",
+        "mul.26"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion.5",
+      "is_transpose": false
+    },
+    {
+      "index": 3,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "w3.1.T"
+      ],
+      "hlo_opcodes": [
+        "transpose"
+      ],
+      "xla_fusion": null,
+      "is_transpose": true
+    },
+    {
+      "index": 4,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "broadcast_multiply_fusion.5.T"
+      ],
+      "hlo_opcodes": [
+        "transpose"
+      ],
+      "xla_fusion": null,
+      "is_transpose": true
+    },
+    {
+      "index": 5,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": null,
+      "is_transpose": false
+    },
+    {
+      "index": 6,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.13"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.18",
+      "is_transpose": false
+    },
+    {
+      "index": 7,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.15"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.20",
+      "is_transpose": false
+    },
+    {
+      "index": 8,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.14"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.20",
+      "is_transpose": false
+    },
+    {
+      "index": 9,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.7",
+        "reduce_max.1",
+        "sub.3",
+        "exp.7"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce",
+        "subtract",
+        "exponential"
+      ],
+      "xla_fusion": "ynn_fusion.20",
+      "is_transpose": false
+    },
+    {
+      "index": 10,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "reduce_sum.9"
+      ],
+      "hlo_opcodes": [
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.19",
+      "is_transpose": false
+    },
+    {
+      "index": 11,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "divide.3"
+      ],
+      "hlo_opcodes": [
+        "divide"
+      ],
+      "xla_fusion": "broadcast_divide_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 12,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.22"
+      ],
+      "hlo_opcodes": [
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion.4",
+      "is_transpose": false
+    },
+    {
+      "index": 13,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.12"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.17",
+      "is_transpose": false
+    },
+    {
+      "index": 14,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.11"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.16",
+      "is_transpose": false
+    },
+    {
+      "index": 15,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.22"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "wrapped_add",
+      "is_transpose": false
+    },
+    {
+      "index": 16,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "reduce_sum.8"
+      ],
+      "hlo_opcodes": [
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.15",
+      "is_transpose": false
+    },
+    {
+      "index": 17,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.21",
+        "sub.10"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "subtract"
+      ],
+      "xla_fusion": "broadcast_subtract_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 18,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.6",
+        "reduce_sum.7"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.14",
+      "is_transpose": false
+    },
+    {
+      "index": 19,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.20",
+        "add.20",
+        "rsqrt.10"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "add",
+        "rsqrt"
+      ],
+      "xla_fusion": "add_rsqrt_fusion.2",
+      "is_transpose": false
+    },
+    {
+      "index": 20,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.19",
+        "sub.8",
+        "mul.24",
+        "mul.22"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "subtract",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion.3",
+      "is_transpose": false
+    },
+    {
+      "index": 21,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.10"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.13",
+      "is_transpose": false
+    },
+    {
+      "index": 22,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.9"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.12",
+      "is_transpose": false
+    },
+    {
+      "index": 23,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "neg.5",
+        "exp.9",
+        "add.19",
+        "div.4",
+        "mul.21",
+        "mul.19"
+      ],
+      "hlo_opcodes": [
+        "negate",
+        "exponential",
+        "add",
+        "divide",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "multiply_multiply_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 24,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.8"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.11",
+      "is_transpose": false
+    },
+    {
+      "index": 25,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.23"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "wrapped_add.1",
+      "is_transpose": false
+    },
+    {
+      "index": 26,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "reduce_sum.6"
+      ],
+      "hlo_opcodes": [
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.10",
+      "is_transpose": false
+    },
+    {
+      "index": 27,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.18",
+        "sub.6"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "subtract"
+      ],
+      "xla_fusion": "broadcast_subtract_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 28,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.5",
+        "reduce_sum.2"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.9",
+      "is_transpose": false
+    },
+    {
+      "index": 29,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.17",
+        "add.18",
+        "rsqrt.9"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "add",
+        "rsqrt"
+      ],
+      "xla_fusion": "add_rsqrt_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 30,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.16",
+        "sub.4",
+        "mul.17",
+        "mul.15"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "subtract",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion.2",
+      "is_transpose": false
+    },
+    {
+      "index": 31,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "w12.1.T"
+      ],
+      "hlo_opcodes": [
+        "transpose"
+      ],
+      "xla_fusion": null,
+      "is_transpose": true
+    },
+    {
+      "index": 32,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "broadcast_multiply_fusion.2.T"
+      ],
+      "hlo_opcodes": [
+        "transpose"
+      ],
+      "xla_fusion": null,
+      "is_transpose": true
+    },
+    {
+      "index": 33,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot.1"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": null,
+      "is_transpose": false
+    },
+    {
+      "index": 34,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.5"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.6",
+      "is_transpose": false
+    },
+    {
+      "index": 35,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.7"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.8",
+      "is_transpose": false
+    },
+    {
+      "index": 36,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.6"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.8",
+      "is_transpose": false
+    },
+    {
+      "index": 37,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.4",
+        "reduce_max.0",
+        "sub.1",
+        "exp.6"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce",
+        "subtract",
+        "exponential"
+      ],
+      "xla_fusion": "ynn_fusion.8",
+      "is_transpose": false
+    },
+    {
+      "index": 38,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "reduce_sum.1"
+      ],
+      "hlo_opcodes": [
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.7",
+      "is_transpose": false
+    },
+    {
+      "index": 39,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "divide.2"
+      ],
+      "hlo_opcodes": [
+        "divide"
+      ],
+      "xla_fusion": "broadcast_divide_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 40,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.15"
+      ],
+      "hlo_opcodes": [
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 41,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.4"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.5",
+      "is_transpose": false
+    },
+    {
+      "index": 42,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.3"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.4",
+      "is_transpose": false
+    },
+    {
+      "index": 43,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.24"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "wrapped_add.2",
+      "is_transpose": false
+    },
+    {
+      "index": 44,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.3",
+        "reduce_sum.0"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "reduce"
+      ],
+      "xla_fusion": "ynn_fusion.3",
+      "is_transpose": false
+    },
+    {
+      "index": 45,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "multiply.14",
+        "add.9",
+        "rsqrt.8"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "add",
+        "rsqrt"
+      ],
+      "xla_fusion": "add_rsqrt_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 46,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "mul.13",
+        "mul.11"
+      ],
+      "hlo_opcodes": [
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "broadcast_multiply_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 47,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.2"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.2",
+      "is_transpose": false
+    },
+    {
+      "index": 48,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.1"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion.1",
+      "is_transpose": false
+    },
+    {
+      "index": 49,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "neg.4",
+        "exp.8",
+        "add.8",
+        "div.3",
+        "mul.10",
+        "mul.9"
+      ],
+      "hlo_opcodes": [
+        "negate",
+        "exponential",
+        "add",
+        "divide",
+        "multiply",
+        "multiply"
+      ],
+      "xla_fusion": "multiply_multiply_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 50,
+      "type": "MatMul",
+      "hlo_instructions": [
+        "dot_general.0"
+      ],
+      "hlo_opcodes": [
+        "dot"
+      ],
+      "xla_fusion": "ynn_fusion",
+      "is_transpose": false
+    },
+    {
+      "index": 51,
+      "type": "Pointwise",
+      "hlo_instructions": [
+        "add.25"
+      ],
+      "hlo_opcodes": [
+        "add"
+      ],
+      "xla_fusion": "wrapped_add.3",
+      "is_transpose": false
+    }
+  ],
+  "xla_fusion_groups": {
+    "ynn_fusion.21": [
+      0
+    ],
+    "add_rsqrt_fusion.3": [
+      1
+    ],
+    "broadcast_multiply_fusion.5": [
+      2
+    ],
+    "ynn_fusion.18": [
+      6
+    ],
+    "ynn_fusion.20": [
+      7,
+      8,
+      9
+    ],
+    "ynn_fusion.19": [
+      10
+    ],
+    "broadcast_divide_fusion.1": [
+      11
+    ],
+    "broadcast_multiply_fusion.4": [
+      12
+    ],
+    "ynn_fusion.17": [
+      13
+    ],
+    "ynn_fusion.16": [
+      14
+    ],
+    "wrapped_add": [
+      15
+    ],
+    "ynn_fusion.15": [
+      16
+    ],
+    "broadcast_subtract_fusion.1": [
+      17
+    ],
+    "ynn_fusion.14": [
+      18
+    ],
+    "add_rsqrt_fusion.2": [
+      19
+    ],
+    "broadcast_multiply_fusion.3": [
+      20
+    ],
+    "ynn_fusion.13": [
+      21
+    ],
+    "ynn_fusion.12": [
+      22
+    ],
+    "multiply_multiply_fusion.1": [
+      23
+    ],
+    "ynn_fusion.11": [
+      24
+    ],
+    "wrapped_add.1": [
+      25
+    ],
+    "ynn_fusion.10": [
+      26
+    ],
+    "broadcast_subtract_fusion": [
+      27
+    ],
+    "ynn_fusion.9": [
+      28
+    ],
+    "add_rsqrt_fusion.1": [
+      29
+    ],
+    "broadcast_multiply_fusion.2": [
+      30
+    ],
+    "ynn_fusion.6": [
+      34
+    ],
+    "ynn_fusion.8": [
+      35,
+      36,
+      37
+    ],
+    "ynn_fusion.7": [
+      38
+    ],
+    "broadcast_divide_fusion": [
+      39
+    ],
+    "broadcast_multiply_fusion.1": [
+      40
+    ],
+    "ynn_fusion.5": [
+      41
+    ],
+    "ynn_fusion.4": [
+      42
+    ],
+    "wrapped_add.2": [
+      43
+    ],
+    "ynn_fusion.3": [
+      44
+    ],
+    "add_rsqrt_fusion": [
+      45
+    ],
+    "broadcast_multiply_fusion": [
+      46
+    ],
+    "ynn_fusion.2": [
+      47
+    ],
+    "ynn_fusion.1": [
+      48
+    ],
+    "multiply_multiply_fusion": [
+      49
+    ],
+    "ynn_fusion": [
+      50
+    ],
+    "wrapped_add.3": [
+      51
+    ]
+  },
+  "source_program": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/programs/prog-small-12.py",
+  "hlo_file": "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/hlo/prog-small-12.opt.hlo",
+  "xla_stage": "opt",
+  "xla_platform": "cpu",
+  "family": "transformer",
+  "size": "small"
+}

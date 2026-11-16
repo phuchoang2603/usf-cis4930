@@ -9,7 +9,7 @@ import sys
 import threading
 import weakref
 
-from synthetic_data.workloads import FIELDS, validate
+from .problem import FIELDS, validate
 
 REVISION = "1f19c2ffeae394ab7c5f1d92c06795debf667758"
 MODEL_ID = "vnrc-1f19c2f-validated-v1"

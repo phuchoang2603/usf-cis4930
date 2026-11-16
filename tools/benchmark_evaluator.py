@@ -22,7 +22,8 @@ def stats(values):
 
 def main():
     paths = sorted((ROOT / "benchmarks").glob("*.json"))
-    paths += sorted((ROOT / "data/generated/synthetic").glob("*/*.json"))
+    if len(paths) != 24:
+        raise ValueError("expected all 24 official benchmarks")
     cases, contexts = [], []
     try:
         for path in paths:
@@ -36,7 +37,7 @@ def main():
             del schedule["subgraph_latencies"]  # An RL action need not predict its own reward.
             ev.evaluate(schedule)  # warm-up
             cases.append(dict(source=str(path.relative_to(ROOT)), nodes=len(problem["op_types"]),
-                              group="official" if path.parent.name == "benchmarks" else "synthetic",
+                              group="official",
                               setup_us=setup_us, samples_us=[], reward_samples_us=[], schedule=schedule,
                               configuration=ev.configuration,
                               baseline_latency=baseline["evaluation"]["total_latency"]))
@@ -62,11 +63,12 @@ def main():
             case["timing_us"] = stats(case["samples_us"])
             case["reward_timing_us"] = stats(case["reward_samples_us"])
         groups = {group: stats([sample for case in cases if case["group"] == group
-                                for sample in case["samples_us"]]) for group in ("official", "synthetic")}
+                                for sample in case["samples_us"]]) for group in ("official",)}
         reward_groups = {group: stats([sample for case in cases if case["group"] == group
-                                       for sample in case["reward_samples_us"]]) for group in ("official", "synthetic")}
+                                       for sample in case["reward_samples_us"]]) for group in ("official",)}
         suffix = ".dylib" if sys.platform == "darwin" else ".so"
-        report = dict(date="2026-10-30", model_id=MODEL_ID, platform=platform.platform(),
+        report = dict(timestamp_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                      model_id=MODEL_ID, platform=platform.platform(),
                       backend_sha256=hashlib.sha256((ROOT / f"build/evaluator/libevaluator_backend{suffix}").read_bytes()).hexdigest(),
                       method="9 sequential randomized rounds after one warm-up per schedule. Reused problem contexts; complete Python validation, schedule serialization, native subgraph construction and cost scoring, and result parsing included. Each evaluate() call is followed by reward() timing with an already cached baseline. Initialization and baseline generation excluded. Wall time in microseconds; desktop background load uncontrolled.",
                       groups=groups, reward_groups=reward_groups, cases=cases)

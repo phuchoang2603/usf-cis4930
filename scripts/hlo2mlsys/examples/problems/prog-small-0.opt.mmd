@@ -1,0 +1,102 @@
+graph LR
+    Tensor0(("Tensor[0]<br>128x256"))
+    Tensor1(("Tensor[1]<br>256x128"))
+    Tensor2(("Tensor[2]<br>256x128"))
+    Tensor3(("Tensor[3]<br>256x128"))
+    Tensor4(("Tensor[4]<br>128x256"))
+    Tensor5(("Tensor[5]<br>256x256"))
+    Tensor6(("Tensor[6]<br>256x256"))
+    Tensor7(("Tensor[7]<br>128x256"))
+    Tensor8(("Tensor[8]<br>128x256"))
+    Tensor9(("Tensor[9]<br>128x256"))
+    Tensor10(("Tensor[10]<br>128x256"))
+    Tensor11(("Tensor[11]<br>128x256"))
+    Tensor12(("Tensor[12]<br>128x256"))
+    Tensor13(("Tensor[13]<br>128x256"))
+    Tensor14(("Tensor[14]<br>128x256"))
+    Tensor15(("Tensor[15]<br>256x128"))
+    Tensor16(("Tensor[16]<br>128x128"))
+    Tensor17(("Tensor[17]<br>128x128"))
+    Tensor18(("Tensor[18]<br>128x128"))
+    Tensor19(("Tensor[19]<br>128x128"))
+    Tensor20(("Tensor[20]<br>128x128"))
+    Tensor21(("Tensor[21]<br>128x128"))
+    Tensor22(("Tensor[22]<br>128x128"))
+    Tensor23(("Tensor[23]<br>128x128"))
+    Tensor24(("Tensor[24]<br>128x128"))
+    Tensor25(("Tensor[25]<br>128x256"))
+    Tensor26(("Tensor[26]<br>128x256"))
+    Op0["Op[0] MatMul<br>2000"]
+    Tensor0 --> Op0
+    Tensor5 --> Op0
+    Op0 --> Tensor7
+    Op1["Op[1] Pointwise<br>100"]
+    Tensor0 --> Op1
+    Op1 --> Tensor8
+    Op2["Op[2] MatMul<br>2000"]
+    Tensor7 --> Op2
+    Tensor6 --> Op2
+    Op2 --> Tensor9
+    Op3["Op[3] Pointwise<br>100"]
+    Tensor0 --> Op3
+    Tensor8 --> Op3
+    Op3 --> Tensor10
+    Op4["Op[4] Pointwise<br>100"]
+    Tensor10 --> Op4
+    Op4 --> Tensor11
+    Op5["Op[5] Pointwise<br>100"]
+    Tensor11 --> Op5
+    Op5 --> Tensor12
+    Op6["Op[6] Pointwise<br>100"]
+    Tensor0 --> Op6
+    Tensor8 --> Op6
+    Tensor12 --> Op6
+    Op6 --> Tensor13
+    Op7["Op[7] Pointwise<br>100"]
+    Tensor2 --> Op7
+    Op7 --> Tensor14
+    Op8["Op[8] Pointwise<br>100"]
+    Tensor13 --> Op8
+    Op8 --> Tensor15
+    Op9["Op[9] MatMul<br>2000"]
+    Tensor14 --> Op9
+    Tensor15 --> Op9
+    Op9 --> Tensor16
+    Op10["Op[10] MatMul<br>2000"]
+    Tensor13 --> Op10
+    Tensor3 --> Op10
+    Op10 --> Tensor17
+    Op11["Op[11] MatMul<br>2000"]
+    Tensor13 --> Op11
+    Tensor1 --> Op11
+    Op11 --> Tensor18
+    Op12["Op[12] MatMul<br>2000"]
+    Tensor18 --> Op12
+    Tensor16 --> Op12
+    Op12 --> Tensor19
+    Op13["Op[13] Pointwise<br>225"]
+    Tensor19 --> Op13
+    Op13 --> Tensor20
+    Op14["Op[14] Pointwise<br>100"]
+    Tensor20 --> Op14
+    Op14 --> Tensor21
+    Op15["Op[15] Pointwise<br>100"]
+    Tensor21 --> Op15
+    Op15 --> Tensor22
+    Op16["Op[16] Pointwise<br>100"]
+    Tensor20 --> Op16
+    Tensor22 --> Op16
+    Op16 --> Tensor23
+    Op17["Op[17] MatMul<br>2000"]
+    Tensor23 --> Op17
+    Tensor17 --> Op17
+    Op17 --> Tensor24
+    Op18["Op[18] MatMul<br>2000"]
+    Tensor24 --> Op18
+    Tensor4 --> Op18
+    Op18 --> Tensor25
+    Op19["Op[19] Pointwise<br>100"]
+    Tensor0 --> Op19
+    Tensor9 --> Op19
+    Tensor25 --> Op19
+    Op19 --> Tensor26

@@ -292,16 +292,37 @@ class EvaluatorTests(unittest.TestCase):
                 self.assertEqual(result["model_id"], MODEL_ID)
                 self.assertFalse(result["official_equivalence_verified"])
 
-    def test_all_124_workloads_have_feasible_baselines(self):
+    def test_all_official_workloads_have_feasible_baselines(self):
         paths = sorted((ROOT / "benchmarks").glob("*.json"))
-        paths += sorted((ROOT / "data/generated/synthetic").glob("*/*.json"))
-        self.assertEqual(len(paths), 124)
+        self.assertEqual(len(paths), 24)
         for path in paths:
             with self.subTest(path=path), Evaluator(json.loads(path.read_text())) as ev:
                 baseline = ev.baseline()
                 self.assertTrue(baseline["evaluation"]["valid"])
                 self.assertTrue(ev.evaluate(baseline["schedule"], submission=True)["valid"])
                 self.assertEqual(ev.reward(baseline["schedule"])["reward"], 0.5)
+
+    def test_unpacked_compiler_examples_are_validated_without_relaxing_shapes(self):
+        from evaluator.problem import validate
+        directory = ROOT / "scripts/hlo2mlsys/examples/problems"
+        paths = [p for p in sorted(directory.glob("*.json")) if not p.name.endswith(".meta.json")]
+        self.assertEqual(len(paths), 24)
+        supported = 0
+        for path in paths:
+            problem = json.loads(path.read_text())
+            with self.subTest(path=path):
+                try:
+                    validate(problem)
+                except ValueError as error:
+                    self.assertIn("Pointwise shapes must match", str(error))
+                    with self.assertRaises(ValueError):
+                        Evaluator(problem)
+                    continue
+                supported += 1
+                with Evaluator(problem) as ev:
+                    baseline = ev.baseline()
+                    self.assertTrue(ev.evaluate(baseline["schedule"], submission=True)["valid"])
+        self.assertEqual(supported, 12)
 
     def test_mutated_actions_do_not_crash_or_emit_nonfinite_results(self):
         rng = random.Random(4930)

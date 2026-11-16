@@ -1,0 +1,18 @@
+graph LR
+    Tensor0(("Tensor[0]<br>128x256"))
+    Tensor1(("Tensor[1]<br>256x512"))
+    Tensor2(("Tensor[2]<br>512x256"))
+    Tensor3(("Tensor[3]<br>128x512"))
+    Tensor4(("Tensor[4]<br>128x512"))
+    Tensor5(("Tensor[5]<br>128x256"))
+    Op0["Op[0] MatMul<br>2000"]
+    Tensor0 --> Op0
+    Tensor1 --> Op0
+    Op0 --> Tensor3
+    Op1["Op[1] Pointwise<br>325"]
+    Tensor3 --> Op1
+    Op1 --> Tensor4
+    Op2["Op[2] MatMul<br>2000"]
+    Tensor4 --> Op2
+    Tensor2 --> Op2
+    Op2 --> Tensor5

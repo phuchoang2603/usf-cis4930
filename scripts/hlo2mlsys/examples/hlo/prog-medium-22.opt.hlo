@@ -1,0 +1,389 @@
+HloModule jit_model, is_scheduled=true, entry_computation_layout={(f32[256,512]{1,0}, f32[512]{0}, f32[512,512]{1,0}, f32[512,512]{1,0}, f32[512,512]{1,0}, /*index=5*/f32[512,512]{1,0}, f32[512]{0}, f32[512,512]{1,0}, f32[512]{0}, f32[512,128]{1,0}, /*index=10*/f32[512,128]{1,0}, f32[512,128]{1,0}, f32[128,512]{1,0}, f32[512,128]{1,0}, f32[512,128]{1,0}, /*index=15*/f32[512,128]{1,0}, f32[128,512]{1,0})->f32[256,512]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+FileNames
+1 "/home/claude/hlo2mlsys/pipeline.py"
+2 "/tmp/claude-0/-home-claude/f897c07d-73e1-5e63-86fe-e5320a7ed498/scratchpad/run5/programs/prog-medium-22.py"
+
+FunctionNames
+1 "<module>"
+2 "main"
+3 "compile_program"
+4 "model"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=695 end_line=695 column=4 end_column=10}
+2 {file_name_id=1 function_name_id=2 line=662 end_line=662 column=29 end_column=81}
+3 {file_name_id=1 function_name_id=3 line=193 end_line=193 column=14 end_column=45}
+4 {file_name_id=2 function_name_id=4 line=28 end_line=28 column=28 end_column=76}
+5 {file_name_id=2 function_name_id=4 line=47 end_line=47 column=10 end_column=38}
+6 {file_name_id=2 function_name_id=4 line=54 end_line=54 column=10 end_column=38}
+7 {file_name_id=2 function_name_id=4 line=28 end_line=28 column=37 end_column=44}
+8 {file_name_id=2 function_name_id=4 line=28 end_line=28 column=14 end_column=77}
+9 {file_name_id=2 function_name_id=4 line=28 end_line=28 column=9 end_column=77}
+10 {file_name_id=2 function_name_id=4 line=29 end_line=29 column=9 end_column=16}
+11 {file_name_id=2 function_name_id=4 line=31 end_line=31 column=9 end_column=16}
+12 {file_name_id=2 function_name_id=4 line=32 end_line=32 column=9 end_column=16}
+13 {file_name_id=2 function_name_id=4 line=33 end_line=33 column=9 end_column=24}
+14 {file_name_id=2 function_name_id=4 line=34 end_line=34 column=9 end_column=16}
+15 {file_name_id=2 function_name_id=4 line=35 end_line=35 column=14 end_column=26}
+16 {file_name_id=2 function_name_id=4 line=35 end_line=35 column=9 end_column=26}
+17 {file_name_id=2 function_name_id=4 line=37 end_line=37 column=9 end_column=16}
+18 {file_name_id=2 function_name_id=4 line=38 end_line=38 column=9 end_column=16}
+19 {file_name_id=2 function_name_id=4 line=39 end_line=39 column=10 end_column=22}
+20 {file_name_id=2 function_name_id=4 line=40 end_line=40 column=10 end_column=18}
+21 {file_name_id=2 function_name_id=4 line=41 end_line=41 column=10 end_column=18}
+22 {file_name_id=2 function_name_id=4 line=43 end_line=43 column=10 end_column=17}
+23 {file_name_id=2 function_name_id=4 line=44 end_line=44 column=10 end_column=18}
+24 {file_name_id=2 function_name_id=4 line=45 end_line=45 column=10 end_column=18}
+25 {file_name_id=2 function_name_id=4 line=46 end_line=46 column=17 end_column=22}
+26 {file_name_id=2 function_name_id=4 line=46 end_line=46 column=11 end_column=22}
+27 {file_name_id=2 function_name_id=4 line=46 end_line=46 column=10 end_column=34}
+28 {file_name_id=2 function_name_id=4 line=48 end_line=48 column=10 end_column=19}
+29 {file_name_id=2 function_name_id=4 line=49 end_line=49 column=10 end_column=19}
+30 {file_name_id=2 function_name_id=4 line=50 end_line=50 column=10 end_column=18}
+31 {file_name_id=2 function_name_id=4 line=51 end_line=51 column=10 end_column=18}
+32 {file_name_id=2 function_name_id=4 line=52 end_line=52 column=10 end_column=18}
+33 {file_name_id=2 function_name_id=4 line=53 end_line=53 column=17 end_column=22}
+34 {file_name_id=2 function_name_id=4 line=53 end_line=53 column=11 end_column=22}
+35 {file_name_id=2 function_name_id=4 line=53 end_line=53 column=10 end_column=34}
+36 {file_name_id=2 function_name_id=4 line=55 end_line=55 column=10 end_column=19}
+37 {file_name_id=2 function_name_id=4 line=56 end_line=56 column=10 end_column=19}
+38 {file_name_id=2 function_name_id=4 line=57 end_line=57 column=10 end_column=19}
+39 {file_name_id=2 function_name_id=4 line=58 end_line=58 column=10 end_column=18}
+40 {file_name_id=2 function_name_id=4 line=59 end_line=59 column=10 end_column=18}
+41 {file_name_id=2 function_name_id=4 line=60 end_line=60 column=10 end_column=19}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+2 {file_location_id=2 parent_frame_id=2}
+3 {file_location_id=3 parent_frame_id=3}
+4 {file_location_id=4 parent_frame_id=4}
+5 {file_location_id=5 parent_frame_id=4}
+6 {file_location_id=6 parent_frame_id=4}
+7 {file_location_id=7 parent_frame_id=4}
+8 {file_location_id=8 parent_frame_id=4}
+9 {file_location_id=9 parent_frame_id=4}
+10 {file_location_id=10 parent_frame_id=4}
+11 {file_location_id=11 parent_frame_id=4}
+12 {file_location_id=12 parent_frame_id=4}
+13 {file_location_id=13 parent_frame_id=4}
+14 {file_location_id=14 parent_frame_id=4}
+15 {file_location_id=15 parent_frame_id=4}
+16 {file_location_id=16 parent_frame_id=4}
+17 {file_location_id=17 parent_frame_id=4}
+18 {file_location_id=18 parent_frame_id=4}
+19 {file_location_id=19 parent_frame_id=4}
+20 {file_location_id=20 parent_frame_id=4}
+21 {file_location_id=21 parent_frame_id=4}
+22 {file_location_id=22 parent_frame_id=4}
+23 {file_location_id=23 parent_frame_id=4}
+24 {file_location_id=24 parent_frame_id=4}
+25 {file_location_id=25 parent_frame_id=4}
+26 {file_location_id=26 parent_frame_id=4}
+27 {file_location_id=27 parent_frame_id=4}
+28 {file_location_id=28 parent_frame_id=4}
+29 {file_location_id=29 parent_frame_id=4}
+30 {file_location_id=30 parent_frame_id=4}
+31 {file_location_id=31 parent_frame_id=4}
+32 {file_location_id=32 parent_frame_id=4}
+33 {file_location_id=33 parent_frame_id=4}
+34 {file_location_id=34 parent_frame_id=4}
+35 {file_location_id=35 parent_frame_id=4}
+36 {file_location_id=36 parent_frame_id=4}
+37 {file_location_id=37 parent_frame_id=4}
+38 {file_location_id=38 parent_frame_id=4}
+39 {file_location_id=39 parent_frame_id=4}
+40 {file_location_id=40 parent_frame_id=4}
+41 {file_location_id=41 parent_frame_id=4}
+
+
+%fused_computation (param_0: f32[256,512], param_1: f32[512,512]) -> f32[256,512] {
+  %param_0 = f32[256,512]{1,0} parameter(0)
+  %param_1 = f32[512,512]{1,0} parameter(1)
+  ROOT %dot_general.0 = f32[256,512]{1,0} dot(%param_0, %param_1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=20}
+}
+
+%fused_computation.1 (param_0.1: f32[256,512], param_1.1: f32[512,512]) -> f32[256,512] {
+  %param_0.1 = f32[256,512]{1,0} parameter(0)
+  %param_1.1 = f32[512,512]{1,0} parameter(1)
+  ROOT %dot_general.1 = f32[256,512]{1,0} dot(%param_0.1, %param_1.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=17}
+}
+
+%fused_computation.2 (param_0.2: f32[256,512], param_1.2: f32[512,512]) -> f32[256,512] {
+  %param_0.2 = f32[256,512]{1,0} parameter(0)
+  %param_1.2 = f32[512,512]{1,0} parameter(1)
+  ROOT %dot_general.2 = f32[256,512]{1,0} dot(%param_0.2, %param_1.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=14}
+}
+
+%fused_computation.3 (param_0.3: f32[256,512], param_1.3: f32[512,512]) -> f32[256,512] {
+  %param_0.3 = f32[256,512]{1,0} parameter(0)
+  %param_1.3 = f32[512,512]{1,0} parameter(1)
+  ROOT %dot_general.3 = f32[256,512]{1,0} dot(%param_0.3, %param_1.3), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=12}
+}
+
+%fused_computation.4 (param_0.4: f32[256,512], param_1.4: f32[512,512]) -> f32[256,512] {
+  %param_0.4 = f32[256,512]{1,0} parameter(0)
+  %param_1.4 = f32[512,512]{1,0} parameter(1)
+  ROOT %dot_general.4 = f32[256,512]{1,0} dot(%param_0.4, %param_1.4), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=11}
+}
+
+%fused_computation.5 (param_0.5: f32[256,128], param_1.5: f32[128,512]) -> f32[256,512] {
+  %param_0.5 = f32[256,128]{1,0} parameter(0)
+  %param_1.5 = f32[128,512]{1,0} parameter(1)
+  ROOT %dot_general.5 = f32[256,512]{1,0} dot(%param_0.5, %param_1.5), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=37}
+}
+
+%fused_computation.6 (param_0.6: f32[256,256], param_1.6: f32[256,128]) -> f32[256,128] {
+  %param_0.6 = f32[256,256]{1,0} parameter(0)
+  %param_1.6 = f32[256,128]{1,0} parameter(1)
+  ROOT %dot_general.6 = f32[256,128]{1,0} dot(%param_0.6, %param_1.6), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=36}
+}
+
+%fused_computation.7 (param_0.7: f32[256,512], param_1.7: f32[512,128]) -> f32[256,128] {
+  %param_0.7 = f32[256,512]{1,0} parameter(0)
+  %param_1.7 = f32[512,128]{1,0} parameter(1)
+  ROOT %dot_general.7 = f32[256,128]{1,0} dot(%param_0.7, %param_1.7), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=32}
+}
+
+%region_4.6 (reduce_sum.17: f32[], reduce_sum.18: f32[]) -> f32[] {
+  %reduce_sum.17 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.18 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.19 = f32[] add(%reduce_sum.17, %reduce_sum.18), metadata={op_name="jit(model)/reduce_sum" stack_frame_id=6}
+}
+
+%fused_computation.8 (param_0.8: f32[256,256], param_1.8: f32[]) -> f32[256] {
+  %param_0.8 = f32[256,256]{1,0} parameter(0)
+  %param_1.8 = f32[] parameter(1)
+  ROOT %reduce_sum.0 = f32[256]{0} reduce(%param_0.8, %param_1.8), dimensions={1}, to_apply=%region_4.6, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=6}
+}
+
+%region_3.5 (reduce_max.10: f32[], reduce_max.11: f32[]) -> f32[] {
+  %reduce_max.10 = f32[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.11 = f32[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.12 = f32[] maximum(%reduce_max.10, %reduce_max.11), metadata={op_name="jit(model)/reduce_max" stack_frame_id=6}
+}
+
+%fused_computation.9 (param_0.10: f32[], param_1.11: f32[256,256], param_2.2: f32[128,256], param_3.1: f32[256,512], param_4: f32[512,128]) -> f32[256,256] {
+  %param_3.1 = f32[256,512]{1,0} parameter(3)
+  %param_4 = f32[512,128]{1,0} parameter(4)
+  %dot_general.9 = f32[256,128]{1,0} dot(%param_3.1, %param_4), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=30}
+  %param_2.2 = f32[128,256]{1,0} parameter(2)
+  %dot_general.8 = f32[256,256]{1,0} dot(%dot_general.9, %param_2.2), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=34}
+  %param_1.11 = f32[256,256]{1,0} parameter(1)
+  %mul.1 = f32[256,256]{1,0} multiply(%dot_general.8, %param_1.11), metadata={op_name="jit(model)/mul" stack_frame_id=35}
+  %param_0.10 = f32[] parameter(0)
+  %reduce_max.0 = f32[256]{0} reduce(%mul.1, %param_0.10), dimensions={1}, to_apply=%region_3.5, metadata={op_name="jit(model)/reduce_max" stack_frame_id=6}
+  %sub.0 = f32[256,256]{1,0} broadcast(%reduce_max.0), dimensions={0}, metadata={op_name="jit(model)/sub" stack_frame_id=6}
+  %sub.1 = f32[256,256]{1,0} subtract(%mul.1, %sub.0), metadata={op_name="jit(model)/sub" stack_frame_id=6}
+  ROOT %exp.2 = f32[256,256]{1,0} exponential(%sub.1), metadata={op_name="jit(model)/exp" stack_frame_id=6}
+}
+
+%fused_computation.10 (param_0.11: f32[256,128], param_1.12: f32[128,512]) -> f32[256,512] {
+  %param_0.11 = f32[256,128]{1,0} parameter(0)
+  %param_1.12 = f32[128,512]{1,0} parameter(1)
+  ROOT %dot_general.10 = f32[256,512]{1,0} dot(%param_0.11, %param_1.12), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=29}
+}
+
+%fused_computation.11 (param_0.12: f32[256,256], param_1.13: f32[256,128]) -> f32[256,128] {
+  %param_0.12 = f32[256,256]{1,0} parameter(0)
+  %param_1.13 = f32[256,128]{1,0} parameter(1)
+  ROOT %dot_general.11 = f32[256,128]{1,0} dot(%param_0.12, %param_1.13), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=28}
+}
+
+%fused_computation.12 (param_0.13: f32[256,512], param_1.14: f32[512,128]) -> f32[256,128] {
+  %param_0.13 = f32[256,512]{1,0} parameter(0)
+  %param_1.14 = f32[512,128]{1,0} parameter(1)
+  ROOT %dot_general.12 = f32[256,128]{1,0} dot(%param_0.13, %param_1.14), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=24}
+}
+
+%region_2.4 (reduce_sum.10: f32[], reduce_sum.11: f32[]) -> f32[] {
+  %reduce_sum.10 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.11 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.12 = f32[] add(%reduce_sum.10, %reduce_sum.11), metadata={op_name="jit(model)/reduce_sum" stack_frame_id=5}
+}
+
+%fused_computation.13 (param_0.14: f32[256,256], param_1.15: f32[]) -> f32[256] {
+  %param_0.14 = f32[256,256]{1,0} parameter(0)
+  %param_1.15 = f32[] parameter(1)
+  ROOT %reduce_sum.1 = f32[256]{0} reduce(%param_0.14, %param_1.15), dimensions={1}, to_apply=%region_2.4, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=5}
+}
+
+%region_1.3 (reduce_max.3: f32[], reduce_max.4: f32[]) -> f32[] {
+  %reduce_max.3 = f32[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.4 = f32[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.5 = f32[] maximum(%reduce_max.3, %reduce_max.4), metadata={op_name="jit(model)/reduce_max" stack_frame_id=5}
+}
+
+%fused_computation.14 (param_0.16: f32[], param_1.18: f32[256,256], param_2.5: f32[128,256], param_3.3: f32[256,512], param_4.1: f32[512,128]) -> f32[256,256] {
+  %param_3.3 = f32[256,512]{1,0} parameter(3)
+  %param_4.1 = f32[512,128]{1,0} parameter(4)
+  %dot_general.14 = f32[256,128]{1,0} dot(%param_3.3, %param_4.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=22}
+  %param_2.5 = f32[128,256]{1,0} parameter(2)
+  %dot_general.13 = f32[256,256]{1,0} dot(%dot_general.14, %param_2.5), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(model)/dot_general" stack_frame_id=26}
+  %param_1.18 = f32[256,256]{1,0} parameter(1)
+  %mul.2 = f32[256,256]{1,0} multiply(%dot_general.13, %param_1.18), metadata={op_name="jit(model)/mul" stack_frame_id=27}
+  %param_0.16 = f32[] parameter(0)
+  %reduce_max.1 = f32[256]{0} reduce(%mul.2, %param_0.16), dimensions={1}, to_apply=%region_1.3, metadata={op_name="jit(model)/reduce_max" stack_frame_id=5}
+  %sub.2 = f32[256,256]{1,0} broadcast(%reduce_max.1), dimensions={0}, metadata={op_name="jit(model)/sub" stack_frame_id=5}
+  %sub.3 = f32[256,256]{1,0} subtract(%mul.2, %sub.2), metadata={op_name="jit(model)/sub" stack_frame_id=5}
+  ROOT %exp.3 = f32[256,256]{1,0} exponential(%sub.3), metadata={op_name="jit(model)/exp" stack_frame_id=5}
+}
+
+%region_0.1 (reduce_sum.3: f32[], reduce_sum.4: f32[]) -> f32[] {
+  %reduce_sum.3 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.4 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.5 = f32[] add(%reduce_sum.3, %reduce_sum.4), metadata={op_name="jit(model)/reduce_sum" stack_frame_id=4}
+}
+
+%fused_computation.15 (param_0.18: f32[], param_1.20: f32[256,512]) -> f32[256] {
+  %param_1.20 = f32[256,512]{1,0} parameter(1)
+  %mul.3 = f32[256,512]{1,0} multiply(%param_1.20, %param_1.20), metadata={op_name="jit(model)/mul" stack_frame_id=7}
+  %param_0.18 = f32[] parameter(0)
+  ROOT %reduce_sum.2 = f32[256]{0} reduce(%mul.3, %param_0.18), dimensions={1}, to_apply=%region_0.1, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=4}
+}
+
+%fused_computation.16 (param_0.20: f32[256,512], param_1.23: f32[512], param_2.9: f32[256,512], param_3.6: f32[256,512], param_4.4: f32[256,512], param_5.1: f32[256,512], param_6: f32[256,512]) -> f32[256,512] {
+  %param_4.4 = f32[256,512]{1,0} parameter(4)
+  %param_5.1 = f32[256,512]{1,0} parameter(5)
+  %param_6 = f32[256,512]{1,0} parameter(6)
+  %add.8 = f32[256,512]{1,0} add(%param_5.1, %param_6), metadata={op_name="jit(model)/add" stack_frame_id=38}
+  %add.7 = f32[256,512]{1,0} add(%param_4.4, %add.8), metadata={op_name="jit(model)/add" stack_frame_id=39}
+  %param_2.9 = f32[256,512]{1,0} parameter(2)
+  %param_3.6 = f32[256,512]{1,0} parameter(3)
+  %tanh.0 = f32[256,512]{1,0} tanh(%param_3.6), metadata={op_name="jit(model)/tanh" stack_frame_id=15}
+  %mul.4 = f32[256,512]{1,0} multiply(%param_2.9, %tanh.0), metadata={op_name="jit(model)/mul" stack_frame_id=16}
+  %add.6 = f32[256,512]{1,0} add(%add.7, %mul.4), metadata={op_name="jit(model)/add" stack_frame_id=40}
+  %param_0.20 = f32[256,512]{1,0} parameter(0)
+  %param_1.23 = f32[512]{0} parameter(1)
+  %add.5 = f32[256,512]{1,0} broadcast(%param_1.23), dimensions={1}, metadata={op_name="jit(model)/add" stack_frame_id=21}
+  %add.3 = f32[256,512]{1,0} add(%param_0.20, %add.5), metadata={op_name="jit(model)/add" stack_frame_id=21}
+  ROOT %add.2 = f32[256,512]{1,0} add(%add.6, %add.3), metadata={op_name="jit(model)/add" stack_frame_id=41}
+}
+
+%fused_computation.17 (param_0.22: f32[256,512], param_1.25: f32[512]) -> f32[256,512] {
+  %param_0.22 = f32[256,512]{1,0} parameter(0)
+  %param_1.25 = f32[512]{0} parameter(1)
+  %add.10 = f32[256,512]{1,0} broadcast(%param_1.25), dimensions={1}, metadata={op_name="jit(model)/add" stack_frame_id=18}
+  %add.9 = f32[256,512]{1,0} add(%param_0.22, %add.10), metadata={op_name="jit(model)/add" stack_frame_id=18}
+  ROOT %tanh.1 = f32[256,512]{1,0} tanh(%add.9), metadata={op_name="jit(model)/tanh" stack_frame_id=19}
+}
+
+%fused_computation.18 (param_0.24: f32[256,512], param_1.27: f32[256,512]) -> f32[256,512] {
+  %param_1.27 = f32[256,512]{1,0} parameter(1)
+  %constant.4 = f32[] constant(1), metadata={op_name="jit(model)/jit(silu)" stack_frame_id=13}
+  %broadcast.19 = f32[256,512]{1,0} broadcast(%constant.4), dimensions={}, metadata={op_name="jit(model)/jit(silu)" stack_frame_id=13}
+  %neg.2 = f32[256,512]{1,0} negate(%param_1.27), metadata={op_name="jit(model)/jit(silu)/neg" stack_frame_id=13}
+  %exp.6 = f32[256,512]{1,0} exponential(%neg.2), metadata={op_name="jit(model)/jit(silu)/exp" stack_frame_id=13}
+  %add.11 = f32[256,512]{1,0} add(%exp.6, %broadcast.19), metadata={op_name="jit(model)/jit(silu)/add" stack_frame_id=13}
+  %div.1 = f32[256,512]{1,0} divide(%broadcast.19, %add.11), metadata={op_name="jit(model)/jit(silu)/div" stack_frame_id=13}
+  %mul.6 = f32[256,512]{1,0} multiply(%param_1.27, %div.1), metadata={op_name="jit(model)/jit(silu)/mul" stack_frame_id=13}
+  %param_0.24 = f32[256,512]{1,0} parameter(0)
+  ROOT %mul.5 = f32[256,512]{1,0} multiply(%mul.6, %param_0.24), metadata={op_name="jit(model)/mul" stack_frame_id=13}
+}
+
+%fused_computation.19 (param_0.25: f32[256,256], param_1.29: f32[256]) -> f32[256,256] {
+  %param_0.25 = f32[256,256]{1,0} parameter(0)
+  %param_1.29 = f32[256]{0} parameter(1)
+  %broadcast.20 = f32[256,256]{1,0} broadcast(%param_1.29), dimensions={0}, metadata={op_name="jit(model)/div" stack_frame_id=6}
+  ROOT %multiply.4 = f32[256,256]{1,0} multiply(%param_0.25, %broadcast.20), metadata={op_name="jit(model)/div" stack_frame_id=6}
+}
+
+%fused_computation.20 (param_0.27: f32[256]) -> f32[256] {
+  %constant.5 = f32[] constant(1), metadata={op_name="jit(model)/jit(silu)" stack_frame_id=13}
+  %broadcast.21 = f32[256]{0} broadcast(%constant.5), dimensions={}, metadata={op_name="jit(model)/div" stack_frame_id=5}
+  %param_0.27 = f32[256]{0} parameter(0)
+  ROOT %divide.2 = f32[256]{0} divide(%broadcast.21, %param_0.27), metadata={op_name="jit(model)/div" stack_frame_id=6}
+}
+
+%fused_computation.21 (param_0.28: f32[256,256], param_1.33: f32[256]) -> f32[256,256] {
+  %param_0.28 = f32[256,256]{1,0} parameter(0)
+  %param_1.33 = f32[256]{0} parameter(1)
+  %broadcast.22 = f32[256,256]{1,0} broadcast(%param_1.33), dimensions={0}, metadata={op_name="jit(model)/div" stack_frame_id=5}
+  ROOT %multiply.5 = f32[256,256]{1,0} multiply(%param_0.28, %broadcast.22), metadata={op_name="jit(model)/div" stack_frame_id=5}
+}
+
+%fused_computation.22 (param_0.30: f32[256]) -> f32[256] {
+  %constant.6 = f32[] constant(1), metadata={op_name="jit(model)/jit(silu)" stack_frame_id=13}
+  %broadcast.23 = f32[256]{0} broadcast(%constant.6), dimensions={}, metadata={op_name="jit(model)/div" stack_frame_id=5}
+  %param_0.30 = f32[256]{0} parameter(0)
+  ROOT %divide.3 = f32[256]{0} divide(%broadcast.23, %param_0.30), metadata={op_name="jit(model)/div" stack_frame_id=5}
+}
+
+%fused_computation.23 (param_0.31: f32[256,512], param_1.38: f32[512], param_2.16: f32[256]) -> f32[256,512] {
+  %param_0.31 = f32[256,512]{1,0} parameter(0)
+  %param_2.16 = f32[256]{0} parameter(2)
+  %mul.11 = f32[256,512]{1,0} broadcast(%param_2.16), dimensions={0}, metadata={op_name="jit(model)/mul" stack_frame_id=9}
+  %mul.9 = f32[256,512]{1,0} multiply(%param_0.31, %mul.11), metadata={op_name="jit(model)/mul" stack_frame_id=9}
+  %param_1.38 = f32[512]{0} parameter(1)
+  %mul.8 = f32[256,512]{1,0} broadcast(%param_1.38), dimensions={1}, metadata={op_name="jit(model)/mul" stack_frame_id=9}
+  %mul.7 = f32[256,512]{1,0} multiply(%mul.9, %mul.8), metadata={op_name="jit(model)/mul" stack_frame_id=9}
+  ROOT %add.12 = f32[256,512]{1,0} add(%param_0.31, %mul.7), metadata={op_name="jit(model)/add" stack_frame_id=10}
+}
+
+%fused_computation.24 (param_0.34: f32[256]) -> f32[256] {
+  %param_0.34 = f32[256]{0} parameter(0)
+  %constant.15 = f32[] constant(0.001953125)
+  %broadcast.25 = f32[256]{0} broadcast(%constant.15), dimensions={}, metadata={op_name="jit(model)/div" stack_frame_id=4}
+  %multiply.6 = f32[256]{0} multiply(%param_0.34, %broadcast.25), metadata={op_name="jit(model)/div" stack_frame_id=4}
+  %constant.14 = f32[] constant(1e-06)
+  %broadcast.24 = f32[256]{0} broadcast(%constant.14), dimensions={}, metadata={op_name="jit(model)/add" stack_frame_id=4}
+  %add.13 = f32[256]{0} add(%multiply.6, %broadcast.24), metadata={op_name="jit(model)/add" stack_frame_id=4}
+  ROOT %rsqrt.2 = f32[256]{0} rsqrt(%add.13), metadata={op_name="jit(model)/rsqrt" stack_frame_id=8}
+}
+
+%wrapped_broadcast_computation (param_0.35: f32[]) -> f32[256,256] {
+  %param_0.35 = f32[] parameter(0)
+  ROOT %broadcast.26 = f32[256,256]{1,0} broadcast(%param_0.35), dimensions={}
+}
+
+ENTRY %main.7 (x0.1: f32[256,512], g1.1: f32[512], w2.1: f32[512,512], w3.1: f32[512,512], w4.1: f32[512,512], w5.1: f32[512,512], b6.1: f32[512], w7.1: f32[512,512], b8.1: f32[512], w9.1: f32[512,128], w10.1: f32[512,128], w11.1: f32[512,128], w12.1: f32[128,512], w13.1: f32[512,128], w14.1: f32[512,128], w15.1: f32[512,128], w16.1: f32[128,512]) -> f32[256,512] {
+  %x0.1 = f32[256,512]{1,0} parameter(0), metadata={op_name="x0"}
+  %g1.1 = f32[512]{0} parameter(1), metadata={op_name="g1"}
+  %w2.1 = f32[512,512]{1,0} parameter(2), metadata={op_name="w2"}
+  %w3.1 = f32[512,512]{1,0} parameter(3), metadata={op_name="w3"}
+  %w4.1 = f32[512,512]{1,0} parameter(4), metadata={op_name="w4"}
+  %w5.1 = f32[512,512]{1,0} parameter(5), metadata={op_name="w5"}
+  %b6.1 = f32[512]{0} parameter(6), metadata={op_name="b6"}
+  %w7.1 = f32[512,512]{1,0} parameter(7), metadata={op_name="w7"}
+  %b8.1 = f32[512]{0} parameter(8), metadata={op_name="b8"}
+  %w9.1 = f32[512,128]{1,0} parameter(9), metadata={op_name="w9"}
+  %w10.1 = f32[512,128]{1,0} parameter(10), metadata={op_name="w10"}
+  %w11.1 = f32[512,128]{1,0} parameter(11), metadata={op_name="w11"}
+  %w12.1 = f32[128,512]{1,0} parameter(12), metadata={op_name="w12"}
+  %w13.1 = f32[512,128]{1,0} parameter(13), metadata={op_name="w13"}
+  %w14.1 = f32[512,128]{1,0} parameter(14), metadata={op_name="w14"}
+  %w15.1 = f32[512,128]{1,0} parameter(15), metadata={op_name="w15"}
+  %w16.1 = f32[128,512]{1,0} parameter(16), metadata={op_name="w16"}
+  %constant.9 = f32[] constant(0.088388)
+  %constant.12 = f32[] constant(-inf)
+  %constant.13 = f32[] constant(0)
+  %wrapped_broadcast = f32[256,256]{1,0} fusion(%constant.9), kind=kLoop, calls=%wrapped_broadcast_computation
+  %ynn_fusion.15 = f32[256]{0} fusion(%constant.13, %x0.1), kind=kCustom, calls=%fused_computation.15, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=4}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %add_rsqrt_fusion = f32[256]{0} fusion(%ynn_fusion.15), kind=kLoop, calls=%fused_computation.24, metadata={op_name="jit(model)/rsqrt" stack_frame_id=8}
+  %multiply_add_fusion = f32[256,512]{1,0} fusion(%x0.1, %g1.1, %add_rsqrt_fusion), kind=kLoop, calls=%fused_computation.23, metadata={op_name="jit(model)/add" stack_frame_id=10}, backend_config={"outer_dimension_partitions":["2"]}
+  %dot = f32[128,256]{1,0} dot(%w10.1, %multiply_add_fusion), lhs_contracting_dims={0}, rhs_contracting_dims={1}, metadata={op_name="jit(model)/transpose" stack_frame_id=25}
+  %ynn_fusion.12 = f32[256,128]{1,0} fusion(%multiply_add_fusion, %w11.1), kind=kCustom, calls=%fused_computation.12, metadata={op_name="jit(model)/dot_general" stack_frame_id=24}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %dot.1 = f32[128,256]{1,0} dot(%w14.1, %multiply_add_fusion), lhs_contracting_dims={0}, rhs_contracting_dims={1}, metadata={op_name="jit(model)/transpose" stack_frame_id=33}
+  %ynn_fusion.7 = f32[256,128]{1,0} fusion(%multiply_add_fusion, %w15.1), kind=kCustom, calls=%fused_computation.7, metadata={op_name="jit(model)/dot_general" stack_frame_id=32}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.4 = f32[256,512]{1,0} fusion(%multiply_add_fusion, %w2.1), kind=kCustom, calls=%fused_computation.4, metadata={op_name="jit(model)/dot_general" stack_frame_id=11}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.3 = f32[256,512]{1,0} fusion(%multiply_add_fusion, %w3.1), kind=kCustom, calls=%fused_computation.3, metadata={op_name="jit(model)/dot_general" stack_frame_id=12}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.1 = f32[256,512]{1,0} fusion(%multiply_add_fusion, %w5.1), kind=kCustom, calls=%fused_computation.1, metadata={op_name="jit(model)/dot_general" stack_frame_id=17}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.14 = f32[256,256]{1,0} fusion(%constant.12, %wrapped_broadcast, %dot, %multiply_add_fusion, %w9.1), kind=kCustom, calls=%fused_computation.14, metadata={op_name="jit(model)/reduce_max" stack_frame_id=5}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.9 = f32[256,256]{1,0} fusion(%constant.12, %wrapped_broadcast, %dot.1, %multiply_add_fusion, %w13.1), kind=kCustom, calls=%fused_computation.9, metadata={op_name="jit(model)/reduce_max" stack_frame_id=6}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %multiply_multiply_fusion = f32[256,512]{1,0} fusion(%ynn_fusion.3, %ynn_fusion.4), kind=kLoop, calls=%fused_computation.18, metadata={op_name="jit(model)/mul" stack_frame_id=13}, backend_config={"outer_dimension_partitions":["2"]}
+  %add_tanh_fusion = f32[256,512]{1,0} fusion(%ynn_fusion.1, %b6.1), kind=kLoop, calls=%fused_computation.17, metadata={op_name="jit(model)/tanh" stack_frame_id=19}, backend_config={"outer_dimension_partitions":["2"]}
+  %ynn_fusion.13 = f32[256]{0} fusion(%ynn_fusion.14, %constant.13), kind=kCustom, calls=%fused_computation.13, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=5}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.8 = f32[256]{0} fusion(%ynn_fusion.9, %constant.13), kind=kCustom, calls=%fused_computation.8, metadata={op_name="jit(model)/reduce_sum" stack_frame_id=6}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.2 = f32[256,512]{1,0} fusion(%multiply_multiply_fusion, %w4.1), kind=kCustom, calls=%fused_computation.2, metadata={op_name="jit(model)/dot_general" stack_frame_id=14}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion = f32[256,512]{1,0} fusion(%add_tanh_fusion, %w7.1), kind=kCustom, calls=%fused_computation, metadata={op_name="jit(model)/dot_general" stack_frame_id=20}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %broadcast_divide_fusion.1 = f32[256]{0} fusion(%ynn_fusion.13), kind=kLoop, calls=%fused_computation.22, metadata={op_name="jit(model)/div" stack_frame_id=5}
+  %broadcast_divide_fusion = f32[256]{0} fusion(%ynn_fusion.8), kind=kLoop, calls=%fused_computation.20, metadata={op_name="jit(model)/div" stack_frame_id=6}
+  %broadcast_multiply_fusion.1 = f32[256,256]{1,0} fusion(%ynn_fusion.14, %broadcast_divide_fusion.1), kind=kLoop, calls=%fused_computation.21, metadata={op_name="jit(model)/div" stack_frame_id=5}, backend_config={"outer_dimension_partitions":["2"]}
+  %broadcast_multiply_fusion = f32[256,256]{1,0} fusion(%ynn_fusion.9, %broadcast_divide_fusion), kind=kLoop, calls=%fused_computation.19, metadata={op_name="jit(model)/div" stack_frame_id=6}, backend_config={"outer_dimension_partitions":["2"]}
+  %ynn_fusion.11 = f32[256,128]{1,0} fusion(%broadcast_multiply_fusion.1, %ynn_fusion.12), kind=kCustom, calls=%fused_computation.11, metadata={op_name="jit(model)/dot_general" stack_frame_id=28}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.6 = f32[256,128]{1,0} fusion(%broadcast_multiply_fusion, %ynn_fusion.7), kind=kCustom, calls=%fused_computation.6, metadata={op_name="jit(model)/dot_general" stack_frame_id=36}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.10 = f32[256,512]{1,0} fusion(%ynn_fusion.11, %w12.1), kind=kCustom, calls=%fused_computation.10, metadata={op_name="jit(model)/dot_general" stack_frame_id=29}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  %ynn_fusion.5 = f32[256,512]{1,0} fusion(%ynn_fusion.6, %w16.1), kind=kCustom, calls=%fused_computation.5, metadata={op_name="jit(model)/dot_general" stack_frame_id=37}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+  ROOT %add_add_fusion = f32[256,512]{1,0} fusion(%ynn_fusion, %b8.1, %ynn_fusion.2, %x0.1, %multiply_add_fusion, /*index=5*/%ynn_fusion.10, %ynn_fusion.5), kind=kLoop, calls=%fused_computation.16, metadata={op_name="jit(model)/add" stack_frame_id=41}, backend_config={"outer_dimension_partitions":["2"]}
+}
+

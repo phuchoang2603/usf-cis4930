@@ -7,6 +7,12 @@ wrapper links that implementation's unchanged core rather than replacing it.
 
 For RL experiments, use the [project wrapper](../../evaluator/README.md).
 
+Repository-layout update, November 16: the current evaluator validates inputs
+through `evaluator/problem.py`, and compiler examples now live under
+`scripts/hlo2mlsys/`. The 124-workload timings and test counts below describe the
+October 30 snapshot, including the 100 synthetic files removed from the current
+repository. See the evaluator README for the current 32-test verification scope.
+
 | Property | Original CLI | Project wrapper |
 | --- | --- | --- |
 | Cost formula | Pinned Huawei/VNRC model | Same model, identified in every result |

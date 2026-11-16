@@ -27,6 +27,12 @@ programs. Artifacts are stored under `build/`. No pip packages or system package
 are required for the Python wrapper. macOS arm64 is tested; Linux build support
 is provided by CMake but has not been exercised here.
 
+Graph schema and DAG validation live in `evaluator/problem.py`; the evaluator
+does not depend on a synthetic-data generator. Compiler sources and examples
+from the former ZIP are under `scripts/hlo2mlsys/`. The optional comparison
+command is `python3 tools/assess_vnrc.py --compare-compiler` (requires NumPy);
+`--compare-archive` remains an alias for existing scripts.
+
 Upstream VNRC is Apache 2.0; nlohmann/json is MIT licensed. Their original licenses
 are kept with the downloaded sources in `external/`. Upstream remains unmodified.
 
@@ -175,7 +181,10 @@ python3 tools/benchmark_evaluator.py
 python3 tools/rl_evaluator_demo.py
 ```
 
-All 31 test methods pass. They include all 11 official example schedules, all 124 workload baselines,
+All 32 test methods pass. They include all 11 official example schedules, all 24 official workload baselines,
+and feasible baselines for the 12 compatible unpacked compiler graphs. The other
+12 compiler graphs are explicitly rejected for incompatible Pointwise shapes.
+The suite also covers
 the original invalid-schedule counterexamples, reported-label manipulation,
 nonfinite inputs, context cleanup, concurrent reuse, backend-fault handling,
 configuration compatibility, and the terminal-schedule reward demo. The optional snake mode
@@ -188,6 +197,10 @@ October 30 final measurements: complete API median 0.34 ms on official graphs
 and 0.44 ms on synthetic graphs. The reward API, including cached baseline
 normalization, measured 0.32 ms and 0.43 ms respectively. Each uses nine rounds
 over all 124 singleton baseline schedules; setup/baseline generation is excluded.
+These October 30 measurements include 100 legacy synthetic fixtures that were
+removed by the later repository restructuring; they are historical results.
+The current `tools/benchmark_evaluator.py` runs the 24 official workloads and
+records the actual UTC measurement timestamp.
 The timing script records both paths separately. A separate earlier matched-schedule comparison measured
 0.54 ms for this wrapper versus 4.82 ms for the original CLI, with identical
 scores on all 24 official inputs. See the [comparison and methodology](../docs/evaluator/wrapper-comparison.md).
