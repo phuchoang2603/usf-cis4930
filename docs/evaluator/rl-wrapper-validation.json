@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-30",
+  "model_id": "vnrc-1f19c2f-validated-v1",
+  "vnrc_source": "https://github.com/huawei-csl/mlsys-2026-graph-scheduling-vnrc-submission",
+  "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+  "backend_sha256": "12798e9048b3a5eb4876642c3d1f80573cfd780805d8787c4660fe72332be015",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "official_worked_examples_matched": 11,
+  "official_example_mode": "allow_snake=True; null/omitted traversal correctly means raster",
+  "workloads_with_feasible_baselines": 124,
+  "rl_default_traversal": "raster",
+  "reward": "baseline_latency / (baseline_latency + schedule_latency); invalid=-1",
+  "cost_model_equivalence_to_official_judge": false,
+  "known_external_uncertainty": "K/base-cost convention follows pinned VNRC, not the ZIP simulator; full official judge parity is unverified.",
+  "unit_test_methods_passed": 31,
+  "unit_test_methods_failed": 0,
+  "backend_failure_handling": "RuntimeError in Python; CLI exit 1; never converted to invalid-action reward",
+  "model_compatibility_guard": true,
+  "threaded_context_reuse_tested": true,
+  "terminal_rl_demo_tested": true,
+  "fast_build_command": "python3 tools/setup_vnrc.py --backend-only",
+  "demo_results": {
+    "baseline": {
+      "valid": true,
+      "reward": 0.5,
+      "latency": 838860.7999999999
+    },
+    "fused": {
+      "valid": true,
+      "reward": 0.8562767847810181,
+      "latency": 140800.0
+    },
+    "invalid_order": {
+      "valid": false,
+      "reward": -1.0,
+      "latency": null
+    }
+  }
+}

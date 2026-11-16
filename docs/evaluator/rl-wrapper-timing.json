@@ -1,0 +1,6237 @@
+{
+  "date": "2026-10-30",
+  "model_id": "vnrc-1f19c2f-validated-v1",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "backend_sha256": "12798e9048b3a5eb4876642c3d1f80573cfd780805d8787c4660fe72332be015",
+  "method": "9 sequential randomized rounds after one warm-up per schedule. Reused problem contexts; complete Python validation, schedule serialization, native subgraph construction and cost scoring, and result parsing included. Each evaluate() call is followed by reward() timing with an already cached baseline. Initialization and baseline generation excluded. Wall time in microseconds; desktop background load uncontrolled.",
+  "groups": {
+    "official": {
+      "count": 216,
+      "median": 343.85400000000004,
+      "p95": 1017.625,
+      "max": 1124.791
+    },
+    "synthetic": {
+      "count": 900,
+      "median": 439.8545,
+      "p95": 895.041,
+      "max": 1118.5
+    }
+  },
+  "reward_groups": {
+    "official": {
+      "count": 216,
+      "median": 315.0415,
+      "p95": 983.0,
+      "max": 1038.417
+    },
+    "synthetic": {
+      "count": 900,
+      "median": 426.5215,
+      "p95": 878.5,
+      "max": 1170.416
+    }
+  },
+  "cases": [
+    {
+      "source": "benchmarks/mlsys-2026-1.json",
+      "nodes": 5,
+      "group": "official",
+      "setup_us": 570.125,
+      "samples_us": [
+        44.0,
+        44.208,
+        50.917,
+        44.5,
+        58.834,
+        43.167,
+        44.875,
+        44.5,
+        46.167
+      ],
+      "reward_samples_us": [
+        37.958,
+        38.333,
+        44.25,
+        45.917,
+        46.208,
+        37.5,
+        38.25,
+        39.417,
+        39.959
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "8b9b9fc5a196cbc81aa183113c03d09481632ab15cb5fa21a81fec5dad66f7b5",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 419430.4,
+      "timing_us": {
+        "count": 9,
+        "median": 44.5,
+        "p95": 58.834,
+        "max": 58.834
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 39.417,
+        "p95": 46.208,
+        "max": 46.208
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-10.json",
+      "nodes": 28,
+      "group": "official",
+      "setup_us": 189.5,
+      "samples_us": [
+        177.5,
+        179.083,
+        172.458,
+        176.792,
+        185.917,
+        180.083,
+        178.917,
+        180.541,
+        208.208
+      ],
+      "reward_samples_us": [
+        167.167,
+        165.084,
+        164.125,
+        166.375,
+        170.917,
+        169.042,
+        176.083,
+        166.375,
+        195.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "ca1045414dcdfee483f2295e460a92c95b3952aa9a3e4350d91ce7208294f9c2",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 14208204.799999995,
+      "timing_us": {
+        "count": 9,
+        "median": 179.083,
+        "p95": 208.208,
+        "max": 208.208
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 167.167,
+        "p95": 195.542,
+        "max": 195.542
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-11.json",
+      "nodes": 26,
+      "group": "official",
+      "setup_us": 159.875,
+      "samples_us": [
+        160.334,
+        161.667,
+        192.5,
+        157.916,
+        180.042,
+        161.125,
+        171.541,
+        173.875,
+        160.333
+      ],
+      "reward_samples_us": [
+        151.75,
+        153.208,
+        162.042,
+        162.0,
+        156.75,
+        152.375,
+        152.375,
+        153.875,
+        168.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "8ecaf50ad03ae6478a4746a5a027a216ca5b84e75352d1cbf101560b006b2da3",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2181990.4000000004,
+      "timing_us": {
+        "count": 9,
+        "median": 161.667,
+        "p95": 192.5,
+        "max": 192.5
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 153.875,
+        "p95": 168.625,
+        "max": 168.625
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-12.json",
+      "nodes": 31,
+      "group": "official",
+      "setup_us": 171.625,
+      "samples_us": [
+        194.917,
+        195.333,
+        184.417,
+        322.833,
+        218.5,
+        186.917,
+        187.834,
+        194.625,
+        210.0
+      ],
+      "reward_samples_us": [
+        186.375,
+        178.125,
+        194.25,
+        219.042,
+        206.125,
+        179.834,
+        196.875,
+        181.75,
+        193.959
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "0e58c46ec8f21bcbd4f3823a5394fe0e0d627fe059e6d0e3a637b537fbc1d1dc",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 4550819.839999999,
+      "timing_us": {
+        "count": 9,
+        "median": 194.917,
+        "p95": 322.833,
+        "max": 322.833
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 193.959,
+        "p95": 219.042,
+        "max": 219.042
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-13.json",
+      "nodes": 63,
+      "group": "official",
+      "setup_us": 300.917,
+      "samples_us": [
+        389.209,
+        403.042,
+        387.25,
+        417.042,
+        410.291,
+        392.375,
+        421.583,
+        433.917,
+        422.708
+      ],
+      "reward_samples_us": [
+        378.958,
+        375.458,
+        410.459,
+        373.5,
+        378.041,
+        376.5,
+        385.667,
+        379.542,
+        398.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "0050feab4f3f8cf6cb6b19e4bfedbaa906c52f902880e306eb125bf091bae811",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 22165913.599999968,
+      "timing_us": {
+        "count": 9,
+        "median": 410.291,
+        "p95": 433.917,
+        "max": 433.917
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 378.958,
+        "p95": 410.459,
+        "max": 410.459
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-14.json",
+      "nodes": 63,
+      "group": "official",
+      "setup_us": 277.041,
+      "samples_us": [
+        422.958,
+        375.667,
+        375.084,
+        387.25,
+        376.375,
+        400.709,
+        377.958,
+        399.25,
+        380.792
+      ],
+      "reward_samples_us": [
+        383.875,
+        388.916,
+        388.875,
+        361.834,
+        361.666,
+        375.0,
+        366.416,
+        391.833,
+        372.083
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "8a659dbde61f8156d937c4a2f7e1f6e969688330ab0b38698fedaa21ac70f0d6",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3343104.000000001,
+      "timing_us": {
+        "count": 9,
+        "median": 380.792,
+        "p95": 422.958,
+        "max": 422.958
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 375.0,
+        "p95": 391.833,
+        "max": 391.833
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-15.json",
+      "nodes": 61,
+      "group": "official",
+      "setup_us": 312.292,
+      "samples_us": [
+        390.625,
+        366.375,
+        364.875,
+        406.875,
+        428.791,
+        365.125,
+        365.125,
+        399.583,
+        380.458
+      ],
+      "reward_samples_us": [
+        372.708,
+        384.458,
+        354.416,
+        355.917,
+        422.75,
+        355.834,
+        364.75,
+        371.333,
+        369.833
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c8d4b263ee08575d7d24b174fd9fda3857d5ebd1571bfd72edbd12c1dec8196d",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2261928.228571427,
+      "timing_us": {
+        "count": 9,
+        "median": 380.458,
+        "p95": 428.791,
+        "max": 428.791
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 369.833,
+        "p95": 422.75,
+        "max": 422.75
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-16.json",
+      "nodes": 63,
+      "group": "official",
+      "setup_us": 309.125,
+      "samples_us": [
+        396.875,
+        396.875,
+        391.875,
+        481.917,
+        399.75,
+        377.333,
+        402.125,
+        418.708,
+        402.25
+      ],
+      "reward_samples_us": [
+        378.125,
+        363.916,
+        381.75,
+        416.667,
+        379.958,
+        362.542,
+        382.875,
+        391.5,
+        397.792
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "54038e2b136f7483a81d5175a062722c89bedbed8f5d04165a7c5c8f5e4afbb8",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 9022506.666666664,
+      "timing_us": {
+        "count": 9,
+        "median": 399.75,
+        "p95": 481.917,
+        "max": 481.917
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 381.75,
+        "p95": 416.667,
+        "max": 416.667
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-17.json",
+      "nodes": 103,
+      "group": "official",
+      "setup_us": 453.25,
+      "samples_us": [
+        681.0,
+        756.917,
+        671.541,
+        715.625,
+        650.417,
+        671.041,
+        710.833,
+        696.416,
+        680.375
+      ],
+      "reward_samples_us": [
+        629.166,
+        705.167,
+        668.041,
+        694.916,
+        624.958,
+        666.333,
+        638.0,
+        667.833,
+        642.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "78284d5c532d0498f39e5fd605b8690edf9c05813189c439cd82616c32fef722",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 5081850.880000006,
+      "timing_us": {
+        "count": 9,
+        "median": 681.0,
+        "p95": 756.917,
+        "max": 756.917
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 666.333,
+        "p95": 705.167,
+        "max": 705.167
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-18.json",
+      "nodes": 96,
+      "group": "official",
+      "setup_us": 411.875,
+      "samples_us": [
+        605.792,
+        607.166,
+        656.209,
+        654.417,
+        626.75,
+        599.333,
+        646.25,
+        631.541,
+        637.375
+      ],
+      "reward_samples_us": [
+        586.708,
+        617.541,
+        581.542,
+        596.208,
+        624.5,
+        583.167,
+        601.333,
+        626.5,
+        645.916
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "68975edd709c2a0378b0abbe3c35becce037aa4b5a9e180485a89813826721d2",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1480857.5999999992,
+      "timing_us": {
+        "count": 9,
+        "median": 631.541,
+        "p95": 656.209,
+        "max": 656.209
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 601.333,
+        "p95": 645.916,
+        "max": 645.916
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-19.json",
+      "nodes": 103,
+      "group": "official",
+      "setup_us": 417.792,
+      "samples_us": [
+        662.209,
+        634.291,
+        638.958,
+        629.5,
+        646.583,
+        729.25,
+        667.084,
+        663.125,
+        627.834
+      ],
+      "reward_samples_us": [
+        647.917,
+        609.708,
+        611.0,
+        615.458,
+        608.292,
+        824.5,
+        627.167,
+        654.583,
+        644.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "6d0304fbac90fa75b925a000ec3834f5c31fbc84a6556392026515ce11715aaa",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2418850.1333333324,
+      "timing_us": {
+        "count": 9,
+        "median": 646.583,
+        "p95": 729.25,
+        "max": 729.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 627.167,
+        "p95": 824.5,
+        "max": 824.5
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-2.json",
+      "nodes": 5,
+      "group": "official",
+      "setup_us": 75.208,
+      "samples_us": [
+        42.208,
+        40.584,
+        50.166,
+        41.0,
+        41.917,
+        40.791,
+        47.375,
+        44.584,
+        50.958
+      ],
+      "reward_samples_us": [
+        37.584,
+        37.042,
+        41.791,
+        36.833,
+        37.75,
+        37.625,
+        38.083,
+        41.958,
+        54.167
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c42d5c32c6b0a882e623dbd561606246480940a08d27550cdde7271bfeff11a7",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 52428.8,
+      "timing_us": {
+        "count": 9,
+        "median": 42.208,
+        "p95": 50.958,
+        "max": 50.958
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 37.75,
+        "p95": 54.167,
+        "max": 54.167
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-20.json",
+      "nodes": 103,
+      "group": "official",
+      "setup_us": 1540.375,
+      "samples_us": [
+        655.917,
+        649.375,
+        672.25,
+        639.625,
+        746.0,
+        643.959,
+        663.833,
+        679.791,
+        673.667
+      ],
+      "reward_samples_us": [
+        737.417,
+        627.333,
+        686.75,
+        1025.75,
+        683.375,
+        626.333,
+        658.208,
+        627.875,
+        626.833
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "334dc4dbceddcf7eb14d5aa0fbc66ca12083a49446eecad955585d863f749047",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 5715733.257142861,
+      "timing_us": {
+        "count": 9,
+        "median": 663.833,
+        "p95": 746.0,
+        "max": 746.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 658.208,
+        "p95": 1025.75,
+        "max": 1025.75
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-21.json",
+      "nodes": 152,
+      "group": "official",
+      "setup_us": 631.416,
+      "samples_us": [
+        1042.042,
+        1003.625,
+        1031.0,
+        1074.958,
+        1027.25,
+        1043.375,
+        1056.791,
+        1043.291,
+        1010.167
+      ],
+      "reward_samples_us": [
+        1004.208,
+        971.209,
+        1023.125,
+        1007.084,
+        989.375,
+        975.75,
+        1038.417,
+        999.959,
+        968.208
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a2042e3fb176852160aa63681f3a08e1d4ef9a4c8939c63f82c234aa0c1cf6e0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2158100.48,
+      "timing_us": {
+        "count": 9,
+        "median": 1042.042,
+        "p95": 1074.958,
+        "max": 1074.958
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 999.959,
+        "p95": 1038.417,
+        "max": 1038.417
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-22.json",
+      "nodes": 150,
+      "group": "official",
+      "setup_us": 598.417,
+      "samples_us": [
+        1015.0,
+        1019.042,
+        1124.791,
+        986.125,
+        1007.167,
+        950.625,
+        1017.625,
+        1010.667,
+        1057.417
+      ],
+      "reward_samples_us": [
+        986.75,
+        982.166,
+        939.375,
+        958.5,
+        937.084,
+        935.666,
+        1012.375,
+        991.209,
+        983.0
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "869154d5a98639912ccd072d8cccbf9922c9369a100f901dd7f3d8fec8657d7f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3404287.9999999986,
+      "timing_us": {
+        "count": 9,
+        "median": 1015.0,
+        "p95": 1124.791,
+        "max": 1124.791
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 982.166,
+        "p95": 1012.375,
+        "max": 1012.375
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-23.json",
+      "nodes": 121,
+      "group": "official",
+      "setup_us": 519.333,
+      "samples_us": [
+        763.75,
+        794.042,
+        800.959,
+        796.542,
+        817.792,
+        757.416,
+        802.167,
+        791.792,
+        782.0
+      ],
+      "reward_samples_us": [
+        746.542,
+        731.709,
+        765.792,
+        784.666,
+        757.042,
+        730.917,
+        775.833,
+        785.625,
+        760.041
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "af6773e3f3adf5f87ce4d48dd1886637482fb78061f7f3a3ad6a1d6650743ff9",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3659622.4000000027,
+      "timing_us": {
+        "count": 9,
+        "median": 794.042,
+        "p95": 817.792,
+        "max": 817.792
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 760.041,
+        "p95": 785.625,
+        "max": 785.625
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-24.json",
+      "nodes": 112,
+      "group": "official",
+      "setup_us": 464.625,
+      "samples_us": [
+        710.833,
+        742.375,
+        697.041,
+        742.417,
+        747.666,
+        701.625,
+        735.25,
+        744.833,
+        717.208
+      ],
+      "reward_samples_us": [
+        675.75,
+        706.625,
+        674.083,
+        690.542,
+        708.709,
+        674.875,
+        677.209,
+        745.333,
+        678.834
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "de9250ba87f784e96fd4cdb7841a5da7e9824804e19dfdaef8c062befa36eed3",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2661601.279999997,
+      "timing_us": {
+        "count": 9,
+        "median": 735.25,
+        "p95": 747.666,
+        "max": 747.666
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 678.834,
+        "p95": 745.333,
+        "max": 745.333
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-3.json",
+      "nodes": 4,
+      "group": "official",
+      "setup_us": 100.584,
+      "samples_us": [
+        39.834,
+        35.458,
+        32.834,
+        34.458,
+        41.334,
+        38.209,
+        38.125,
+        45.625,
+        36.667
+      ],
+      "reward_samples_us": [
+        37.333,
+        32.292,
+        31.792,
+        32.375,
+        33.292,
+        34.0,
+        37.25,
+        44.0,
+        33.167
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "552c1e417147a2f8164b077954c8c4a5dcc00b876f6dab1301a51d1ffcf0f112",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 144179.2,
+      "timing_us": {
+        "count": 9,
+        "median": 38.125,
+        "p95": 45.625,
+        "max": 45.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 33.292,
+        "p95": 44.0,
+        "max": 44.0
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-4.json",
+      "nodes": 5,
+      "group": "official",
+      "setup_us": 85.875,
+      "samples_us": [
+        46.292,
+        41.417,
+        43.709,
+        46.583,
+        53.083,
+        48.792,
+        42.042,
+        39.625,
+        55.5
+      ],
+      "reward_samples_us": [
+        39.125,
+        37.667,
+        38.917,
+        41.666,
+        49.75,
+        40.459,
+        38.375,
+        37.833,
+        42.291
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "eed32a91c27f3c0fe0d58230074f27026596474e0243cedeb0740e8fe73d49f6",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 27033.6,
+      "timing_us": {
+        "count": 9,
+        "median": 46.292,
+        "p95": 55.5,
+        "max": 55.5
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 39.125,
+        "p95": 49.75,
+        "max": 49.75
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-5.json",
+      "nodes": 19,
+      "group": "official",
+      "setup_us": 138.125,
+      "samples_us": [
+        123.834,
+        130.416,
+        139.375,
+        123.916,
+        130.916,
+        128.209,
+        129.25,
+        127.084,
+        130.833
+      ],
+      "reward_samples_us": [
+        117.417,
+        115.042,
+        118.083,
+        116.292,
+        120.292,
+        118.125,
+        118.041,
+        118.5,
+        122.083
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "775d305b7363d275cf0353e558702ece3dc006503888ae43b63adf695a949466",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1336516.266666666,
+      "timing_us": {
+        "count": 9,
+        "median": 129.25,
+        "p95": 139.375,
+        "max": 139.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 118.083,
+        "p95": 122.083,
+        "max": 122.083
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-6.json",
+      "nodes": 17,
+      "group": "official",
+      "setup_us": 124.125,
+      "samples_us": [
+        123.375,
+        111.75,
+        115.917,
+        127.25,
+        122.625,
+        113.792,
+        112.666,
+        126.333,
+        128.375
+      ],
+      "reward_samples_us": [
+        117.791,
+        105.583,
+        104.875,
+        116.625,
+        108.5,
+        107.167,
+        104.541,
+        113.208,
+        110.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "e75f0d36957c089394f184b37ad9d5bb331493ed730b95904ff4c437942d9242",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 314572.80000000005,
+      "timing_us": {
+        "count": 9,
+        "median": 122.625,
+        "p95": 128.375,
+        "max": 128.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 108.5,
+        "p95": 117.791,
+        "max": 117.791
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-7.json",
+      "nodes": 15,
+      "group": "official",
+      "setup_us": 110.125,
+      "samples_us": [
+        106.292,
+        99.125,
+        99.916,
+        97.167,
+        133.125,
+        100.542,
+        99.25,
+        109.875,
+        107.292
+      ],
+      "reward_samples_us": [
+        95.042,
+        93.125,
+        93.833,
+        99.583,
+        110.459,
+        91.542,
+        93.292,
+        95.75,
+        105.166
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "d3244b1ea8501754018274578b1c74d024e12c7127c04e02cefa789c341a7151",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 244667.73333333334,
+      "timing_us": {
+        "count": 9,
+        "median": 100.542,
+        "p95": 133.125,
+        "max": 133.125
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 95.042,
+        "p95": 110.459,
+        "max": 110.459
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-8.json",
+      "nodes": 20,
+      "group": "official",
+      "setup_us": 136.375,
+      "samples_us": [
+        129.0,
+        140.292,
+        127.042,
+        148.0,
+        141.5,
+        129.708,
+        146.708,
+        138.916,
+        128.834
+      ],
+      "reward_samples_us": [
+        120.833,
+        135.917,
+        120.916,
+        128.166,
+        141.833,
+        122.125,
+        126.083,
+        136.875,
+        121.916
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3f63dcad8d545159ded28d6f3c72811af3461b5b508f5e0cc0b7272105f07381",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 159744.00000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 138.916,
+        "p95": 148.0,
+        "max": 148.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 126.083,
+        "p95": 141.833,
+        "max": 141.833
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-9.json",
+      "nodes": 32,
+      "group": "official",
+      "setup_us": 172.625,
+      "samples_us": [
+        196.833,
+        192.75,
+        199.958,
+        247.458,
+        217.541,
+        202.666,
+        197.417,
+        196.625,
+        200.25
+      ],
+      "reward_samples_us": [
+        187.291,
+        188.125,
+        200.167,
+        275.667,
+        189.125,
+        204.083,
+        189.75,
+        188.333,
+        191.125
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "096a96625ed7caf67e5ad4bd2bc6b6cb39ffdcb4216690f9e463c3c7893927b0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 48318382.08,
+      "timing_us": {
+        "count": 9,
+        "median": 199.958,
+        "p95": 247.458,
+        "max": 247.458
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 189.75,
+        "p95": 275.667,
+        "max": 275.667
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00004_mixed.json",
+      "nodes": 91,
+      "group": "synthetic",
+      "setup_us": 405.125,
+      "samples_us": [
+        569.708,
+        603.25,
+        575.375,
+        577.0,
+        600.833,
+        556.375,
+        621.792,
+        607.5,
+        580.458
+      ],
+      "reward_samples_us": [
+        548.25,
+        557.916,
+        565.917,
+        583.417,
+        562.708,
+        537.125,
+        551.208,
+        575.0,
+        554.375
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "e661641481f1a26c7e02ff7f519c0739f01e0a33f7bfb488f5de313e6b1abb26",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 120938905.6,
+      "timing_us": {
+        "count": 9,
+        "median": 580.458,
+        "p95": 621.792,
+        "max": 621.792
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 557.916,
+        "p95": 583.417,
+        "max": 583.417
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00009_mixed.json",
+      "nodes": 112,
+      "group": "synthetic",
+      "setup_us": 475.5,
+      "samples_us": [
+        718.375,
+        730.125,
+        773.167,
+        711.875,
+        692.5,
+        713.958,
+        819.625,
+        714.667,
+        728.542
+      ],
+      "reward_samples_us": [
+        684.417,
+        689.25,
+        811.208,
+        680.291,
+        665.291,
+        676.625,
+        697.25,
+        719.208,
+        726.917
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "363ecd7896cd873adda87c7c951927e1ec84654b16c5f831fa7863fbe6022c71",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15200985.599999994,
+      "timing_us": {
+        "count": 9,
+        "median": 718.375,
+        "p95": 819.625,
+        "max": 819.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 689.25,
+        "p95": 811.208,
+        "max": 811.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00014_mixed.json",
+      "nodes": 135,
+      "group": "synthetic",
+      "setup_us": 570.375,
+      "samples_us": [
+        946.375,
+        877.625,
+        928.208,
+        863.292,
+        869.125,
+        861.375,
+        904.875,
+        928.834,
+        873.0
+      ],
+      "reward_samples_us": [
+        909.666,
+        849.75,
+        879.583,
+        829.625,
+        852.583,
+        826.583,
+        887.292,
+        863.833,
+        837.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "918c2316269f202e57acc503132fd2dc10126d5e12f70cba76541b3bbb0b3718",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 10502489.600000007,
+      "timing_us": {
+        "count": 9,
+        "median": 877.625,
+        "p95": 946.375,
+        "max": 946.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 852.583,
+        "p95": 909.666,
+        "max": 909.666
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00019_mixed.json",
+      "nodes": 100,
+      "group": "synthetic",
+      "setup_us": 623.583,
+      "samples_us": [
+        628.208,
+        650.0,
+        634.625,
+        663.208,
+        795.792,
+        639.625,
+        640.458,
+        667.333,
+        659.625
+      ],
+      "reward_samples_us": [
+        620.834,
+        630.958,
+        657.833,
+        612.125,
+        640.208,
+        663.625,
+        653.916,
+        641.458,
+        618.125
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "02f155c7aad8e24e5d06ec371a5c6f59361d3930c33f6d05d6a272b3f77672e5",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2577887.999999998,
+      "timing_us": {
+        "count": 9,
+        "median": 650.0,
+        "p95": 795.792,
+        "max": 795.792
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 640.208,
+        "p95": 663.625,
+        "max": 663.625
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00024_mixed.json",
+      "nodes": 60,
+      "group": "synthetic",
+      "setup_us": 297.208,
+      "samples_us": [
+        369.583,
+        379.5,
+        373.459,
+        392.584,
+        367.25,
+        388.958,
+        374.459,
+        391.334,
+        379.958
+      ],
+      "reward_samples_us": [
+        383.625,
+        359.833,
+        371.333,
+        347.625,
+        384.375,
+        369.625,
+        370.208,
+        377.167,
+        357.292
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "7168abf704b1190892e7858b1ea468208b305f9b5c80db234f3ea13d1ece7354",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 4137170.400000001,
+      "timing_us": {
+        "count": 9,
+        "median": 379.5,
+        "p95": 392.584,
+        "max": 392.584
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 370.208,
+        "p95": 384.375,
+        "max": 384.375
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00029_mixed.json",
+      "nodes": 9,
+      "group": "synthetic",
+      "setup_us": 97.958,
+      "samples_us": [
+        66.625,
+        81.208,
+        73.083,
+        70.458,
+        105.958,
+        65.916,
+        66.125,
+        72.792,
+        64.708
+      ],
+      "reward_samples_us": [
+        59.75,
+        60.541,
+        59.375,
+        62.542,
+        81.958,
+        59.792,
+        60.291,
+        63.084,
+        58.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "d59144c3662c43bdee49412593a8e40a8072748d19e3f51b974f592945bcbb9f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1143603.2000000002,
+      "timing_us": {
+        "count": 9,
+        "median": 70.458,
+        "p95": 105.958,
+        "max": 105.958
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 60.291,
+        "p95": 81.958,
+        "max": 81.958
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00034_mixed.json",
+      "nodes": 99,
+      "group": "synthetic",
+      "setup_us": 487.042,
+      "samples_us": [
+        650.666,
+        633.625,
+        695.458,
+        636.042,
+        630.917,
+        604.625,
+        651.458,
+        623.625,
+        693.708
+      ],
+      "reward_samples_us": [
+        613.25,
+        635.958,
+        600.25,
+        616.916,
+        604.125,
+        722.875,
+        630.709,
+        605.625,
+        622.084
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "caf2f7fd7e8389cd111da7beb7c015292a5825724595858eb09dc70af7b1cd0f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1597559.9999999995,
+      "timing_us": {
+        "count": 9,
+        "median": 636.042,
+        "p95": 695.458,
+        "max": 695.458
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 616.916,
+        "p95": 722.875,
+        "max": 722.875
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00039_mixed.json",
+      "nodes": 107,
+      "group": "synthetic",
+      "setup_us": 457.125,
+      "samples_us": [
+        676.375,
+        784.792,
+        695.791,
+        812.375,
+        744.125,
+        674.75,
+        682.792,
+        657.375,
+        718.125
+      ],
+      "reward_samples_us": [
+        655.041,
+        644.458,
+        659.042,
+        657.208,
+        815.083,
+        646.459,
+        677.125,
+        639.709,
+        686.792
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "2413a87c62aedeaa11611901bb35a4827983e8e543bcb1bf831c0d8b3548420f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1467150.4000000001,
+      "timing_us": {
+        "count": 9,
+        "median": 695.791,
+        "p95": 812.375,
+        "max": 812.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 657.208,
+        "p95": 815.083,
+        "max": 815.083
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00044_mixed.json",
+      "nodes": 91,
+      "group": "synthetic",
+      "setup_us": 403.209,
+      "samples_us": [
+        569.791,
+        567.0,
+        579.25,
+        603.542,
+        571.875,
+        591.542,
+        568.417,
+        573.833,
+        626.083
+      ],
+      "reward_samples_us": [
+        544.834,
+        540.334,
+        561.084,
+        559.041,
+        543.792,
+        558.375,
+        548.834,
+        630.291,
+        558.25
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "33bc4c9770ee195d170333391730a59b1304c811d10faa8a60b57ce73c0cab7b",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2026268.7999999998,
+      "timing_us": {
+        "count": 9,
+        "median": 573.833,
+        "p95": 626.083,
+        "max": 626.083
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 558.25,
+        "p95": 630.291,
+        "max": 630.291
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00049_mixed.json",
+      "nodes": 102,
+      "group": "synthetic",
+      "setup_us": 456.791,
+      "samples_us": [
+        653.5,
+        639.375,
+        690.708,
+        658.75,
+        707.0,
+        649.208,
+        681.125,
+        663.5,
+        670.5
+      ],
+      "reward_samples_us": [
+        746.709,
+        632.209,
+        622.416,
+        641.125,
+        624.958,
+        639.875,
+        650.333,
+        655.209,
+        649.792
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "b3203f62383a4760faa5cf063d77b5c899a173227e90eeb96a11ade1de637227",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 17470771.199999996,
+      "timing_us": {
+        "count": 9,
+        "median": 663.5,
+        "p95": 707.0,
+        "max": 707.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 641.125,
+        "p95": 746.709,
+        "max": 746.709
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00054_mixed.json",
+      "nodes": 109,
+      "group": "synthetic",
+      "setup_us": 478.333,
+      "samples_us": [
+        716.792,
+        689.25,
+        679.667,
+        681.459,
+        697.458,
+        680.667,
+        798.083,
+        705.667,
+        702.542
+      ],
+      "reward_samples_us": [
+        711.25,
+        672.417,
+        668.375,
+        652.5,
+        684.625,
+        660.041,
+        715.292,
+        694.542,
+        662.125
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a9909e61d0be98392af9e10d41285ea0e930b730ea21854b9c757c666fa65c5a",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 915319.9999999999,
+      "timing_us": {
+        "count": 9,
+        "median": 697.458,
+        "p95": 798.083,
+        "max": 798.083
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 672.417,
+        "p95": 715.292,
+        "max": 715.292
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00059_mixed.json",
+      "nodes": 60,
+      "group": "synthetic",
+      "setup_us": 291.709,
+      "samples_us": [
+        389.791,
+        367.5,
+        396.0,
+        399.375,
+        408.625,
+        374.25,
+        371.417,
+        407.75,
+        400.041
+      ],
+      "reward_samples_us": [
+        365.042,
+        354.584,
+        418.458,
+        358.041,
+        356.542,
+        360.667,
+        352.958,
+        351.958,
+        388.75
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "5d9af650398ac0de5dac60ba4bd225f877730f5a9aea77445dc821cc1b5bf069",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3413862.4,
+      "timing_us": {
+        "count": 9,
+        "median": 396.0,
+        "p95": 408.625,
+        "max": 408.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 358.041,
+        "p95": 418.458,
+        "max": 418.458
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00064_mixed.json",
+      "nodes": 90,
+      "group": "synthetic",
+      "setup_us": 469.125,
+      "samples_us": [
+        585.792,
+        592.083,
+        551.542,
+        549.709,
+        568.125,
+        580.375,
+        560.917,
+        638.042,
+        564.0
+      ],
+      "reward_samples_us": [
+        539.208,
+        571.542,
+        539.542,
+        543.5,
+        544.041,
+        544.583,
+        550.083,
+        547.0,
+        534.083
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "f895d65902ffb43a6c2db2d34d1c7c3d6f2a0cf9ceb266e6fc084ba7010807d8",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15872678.399999993,
+      "timing_us": {
+        "count": 9,
+        "median": 568.125,
+        "p95": 638.042,
+        "max": 638.042
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 544.041,
+        "p95": 571.542,
+        "max": 571.542
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00069_mixed.json",
+      "nodes": 72,
+      "group": "synthetic",
+      "setup_us": 329.875,
+      "samples_us": [
+        450.625,
+        447.333,
+        450.167,
+        439.542,
+        461.833,
+        473.708,
+        443.333,
+        473.5,
+        441.5
+      ],
+      "reward_samples_us": [
+        432.834,
+        435.25,
+        476.541,
+        426.834,
+        437.875,
+        433.791,
+        422.584,
+        429.333,
+        427.709
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "22993854f18ea1de3788907ddb4a6458af411a6c4b0c02c027adb181bdd796cd",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3867371.5199999977,
+      "timing_us": {
+        "count": 9,
+        "median": 450.167,
+        "p95": 473.708,
+        "max": 473.708
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 432.834,
+        "p95": 476.541,
+        "max": 476.541
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00074_mixed.json",
+      "nodes": 35,
+      "group": "synthetic",
+      "setup_us": 221.666,
+      "samples_us": [
+        226.583,
+        230.25,
+        216.708,
+        235.708,
+        241.458,
+        283.0,
+        235.208,
+        231.5,
+        238.709
+      ],
+      "reward_samples_us": [
+        226.458,
+        210.042,
+        208.167,
+        225.042,
+        268.125,
+        216.875,
+        214.959,
+        210.75,
+        249.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "afacc9278032e06766824e69e7fe7e124c06ae38cb01e5ffdce38d2094481d43",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 674073.6000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 235.208,
+        "p95": 283.0,
+        "max": 283.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 216.875,
+        "p95": 268.125,
+        "max": 268.125
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00079_mixed.json",
+      "nodes": 146,
+      "group": "synthetic",
+      "setup_us": 664.792,
+      "samples_us": [
+        970.083,
+        957.542,
+        955.917,
+        992.041,
+        982.917,
+        1018.459,
+        985.375,
+        969.333,
+        981.042
+      ],
+      "reward_samples_us": [
+        1002.417,
+        945.083,
+        923.375,
+        963.125,
+        938.833,
+        939.792,
+        988.917,
+        951.625,
+        950.959
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "35d6419a4bcd4b1e8fe2062657c63ff75eb4f5ba3c0fc1b1f121888611b961be",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 27822233.599999987,
+      "timing_us": {
+        "count": 9,
+        "median": 981.042,
+        "p95": 1018.459,
+        "max": 1018.459
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 950.959,
+        "p95": 1002.417,
+        "max": 1002.417
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00084_mixed.json",
+      "nodes": 54,
+      "group": "synthetic",
+      "setup_us": 269.209,
+      "samples_us": [
+        341.625,
+        334.875,
+        337.292,
+        335.084,
+        370.083,
+        336.083,
+        343.583,
+        347.083,
+        381.417
+      ],
+      "reward_samples_us": [
+        320.375,
+        326.333,
+        315.792,
+        322.334,
+        391.042,
+        324.042,
+        324.25,
+        340.875,
+        377.833
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "aca72b460f31b4175eb43ea64573f2cbbb96c05e737eb0f4249290da96da6f17",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3487488.0,
+      "timing_us": {
+        "count": 9,
+        "median": 341.625,
+        "p95": 381.417,
+        "max": 381.417
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 324.25,
+        "p95": 391.042,
+        "max": 391.042
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00089_mixed.json",
+      "nodes": 152,
+      "group": "synthetic",
+      "setup_us": 624.542,
+      "samples_us": [
+        996.583,
+        1037.167,
+        1034.917,
+        1055.0,
+        1058.0,
+        1021.75,
+        1009.5,
+        1051.625,
+        1017.584
+      ],
+      "reward_samples_us": [
+        992.75,
+        1015.875,
+        1170.416,
+        1022.125,
+        1002.833,
+        968.458,
+        963.167,
+        1023.959,
+        971.959
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "98dd56d309620ea75e5a1ecc0d84f32bc1f5f376199f9fd7330ab2ee95a665a0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 8315875.199999999,
+      "timing_us": {
+        "count": 9,
+        "median": 1034.917,
+        "p95": 1058.0,
+        "max": 1058.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 1002.833,
+        "p95": 1170.416,
+        "max": 1170.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00094_mixed.json",
+      "nodes": 21,
+      "group": "synthetic",
+      "setup_us": 142.0,
+      "samples_us": [
+        135.833,
+        152.625,
+        134.667,
+        150.708,
+        144.291,
+        130.875,
+        134.625,
+        132.875,
+        146.417
+      ],
+      "reward_samples_us": [
+        125.792,
+        128.125,
+        125.208,
+        135.291,
+        127.792,
+        123.333,
+        125.875,
+        125.0,
+        136.5
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "1789a95c6d814f6d6c36f10e3ffedfb68d2a40866d43dd0b7b796455c97a8dd2",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1153433.6,
+      "timing_us": {
+        "count": 9,
+        "median": 135.833,
+        "p95": 152.625,
+        "max": 152.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 125.875,
+        "p95": 136.5,
+        "max": 136.5
+      }
+    },
+    {
+      "source": "data/generated/synthetic/test/00099_mixed.json",
+      "nodes": 39,
+      "group": "synthetic",
+      "setup_us": 233.292,
+      "samples_us": [
+        265.875,
+        242.916,
+        244.0,
+        270.0,
+        275.084,
+        242.5,
+        269.958,
+        263.584,
+        249.625
+      ],
+      "reward_samples_us": [
+        228.541,
+        231.292,
+        229.791,
+        239.292,
+        263.583,
+        228.875,
+        235.625,
+        239.666,
+        229.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "cc994257df627fe850bb5647fe1b14d5107261374f6011ad34b51ef89e28c9b5",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 4251555.839999999,
+      "timing_us": {
+        "count": 9,
+        "median": 263.584,
+        "p95": 275.084,
+        "max": 275.084
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 231.292,
+        "p95": 263.583,
+        "max": 263.583
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00000_chain.json",
+      "nodes": 51,
+      "group": "synthetic",
+      "setup_us": 216.166,
+      "samples_us": [
+        282.75,
+        280.958,
+        290.417,
+        283.791,
+        299.542,
+        303.417,
+        281.5,
+        284.125,
+        289.042
+      ],
+      "reward_samples_us": [
+        271.708,
+        290.958,
+        271.708,
+        301.417,
+        283.25,
+        285.292,
+        287.041,
+        298.916,
+        300.667
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a007769784c9f0fb05dc734a198de4eede74d2f53694da973802d55783471084",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 21390950.39999999,
+      "timing_us": {
+        "count": 9,
+        "median": 284.125,
+        "p95": 303.417,
+        "max": 303.417
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 287.041,
+        "p95": 301.417,
+        "max": 301.417
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00002_diamond.json",
+      "nodes": 53,
+      "group": "synthetic",
+      "setup_us": 242.542,
+      "samples_us": [
+        301.959,
+        300.834,
+        308.125,
+        315.0,
+        345.875,
+        308.958,
+        322.917,
+        317.542,
+        317.042
+      ],
+      "reward_samples_us": [
+        290.25,
+        292.916,
+        301.75,
+        315.666,
+        333.5,
+        292.625,
+        289.708,
+        351.958,
+        307.834
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "45de7515238a7e7f661454f8eb3dad6eb8063e0694f20698cf6e5de0b0e8fab4",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1670041.5999999999,
+      "timing_us": {
+        "count": 9,
+        "median": 315.0,
+        "p95": 345.875,
+        "max": 345.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 301.75,
+        "p95": 351.958,
+        "max": 351.958
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00003_matmul.json",
+      "nodes": 105,
+      "group": "synthetic",
+      "setup_us": 478.625,
+      "samples_us": [
+        737.583,
+        753.375,
+        670.583,
+        702.833,
+        754.542,
+        673.708,
+        680.708,
+        690.667,
+        736.958
+      ],
+      "reward_samples_us": [
+        641.792,
+        677.542,
+        669.292,
+        690.834,
+        735.416,
+        668.958,
+        693.125,
+        673.625,
+        673.208
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "04183cac39d4a9e990599ebbd2168f3077e91bdda9542fb3fade08ca8f3cba8b",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2036415.200000001,
+      "timing_us": {
+        "count": 9,
+        "median": 702.833,
+        "p95": 754.542,
+        "max": 754.542
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 673.625,
+        "p95": 735.416,
+        "max": 735.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00005_chain.json",
+      "nodes": 147,
+      "group": "synthetic",
+      "setup_us": 504.5,
+      "samples_us": [
+        828.708,
+        827.75,
+        901.291,
+        841.916,
+        898.208,
+        842.334,
+        844.75,
+        911.208,
+        890.875
+      ],
+      "reward_samples_us": [
+        813.5,
+        840.709,
+        1016.416,
+        816.083,
+        917.625,
+        953.125,
+        820.458,
+        856.792,
+        862.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "2d232ad9bdd393547301e2b456b25f4085408078d95377e1dd2b418fe6d57bff",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 481689.5999999988,
+      "timing_us": {
+        "count": 9,
+        "median": 844.75,
+        "p95": 911.208,
+        "max": 911.208
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 856.792,
+        "p95": 1016.416,
+        "max": 1016.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00007_diamond.json",
+      "nodes": 17,
+      "group": "synthetic",
+      "setup_us": 128.375,
+      "samples_us": [
+        104.542,
+        100.958,
+        108.25,
+        104.708,
+        104.75,
+        143.958,
+        106.125,
+        116.5,
+        104.625
+      ],
+      "reward_samples_us": [
+        99.291,
+        97.583,
+        108.583,
+        104.459,
+        98.208,
+        117.167,
+        99.0,
+        111.875,
+        103.458
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "168ee0a295991a5d2cbbec0b44e7ec32bf7dd419f949de04d36822907cc3bd69",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 255590.40000000002,
+      "timing_us": {
+        "count": 9,
+        "median": 104.75,
+        "p95": 143.958,
+        "max": 143.958
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 103.458,
+        "p95": 117.167,
+        "max": 117.167
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00008_matmul.json",
+      "nodes": 141,
+      "group": "synthetic",
+      "setup_us": 561.667,
+      "samples_us": [
+        939.125,
+        923.875,
+        906.208,
+        921.709,
+        1061.875,
+        891.667,
+        943.667,
+        948.5,
+        929.333
+      ],
+      "reward_samples_us": [
+        896.125,
+        958.833,
+        872.5,
+        912.875,
+        1012.042,
+        858.917,
+        922.375,
+        927.625,
+        920.5
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "d31d947644e76d2edcb9f100cf0c951f3d9682eff04594190b3f5295a5d1a656",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3086905.600000002,
+      "timing_us": {
+        "count": 9,
+        "median": 929.333,
+        "p95": 1061.875,
+        "max": 1061.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 920.5,
+        "p95": 1012.042,
+        "max": 1012.042
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00010_chain.json",
+      "nodes": 149,
+      "group": "synthetic",
+      "setup_us": 573.292,
+      "samples_us": [
+        887.375,
+        894.333,
+        873.167,
+        882.875,
+        862.917,
+        851.875,
+        897.292,
+        899.875,
+        855.875
+      ],
+      "reward_samples_us": [
+        860.917,
+        990.417,
+        849.667,
+        851.708,
+        1042.0,
+        927.958,
+        884.333,
+        877.084,
+        832.167
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "73a18bed9c548be7ca34547ef35479836c4fa77639cc6f9055d1d1dade713272",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 664697.6000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 882.875,
+        "p95": 899.875,
+        "max": 899.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 877.084,
+        "p95": 1042.0,
+        "max": 1042.0
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00012_diamond.json",
+      "nodes": 35,
+      "group": "synthetic",
+      "setup_us": 180.208,
+      "samples_us": [
+        215.375,
+        210.166,
+        206.916,
+        202.708,
+        208.334,
+        209.417,
+        201.542,
+        209.625,
+        203.417
+      ],
+      "reward_samples_us": [
+        191.708,
+        192.833,
+        223.166,
+        191.0,
+        196.167,
+        195.125,
+        197.709,
+        207.834,
+        203.5
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "6548e33af7cbf90098fae29f3d24f9468adac22a1c0996de54de76b56530e266",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 375411.19999999995,
+      "timing_us": {
+        "count": 9,
+        "median": 208.334,
+        "p95": 215.375,
+        "max": 215.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 196.167,
+        "p95": 223.166,
+        "max": 223.166
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00013_matmul.json",
+      "nodes": 75,
+      "group": "synthetic",
+      "setup_us": 327.666,
+      "samples_us": [
+        465.833,
+        473.167,
+        490.375,
+        488.125,
+        464.333,
+        461.875,
+        486.083,
+        499.792,
+        506.75
+      ],
+      "reward_samples_us": [
+        468.667,
+        453.75,
+        529.167,
+        457.958,
+        454.584,
+        530.667,
+        448.292,
+        476.542,
+        475.958
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3f57f275ce4f934559a3f760b508918c4690bfe88ab1abf5286d7fa87391bff7",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 28850503.680000007,
+      "timing_us": {
+        "count": 9,
+        "median": 486.083,
+        "p95": 506.75,
+        "max": 506.75
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 468.667,
+        "p95": 530.667,
+        "max": 530.667
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00015_chain.json",
+      "nodes": 52,
+      "group": "synthetic",
+      "setup_us": 214.166,
+      "samples_us": [
+        286.875,
+        284.208,
+        291.25,
+        303.25,
+        285.375,
+        286.959,
+        286.708,
+        303.542,
+        344.667
+      ],
+      "reward_samples_us": [
+        273.75,
+        286.75,
+        273.625,
+        300.5,
+        316.875,
+        275.417,
+        277.791,
+        299.917,
+        306.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "0a643548c2d706763491cba14e343f0e07dc198432baa4b3c1ca5adf47e9e3f2",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 681574.3999999997,
+      "timing_us": {
+        "count": 9,
+        "median": 286.959,
+        "p95": 344.667,
+        "max": 344.667
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 286.75,
+        "p95": 316.875,
+        "max": 316.875
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00017_diamond.json",
+      "nodes": 51,
+      "group": "synthetic",
+      "setup_us": 221.917,
+      "samples_us": [
+        294.291,
+        324.583,
+        303.833,
+        299.792,
+        347.791,
+        291.0,
+        303.917,
+        288.0,
+        312.084
+      ],
+      "reward_samples_us": [
+        277.083,
+        291.875,
+        284.334,
+        299.167,
+        366.584,
+        315.666,
+        285.333,
+        289.917,
+        288.958
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "1713f3da06819c238394f461a2a57b546f85a0b17413896fa6c1a9c7660cc96b",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 779878.3999999999,
+      "timing_us": {
+        "count": 9,
+        "median": 303.833,
+        "p95": 347.791,
+        "max": 347.791
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 289.917,
+        "p95": 366.584,
+        "max": 366.584
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00018_matmul.json",
+      "nodes": 14,
+      "group": "synthetic",
+      "setup_us": 122.708,
+      "samples_us": [
+        98.709,
+        96.417,
+        95.708,
+        99.084,
+        96.75,
+        96.0,
+        97.542,
+        97.042,
+        105.25
+      ],
+      "reward_samples_us": [
+        88.917,
+        100.708,
+        89.542,
+        90.375,
+        88.833,
+        89.125,
+        100.0,
+        90.125,
+        89.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "b57f6763d0027692d12cda8630a54725e1f29fde1b3a41c58ff2844dd9341a4b",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 12044083.200000003,
+      "timing_us": {
+        "count": 9,
+        "median": 97.042,
+        "p95": 105.25,
+        "max": 105.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 89.625,
+        "p95": 100.708,
+        "max": 100.708
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00020_chain.json",
+      "nodes": 57,
+      "group": "synthetic",
+      "setup_us": 230.958,
+      "samples_us": [
+        320.792,
+        337.083,
+        308.917,
+        312.5,
+        358.834,
+        436.333,
+        331.459,
+        324.917,
+        311.708
+      ],
+      "reward_samples_us": [
+        305.958,
+        337.125,
+        323.667,
+        300.958,
+        350.458,
+        348.459,
+        312.333,
+        325.375,
+        305.292
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "67ffc11b1d5e60c08581e606f1ea8948810dff6377b381a8b6758110ea07adf4",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2071316.4800000004,
+      "timing_us": {
+        "count": 9,
+        "median": 324.917,
+        "p95": 436.333,
+        "max": 436.333
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 323.667,
+        "p95": 350.458,
+        "max": 350.458
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00022_diamond.json",
+      "nodes": 9,
+      "group": "synthetic",
+      "setup_us": 89.083,
+      "samples_us": [
+        67.334,
+        70.416,
+        69.833,
+        65.416,
+        62.792,
+        61.333,
+        68.959,
+        66.041,
+        63.459
+      ],
+      "reward_samples_us": [
+        57.666,
+        63.666,
+        61.792,
+        63.542,
+        72.625,
+        59.667,
+        63.583,
+        69.667,
+        58.375
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "eab6bbad8f7ab7ce4da5e74432d0ed8ba20c5816d14005d0f7fe5ba189a7c8ae",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 71321.6,
+      "timing_us": {
+        "count": 9,
+        "median": 66.041,
+        "p95": 70.416,
+        "max": 70.416
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 63.542,
+        "p95": 72.625,
+        "max": 72.625
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00023_matmul.json",
+      "nodes": 47,
+      "group": "synthetic",
+      "setup_us": 253.0,
+      "samples_us": [
+        299.5,
+        288.583,
+        280.5,
+        296.292,
+        283.167,
+        278.0,
+        309.875,
+        286.583,
+        282.458
+      ],
+      "reward_samples_us": [
+        285.417,
+        288.459,
+        269.125,
+        289.209,
+        274.417,
+        274.0,
+        283.917,
+        283.875,
+        272.167
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "63bd3fe0606533dfda230356982b68daae2cd03557df438e8bd06e88e4d63f45",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 743307.52,
+      "timing_us": {
+        "count": 9,
+        "median": 286.583,
+        "p95": 309.875,
+        "max": 309.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 283.875,
+        "p95": 289.209,
+        "max": 289.209
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00025_chain.json",
+      "nodes": 72,
+      "group": "synthetic",
+      "setup_us": 347.708,
+      "samples_us": [
+        393.541,
+        423.958,
+        401.458,
+        428.833,
+        407.334,
+        434.0,
+        420.958,
+        438.709,
+        397.792
+      ],
+      "reward_samples_us": [
+        400.709,
+        398.709,
+        399.583,
+        400.791,
+        394.958,
+        408.083,
+        405.792,
+        421.292,
+        387.334
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "adaea43a997b45342c3b87e14bc182b3bfd0a2f9af31370200a269c184eb944a",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 615229.4400000002,
+      "timing_us": {
+        "count": 9,
+        "median": 420.958,
+        "p95": 438.709,
+        "max": 438.709
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 400.709,
+        "p95": 421.292,
+        "max": 421.292
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00027_diamond.json",
+      "nodes": 71,
+      "group": "synthetic",
+      "setup_us": 290.125,
+      "samples_us": [
+        464.0,
+        421.5,
+        442.0,
+        404.083,
+        446.666,
+        411.542,
+        429.667,
+        420.5,
+        408.084
+      ],
+      "reward_samples_us": [
+        564.667,
+        414.75,
+        456.667,
+        388.958,
+        398.5,
+        538.708,
+        405.291,
+        448.833,
+        397.25
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "423d945fb299866cde2802bc8ac3bb3cba664b26340e6790af7e1b9a462da73d",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 8703180.799999997,
+      "timing_us": {
+        "count": 9,
+        "median": 421.5,
+        "p95": 464.0,
+        "max": 464.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 414.75,
+        "p95": 564.667,
+        "max": 564.667
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00028_matmul.json",
+      "nodes": 98,
+      "group": "synthetic",
+      "setup_us": 433.75,
+      "samples_us": [
+        593.875,
+        619.833,
+        739.375,
+        620.208,
+        711.084,
+        602.958,
+        638.5,
+        599.5,
+        622.875
+      ],
+      "reward_samples_us": [
+        581.25,
+        641.375,
+        665.75,
+        599.0,
+        605.5,
+        611.667,
+        643.834,
+        585.584,
+        612.208
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "43570a16db63854a0673020924494bb4cd10dcd683a8b02b801c163db6d3ce84",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 19144030.71999999,
+      "timing_us": {
+        "count": 9,
+        "median": 620.208,
+        "p95": 739.375,
+        "max": 739.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 611.667,
+        "p95": 665.75,
+        "max": 665.75
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00030_chain.json",
+      "nodes": 39,
+      "group": "synthetic",
+      "setup_us": 288.375,
+      "samples_us": [
+        246.791,
+        212.5,
+        213.834,
+        226.25,
+        222.5,
+        218.792,
+        216.041,
+        228.417,
+        230.791
+      ],
+      "reward_samples_us": [
+        232.708,
+        211.458,
+        244.208,
+        211.5,
+        213.375,
+        233.042,
+        220.166,
+        208.708,
+        227.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c95e4f0066e8c486a8a6844f2b112d0b72dfdec9643312025a6b4bdf7734abdb",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 255590.40000000014,
+      "timing_us": {
+        "count": 9,
+        "median": 222.5,
+        "p95": 246.791,
+        "max": 246.791
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 220.166,
+        "p95": 244.208,
+        "max": 244.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00032_diamond.json",
+      "nodes": 122,
+      "group": "synthetic",
+      "setup_us": 614.25,
+      "samples_us": [
+        728.25,
+        736.542,
+        708.166,
+        748.5,
+        739.167,
+        716.167,
+        737.0,
+        752.709,
+        755.292
+      ],
+      "reward_samples_us": [
+        698.541,
+        698.875,
+        687.75,
+        689.209,
+        689.5,
+        692.125,
+        701.458,
+        713.5,
+        714.334
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c1608a78de14397e5fef0bf8588fa0047a64cd1462fae50411b2136e0457a959",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 119399.99999999996,
+      "timing_us": {
+        "count": 9,
+        "median": 737.0,
+        "p95": 755.292,
+        "max": 755.292
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 698.541,
+        "p95": 714.334,
+        "max": 714.334
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00033_matmul.json",
+      "nodes": 113,
+      "group": "synthetic",
+      "setup_us": 472.25,
+      "samples_us": [
+        713.75,
+        737.209,
+        711.958,
+        785.875,
+        714.291,
+        747.417,
+        710.334,
+        743.209,
+        744.458
+      ],
+      "reward_samples_us": [
+        690.542,
+        733.416,
+        679.75,
+        734.0,
+        710.542,
+        676.666,
+        730.916,
+        736.708,
+        687.417
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "812fe9d04e2d4ed5c7812a3fb524e41b90b437a94ca6418ac4947ee0768a67cf",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 31876096.000000004,
+      "timing_us": {
+        "count": 9,
+        "median": 737.209,
+        "p95": 785.875,
+        "max": 785.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 710.542,
+        "p95": 736.708,
+        "max": 736.708
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00035_chain.json",
+      "nodes": 131,
+      "group": "synthetic",
+      "setup_us": 457.125,
+      "samples_us": [
+        773.292,
+        791.291,
+        748.958,
+        772.083,
+        743.375,
+        738.792,
+        762.209,
+        753.791,
+        826.084
+      ],
+      "reward_samples_us": [
+        775.166,
+        770.583,
+        735.042,
+        778.25,
+        728.333,
+        719.417,
+        810.583,
+        731.167,
+        757.792
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "78b2dd3fb6fbac49278ba105728c430db032bb131f919170b74dd76ae165ffe0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 9453158.399999995,
+      "timing_us": {
+        "count": 9,
+        "median": 762.209,
+        "p95": 826.084,
+        "max": 826.084
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 757.792,
+        "p95": 810.583,
+        "max": 810.583
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00037_diamond.json",
+      "nodes": 79,
+      "group": "synthetic",
+      "setup_us": 383.667,
+      "samples_us": [
+        450.25,
+        468.375,
+        452.417,
+        463.042,
+        481.25,
+        452.875,
+        493.584,
+        463.084,
+        444.958
+      ],
+      "reward_samples_us": [
+        441.167,
+        468.875,
+        459.417,
+        485.792,
+        488.084,
+        431.375,
+        436.375,
+        447.75,
+        432.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a0d20351efd786bf9f1d9438ec8c470f7e46b875ed4da874f4dd345daa22defa",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 9646899.199999996,
+      "timing_us": {
+        "count": 9,
+        "median": 463.042,
+        "p95": 493.584,
+        "max": 493.584
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 447.75,
+        "p95": 488.084,
+        "max": 488.084
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00038_matmul.json",
+      "nodes": 18,
+      "group": "synthetic",
+      "setup_us": 133.208,
+      "samples_us": [
+        116.792,
+        117.0,
+        113.666,
+        111.958,
+        118.542,
+        112.917,
+        113.791,
+        119.416,
+        124.167
+      ],
+      "reward_samples_us": [
+        109.417,
+        109.958,
+        109.292,
+        115.0,
+        108.75,
+        107.334,
+        109.041,
+        112.125,
+        122.917
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "7223a06436e2112661b82cdc3e77af262ca1f0cca9e618eb0169472eddb67613",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 7162137.599999999,
+      "timing_us": {
+        "count": 9,
+        "median": 116.792,
+        "p95": 124.167,
+        "max": 124.167
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 109.417,
+        "p95": 122.917,
+        "max": 122.917
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00040_chain.json",
+      "nodes": 73,
+      "group": "synthetic",
+      "setup_us": 279.5,
+      "samples_us": [
+        427.708,
+        431.834,
+        432.375,
+        400.416,
+        464.5,
+        414.958,
+        424.875,
+        427.333,
+        412.0
+      ],
+      "reward_samples_us": [
+        398.75,
+        422.583,
+        393.459,
+        386.917,
+        442.208,
+        401.709,
+        426.209,
+        399.875,
+        395.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "054bd3365289dab35c8281b46a5b2c877713bb05daf98532956889d514e154fb",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3827302.399999995,
+      "timing_us": {
+        "count": 9,
+        "median": 427.333,
+        "p95": 464.5,
+        "max": 464.5
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 399.875,
+        "p95": 442.208,
+        "max": 442.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00042_diamond.json",
+      "nodes": 33,
+      "group": "synthetic",
+      "setup_us": 166.958,
+      "samples_us": [
+        191.0,
+        221.291,
+        235.375,
+        197.25,
+        190.208,
+        196.042,
+        194.208,
+        203.916,
+        195.833
+      ],
+      "reward_samples_us": [
+        189.5,
+        184.125,
+        208.125,
+        203.125,
+        274.416,
+        183.5,
+        183.541,
+        201.333,
+        184.0
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "54af0ecf348137bf766f02e339137beaca37d22123a074a621ec3ab3d9baae5f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2313216.0,
+      "timing_us": {
+        "count": 9,
+        "median": 196.042,
+        "p95": 235.375,
+        "max": 235.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 189.5,
+        "p95": 274.416,
+        "max": 274.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00043_matmul.json",
+      "nodes": 119,
+      "group": "synthetic",
+      "setup_us": 506.75,
+      "samples_us": [
+        771.583,
+        768.5,
+        778.0,
+        782.75,
+        830.0,
+        793.5,
+        774.666,
+        786.666,
+        777.167
+      ],
+      "reward_samples_us": [
+        750.5,
+        773.292,
+        764.0,
+        752.5,
+        962.042,
+        749.208,
+        784.667,
+        780.5,
+        782.375
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "da1fbff4bd63ad57eec48e76ae53cab3bc8722ee79709592f70c95a6987c02cb",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 44237043.20000001,
+      "timing_us": {
+        "count": 9,
+        "median": 778.0,
+        "p95": 830.0,
+        "max": 830.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 773.292,
+        "p95": 962.042,
+        "max": 962.042
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00045_chain.json",
+      "nodes": 143,
+      "group": "synthetic",
+      "setup_us": 488.75,
+      "samples_us": [
+        826.625,
+        817.417,
+        822.584,
+        876.292,
+        869.667,
+        895.041,
+        867.917,
+        846.0,
+        871.0
+      ],
+      "reward_samples_us": [
+        896.375,
+        796.125,
+        836.833,
+        849.0,
+        834.333,
+        835.666,
+        842.875,
+        841.25,
+        842.917
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3a870376236407649cda375267f6a848d026bd92cc91e719c5af7ff0139b24ba",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3748659.199999991,
+      "timing_us": {
+        "count": 9,
+        "median": 867.917,
+        "p95": 895.041,
+        "max": 895.041
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 841.25,
+        "p95": 896.375,
+        "max": 896.375
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00047_diamond.json",
+      "nodes": 126,
+      "group": "synthetic",
+      "setup_us": 489.75,
+      "samples_us": [
+        902.25,
+        761.75,
+        778.208,
+        762.25,
+        739.375,
+        731.416,
+        763.959,
+        757.25,
+        730.042
+      ],
+      "reward_samples_us": [
+        717.792,
+        722.792,
+        728.084,
+        732.209,
+        741.084,
+        708.667,
+        750.209,
+        741.333,
+        718.583
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "5083b8dfd1b6d006e7a22e28b00f61dea702b05f04209f5fd03f7573e8770223",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 152414.40000000002,
+      "timing_us": {
+        "count": 9,
+        "median": 761.75,
+        "p95": 902.25,
+        "max": 902.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 728.084,
+        "p95": 750.209,
+        "max": 750.209
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00048_matmul.json",
+      "nodes": 82,
+      "group": "synthetic",
+      "setup_us": 368.75,
+      "samples_us": [
+        494.458,
+        525.875,
+        498.25,
+        502.459,
+        494.875,
+        552.875,
+        518.917,
+        522.875,
+        531.041
+      ],
+      "reward_samples_us": [
+        514.584,
+        503.75,
+        479.0,
+        483.167,
+        479.958,
+        653.417,
+        508.542,
+        516.208,
+        510.333
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "fd5c0dc7f45fcd61f6a2dfcc9d5fe2f4cd0207bc0ecde79dd6363ce37f546c82",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 16146777.600000005,
+      "timing_us": {
+        "count": 9,
+        "median": 518.917,
+        "p95": 552.875,
+        "max": 552.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 508.542,
+        "p95": 653.417,
+        "max": 653.417
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00050_chain.json",
+      "nodes": 73,
+      "group": "synthetic",
+      "setup_us": 282.459,
+      "samples_us": [
+        405.917,
+        434.417,
+        408.75,
+        416.125,
+        431.125,
+        406.875,
+        450.375,
+        400.542,
+        412.875
+      ],
+      "reward_samples_us": [
+        439.917,
+        454.375,
+        407.5,
+        422.334,
+        494.875,
+        386.791,
+        409.083,
+        390.75,
+        395.125
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "643e66f4221b130020c8862bdffe128eb4293e12348d25a9517737c901780085",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1006003.1999999989,
+      "timing_us": {
+        "count": 9,
+        "median": 412.875,
+        "p95": 450.375,
+        "max": 450.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 409.083,
+        "p95": 494.875,
+        "max": 494.875
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00052_diamond.json",
+      "nodes": 52,
+      "group": "synthetic",
+      "setup_us": 228.375,
+      "samples_us": [
+        309.542,
+        316.542,
+        290.0,
+        294.709,
+        294.125,
+        294.416,
+        312.5,
+        320.0,
+        297.042
+      ],
+      "reward_samples_us": [
+        283.25,
+        281.917,
+        312.916,
+        280.291,
+        281.75,
+        283.25,
+        316.334,
+        303.333,
+        280.583
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "fbac59d41ffc7fef1c953196b6f3bcf3b8f0d1b96cec301cdcda888df0d7d041",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 792985.5999999999,
+      "timing_us": {
+        "count": 9,
+        "median": 297.042,
+        "p95": 320.0,
+        "max": 320.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 283.25,
+        "p95": 316.334,
+        "max": 316.334
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00053_matmul.json",
+      "nodes": 56,
+      "group": "synthetic",
+      "setup_us": 263.208,
+      "samples_us": [
+        347.5,
+        347.541,
+        344.208,
+        334.541,
+        337.125,
+        338.583,
+        364.667,
+        363.333,
+        390.625
+      ],
+      "reward_samples_us": [
+        345.0,
+        327.5,
+        337.708,
+        327.666,
+        331.125,
+        336.25,
+        323.333,
+        324.333,
+        332.75
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a75b0296299347a7095535e5d26592c3febcd8816ffd947180c5820fac6abeb3",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 6969945.600000003,
+      "timing_us": {
+        "count": 9,
+        "median": 347.5,
+        "p95": 390.625,
+        "max": 390.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 331.125,
+        "p95": 345.0,
+        "max": 345.0
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00055_chain.json",
+      "nodes": 95,
+      "group": "synthetic",
+      "setup_us": 340.625,
+      "samples_us": [
+        528.209,
+        537.542,
+        578.75,
+        538.542,
+        528.666,
+        526.458,
+        558.209,
+        528.75,
+        537.75
+      ],
+      "reward_samples_us": [
+        548.542,
+        574.709,
+        585.583,
+        507.625,
+        513.542,
+        515.75,
+        540.958,
+        558.417,
+        523.792
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "ee3331a1acedbbf7894fef1c5ac77c6d09d0f4ca1f61988217beeb70e9405c76",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2606079.9999999963,
+      "timing_us": {
+        "count": 9,
+        "median": 537.542,
+        "p95": 578.75,
+        "max": 578.75
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 540.958,
+        "p95": 585.583,
+        "max": 585.583
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00057_diamond.json",
+      "nodes": 147,
+      "group": "synthetic",
+      "setup_us": 551.417,
+      "samples_us": [
+        867.625,
+        872.417,
+        928.875,
+        917.583,
+        859.125,
+        874.625,
+        996.916,
+        981.0,
+        916.417
+      ],
+      "reward_samples_us": [
+        850.209,
+        859.042,
+        877.25,
+        896.166,
+        843.834,
+        875.5,
+        863.166,
+        918.958,
+        906.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "5b1a85570670beb2943f943f44e745ab17464dcb108fbbe3efb09c49baca7b22",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 5301493.759999998,
+      "timing_us": {
+        "count": 9,
+        "median": 916.417,
+        "p95": 996.916,
+        "max": 996.916
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 875.5,
+        "p95": 918.958,
+        "max": 918.958
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00058_matmul.json",
+      "nodes": 24,
+      "group": "synthetic",
+      "setup_us": 166.208,
+      "samples_us": [
+        149.167,
+        147.416,
+        168.166,
+        146.208,
+        184.167,
+        149.25,
+        149.25,
+        146.916,
+        149.375
+      ],
+      "reward_samples_us": [
+        141.958,
+        154.083,
+        149.75,
+        140.625,
+        166.167,
+        141.542,
+        154.125,
+        143.083,
+        140.25
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "70c7feb55b5bb2f46920ae0ceae43d65b11b076f7a25dc090119855a79209e97",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 325953.92000000004,
+      "timing_us": {
+        "count": 9,
+        "median": 149.25,
+        "p95": 184.167,
+        "max": 184.167
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 143.083,
+        "p95": 166.167,
+        "max": 166.167
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00060_chain.json",
+      "nodes": 45,
+      "group": "synthetic",
+      "setup_us": 228.916,
+      "samples_us": [
+        258.625,
+        254.083,
+        262.458,
+        244.709,
+        265.375,
+        276.0,
+        245.792,
+        260.75,
+        249.208
+      ],
+      "reward_samples_us": [
+        240.5,
+        242.25,
+        238.625,
+        252.833,
+        255.583,
+        246.042,
+        242.0,
+        271.125,
+        239.125
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "82575014c02b850b5fb08a4091fa34e92fe3fe1eeeea4c39198021dbd91ab116",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 18874368.0,
+      "timing_us": {
+        "count": 9,
+        "median": 258.625,
+        "p95": 276.0,
+        "max": 276.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 242.25,
+        "p95": 271.125,
+        "max": 271.125
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00062_diamond.json",
+      "nodes": 105,
+      "group": "synthetic",
+      "setup_us": 958.458,
+      "samples_us": [
+        590.083,
+        601.75,
+        607.375,
+        612.875,
+        607.417,
+        605.0,
+        628.583,
+        583.709,
+        625.875
+      ],
+      "reward_samples_us": [
+        573.125,
+        584.75,
+        589.667,
+        626.083,
+        586.625,
+        597.458,
+        599.208,
+        577.458,
+        624.958
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "7c7f11dea7b194d2f2d075470cad9a080332aba0e5c88038ceda96860f1c1609",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 423560.95999999985,
+      "timing_us": {
+        "count": 9,
+        "median": 607.375,
+        "p95": 628.583,
+        "max": 628.583
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 589.667,
+        "p95": 626.083,
+        "max": 626.083
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00063_matmul.json",
+      "nodes": 94,
+      "group": "synthetic",
+      "setup_us": 394.167,
+      "samples_us": [
+        578.708,
+        621.875,
+        589.041,
+        651.458,
+        661.875,
+        605.5,
+        609.792,
+        626.416,
+        592.291
+      ],
+      "reward_samples_us": [
+        559.25,
+        591.792,
+        576.75,
+        584.375,
+        582.75,
+        578.792,
+        589.625,
+        688.209,
+        576.292
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "cc975e6173f2dfd1a1364d65085a4bf03578d4c87c176105353f82427feb8ad2",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3421126.7199999997,
+      "timing_us": {
+        "count": 9,
+        "median": 609.792,
+        "p95": 661.875,
+        "max": 661.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 582.75,
+        "p95": 688.209,
+        "max": 688.209
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00065_chain.json",
+      "nodes": 127,
+      "group": "synthetic",
+      "setup_us": 469.959,
+      "samples_us": [
+        754.0,
+        752.25,
+        734.25,
+        729.959,
+        755.958,
+        733.75,
+        760.666,
+        766.667,
+        748.916
+      ],
+      "reward_samples_us": [
+        701.333,
+        753.375,
+        821.208,
+        725.916,
+        741.0,
+        743.875,
+        725.209,
+        755.292,
+        751.334
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "8b133556e5fb9d0dff4fea134d4393a7391c26f3bcddf78f2fe9d15f0203c5ff",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 542529.28,
+      "timing_us": {
+        "count": 9,
+        "median": 752.25,
+        "p95": 766.667,
+        "max": 766.667
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 743.875,
+        "p95": 821.208,
+        "max": 821.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00067_diamond.json",
+      "nodes": 107,
+      "group": "synthetic",
+      "setup_us": 399.5,
+      "samples_us": [
+        606.375,
+        647.541,
+        630.583,
+        609.667,
+        688.041,
+        620.25,
+        614.625,
+        657.958,
+        609.958
+      ],
+      "reward_samples_us": [
+        589.0,
+        625.541,
+        608.125,
+        610.459,
+        616.167,
+        605.416,
+        590.791,
+        633.833,
+        595.916
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "30ebc2f6c97922e751a3235590dc7b101d726b58591ccb306108c8aa6c12d945",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 139753.59999999998,
+      "timing_us": {
+        "count": 9,
+        "median": 620.25,
+        "p95": 688.041,
+        "max": 688.041
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 608.125,
+        "p95": 633.833,
+        "max": 633.833
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00068_matmul.json",
+      "nodes": 123,
+      "group": "synthetic",
+      "setup_us": 566.166,
+      "samples_us": [
+        765.583,
+        801.0,
+        781.583,
+        773.125,
+        776.583,
+        802.875,
+        812.375,
+        782.041,
+        938.458
+      ],
+      "reward_samples_us": [
+        753.291,
+        782.25,
+        776.917,
+        758.167,
+        745.458,
+        820.042,
+        807.25,
+        775.584,
+        929.084
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3287a29ebf7ed8eb6089fbf0e336643de1566c2b1cd7c9f841b034f972afb96f",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 7487308.799999999,
+      "timing_us": {
+        "count": 9,
+        "median": 782.041,
+        "p95": 938.458,
+        "max": 938.458
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 776.917,
+        "p95": 929.084,
+        "max": 929.084
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00070_chain.json",
+      "nodes": 19,
+      "group": "synthetic",
+      "setup_us": 123.083,
+      "samples_us": [
+        112.042,
+        124.833,
+        114.833,
+        109.875,
+        150.25,
+        113.0,
+        117.875,
+        110.917,
+        112.042
+      ],
+      "reward_samples_us": [
+        106.208,
+        119.291,
+        108.708,
+        115.542,
+        208.167,
+        106.667,
+        109.792,
+        106.917,
+        105.833
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "afbbd00a59d84a778771d21f0aae8d8b10b94e221056fbbe773e9cba400a5f7c",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3984588.800000001,
+      "timing_us": {
+        "count": 9,
+        "median": 113.0,
+        "p95": 150.25,
+        "max": 150.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 108.708,
+        "p95": 208.167,
+        "max": 208.167
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00072_diamond.json",
+      "nodes": 138,
+      "group": "synthetic",
+      "setup_us": 527.458,
+      "samples_us": [
+        829.75,
+        854.958,
+        867.917,
+        840.625,
+        865.666,
+        842.375,
+        824.417,
+        838.125,
+        853.125
+      ],
+      "reward_samples_us": [
+        822.541,
+        892.041,
+        810.875,
+        905.833,
+        851.416,
+        801.541,
+        807.042,
+        818.75,
+        834.167
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "29cbf4c5b5cc58b02ca5d5d975f3373b82838c762991416825dff7eab74913bb",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2110259.1999999983,
+      "timing_us": {
+        "count": 9,
+        "median": 842.375,
+        "p95": 867.917,
+        "max": 867.917
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 822.541,
+        "p95": 905.833,
+        "max": 905.833
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00073_matmul.json",
+      "nodes": 9,
+      "group": "synthetic",
+      "setup_us": 105.125,
+      "samples_us": [
+        61.958,
+        65.167,
+        66.0,
+        68.083,
+        65.959,
+        64.416,
+        64.709,
+        62.459,
+        65.25
+      ],
+      "reward_samples_us": [
+        57.0,
+        60.458,
+        63.375,
+        60.25,
+        58.834,
+        59.292,
+        61.583,
+        58.166,
+        59.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "4beab6c2fbbcd1784868081ee65fc3b098409f00806b6731f5c123977bce2135",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2443550.72,
+      "timing_us": {
+        "count": 9,
+        "median": 65.167,
+        "p95": 68.083,
+        "max": 68.083
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 59.625,
+        "p95": 63.375,
+        "max": 63.375
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00075_chain.json",
+      "nodes": 13,
+      "group": "synthetic",
+      "setup_us": 95.458,
+      "samples_us": [
+        84.125,
+        84.5,
+        81.792,
+        88.583,
+        86.542,
+        91.75,
+        94.459,
+        95.584,
+        81.125
+      ],
+      "reward_samples_us": [
+        77.084,
+        78.0,
+        76.917,
+        85.25,
+        78.333,
+        79.333,
+        78.166,
+        77.667,
+        75.708
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "b4db6e75139d21faee8b3457e1febc955a79e66e07df8586a270f81215414944",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 21734.400000000005,
+      "timing_us": {
+        "count": 9,
+        "median": 86.542,
+        "p95": 95.584,
+        "max": 95.584
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 78.0,
+        "p95": 85.25,
+        "max": 85.25
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00077_diamond.json",
+      "nodes": 85,
+      "group": "synthetic",
+      "setup_us": 344.292,
+      "samples_us": [
+        492.875,
+        492.291,
+        502.083,
+        525.875,
+        505.667,
+        502.125,
+        527.375,
+        513.834,
+        499.959
+      ],
+      "reward_samples_us": [
+        515.292,
+        509.333,
+        492.417,
+        469.5,
+        510.875,
+        487.541,
+        486.375,
+        506.583,
+        510.333
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "797bee19b2568f31cc229b1902fbb602bd99928b2135e78fa463bf2da6eb81d5",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 41523609.59999998,
+      "timing_us": {
+        "count": 9,
+        "median": 502.125,
+        "p95": 527.375,
+        "max": 527.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 506.583,
+        "p95": 515.292,
+        "max": 515.292
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00078_matmul.json",
+      "nodes": 88,
+      "group": "synthetic",
+      "setup_us": 353.167,
+      "samples_us": [
+        528.292,
+        534.833,
+        541.666,
+        543.042,
+        712.208,
+        540.708,
+        555.959,
+        574.875,
+        594.0
+      ],
+      "reward_samples_us": [
+        596.334,
+        520.0,
+        521.125,
+        542.083,
+        606.125,
+        520.625,
+        547.417,
+        554.5,
+        549.166
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c85d52fb973c014733a3e950c047ed85736359d3640300c8f51bdc3a5e7b81c1",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 8185118.399999997,
+      "timing_us": {
+        "count": 9,
+        "median": 543.042,
+        "p95": 712.208,
+        "max": 712.208
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 547.417,
+        "p95": 606.125,
+        "max": 606.125
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00080_chain.json",
+      "nodes": 55,
+      "group": "synthetic",
+      "setup_us": 274.083,
+      "samples_us": [
+        304.041,
+        315.792,
+        321.375,
+        309.542,
+        310.834,
+        300.5,
+        329.834,
+        313.583,
+        310.334
+      ],
+      "reward_samples_us": [
+        294.583,
+        303.917,
+        292.375,
+        313.084,
+        295.791,
+        287.375,
+        318.416,
+        292.75,
+        297.959
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "53b4fbfe0765845109e87858ae6526d4277b1644a64a35139b8e338f16ed6fb6",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 893286.3999999997,
+      "timing_us": {
+        "count": 9,
+        "median": 310.834,
+        "p95": 329.834,
+        "max": 329.834
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 295.791,
+        "p95": 318.416,
+        "max": 318.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00082_diamond.json",
+      "nodes": 36,
+      "group": "synthetic",
+      "setup_us": 178.333,
+      "samples_us": [
+        231.583,
+        207.791,
+        208.792,
+        218.041,
+        249.167,
+        212.167,
+        214.042,
+        211.958,
+        210.333
+      ],
+      "reward_samples_us": [
+        211.625,
+        221.458,
+        211.208,
+        221.791,
+        228.666,
+        202.625,
+        242.709,
+        229.084,
+        223.333
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c8b260bc10dc824c3df9c0fbb609a642bc28a474fb7f6d48cb4fb4f0ce772fb0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 35232153.6,
+      "timing_us": {
+        "count": 9,
+        "median": 212.167,
+        "p95": 249.167,
+        "max": 249.167
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 221.791,
+        "p95": 242.709,
+        "max": 242.709
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00083_matmul.json",
+      "nodes": 40,
+      "group": "synthetic",
+      "setup_us": 198.042,
+      "samples_us": [
+        241.125,
+        258.375,
+        260.708,
+        240.375,
+        263.292,
+        243.333,
+        254.334,
+        252.584,
+        265.042
+      ],
+      "reward_samples_us": [
+        227.542,
+        249.25,
+        234.667,
+        228.375,
+        238.209,
+        230.958,
+        236.667,
+        229.458,
+        256.917
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "d3ca0f2156a06f4c05ec594e695eadf091b05d99617cc332f200c16baf068972",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15019724.799999999,
+      "timing_us": {
+        "count": 9,
+        "median": 254.334,
+        "p95": 265.042,
+        "max": 265.042
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 234.667,
+        "p95": 256.917,
+        "max": 256.917
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00085_chain.json",
+      "nodes": 32,
+      "group": "synthetic",
+      "setup_us": 153.625,
+      "samples_us": [
+        179.834,
+        185.916,
+        181.0,
+        203.541,
+        186.959,
+        181.667,
+        198.083,
+        179.292,
+        198.833
+      ],
+      "reward_samples_us": [
+        172.75,
+        176.875,
+        172.125,
+        177.833,
+        171.416,
+        173.25,
+        191.625,
+        173.416,
+        176.0
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "fe1cc7ce2fae1325be339a8d17cbb5a953103ae1b89d151a35c62ce14f49b72d",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 66768.00000000001,
+      "timing_us": {
+        "count": 9,
+        "median": 185.916,
+        "p95": 203.541,
+        "max": 203.541
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 173.416,
+        "p95": 191.625,
+        "max": 191.625
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00087_diamond.json",
+      "nodes": 105,
+      "group": "synthetic",
+      "setup_us": 394.041,
+      "samples_us": [
+        629.667,
+        634.25,
+        599.875,
+        688.459,
+        645.542,
+        595.875,
+        607.125,
+        686.541,
+        601.084
+      ],
+      "reward_samples_us": [
+        586.083,
+        642.667,
+        584.917,
+        685.875,
+        601.125,
+        578.291,
+        617.458,
+        635.0,
+        618.417
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "92fb1d965b959c6ef8ef58c7b8c8e26f4b801081238a433e9d1e2fd463a0455d",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 12845055.999999993,
+      "timing_us": {
+        "count": 9,
+        "median": 629.667,
+        "p95": 688.459,
+        "max": 688.459
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 617.458,
+        "p95": 685.875,
+        "max": 685.875
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00088_matmul.json",
+      "nodes": 68,
+      "group": "synthetic",
+      "setup_us": 309.0,
+      "samples_us": [
+        418.333,
+        420.042,
+        441.042,
+        425.917,
+        455.875,
+        433.125,
+        422.416,
+        434.417,
+        482.208
+      ],
+      "reward_samples_us": [
+        407.875,
+        425.959,
+        416.333,
+        413.167,
+        485.458,
+        416.292,
+        411.375,
+        421.833,
+        420.667
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "365cb3493eb8ae213671fdc61ae9aa2d32bbea48843b3406c276aedb9ad2561d",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 80566499.20000006,
+      "timing_us": {
+        "count": 9,
+        "median": 433.125,
+        "p95": 482.208,
+        "max": 482.208
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 416.333,
+        "p95": 485.458,
+        "max": 485.458
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00090_chain.json",
+      "nodes": 48,
+      "group": "synthetic",
+      "setup_us": 200.834,
+      "samples_us": [
+        262.959,
+        269.333,
+        269.792,
+        269.084,
+        273.625,
+        274.416,
+        287.292,
+        283.125,
+        292.042
+      ],
+      "reward_samples_us": [
+        259.625,
+        258.375,
+        261.667,
+        262.417,
+        270.792,
+        258.333,
+        265.166,
+        261.791,
+        270.584
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "81a0b362128d596f3071afc49a94fad651c6649ea9c0445b4b375785ef9745c5",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 186417.92,
+      "timing_us": {
+        "count": 9,
+        "median": 273.625,
+        "p95": 292.042,
+        "max": 292.042
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 261.791,
+        "p95": 270.792,
+        "max": 270.792
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00092_diamond.json",
+      "nodes": 111,
+      "group": "synthetic",
+      "setup_us": 409.458,
+      "samples_us": [
+        638.042,
+        683.083,
+        657.084,
+        634.792,
+        673.667,
+        637.541,
+        670.459,
+        649.166,
+        669.375
+      ],
+      "reward_samples_us": [
+        659.625,
+        621.042,
+        621.333,
+        610.125,
+        635.583,
+        622.167,
+        627.042,
+        638.708,
+        651.333
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "b93afafc212bfc9c5391bc147f35cb95257792841fe9c0f948c610fe7dff8730",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 63152.31999999998,
+      "timing_us": {
+        "count": 9,
+        "median": 657.084,
+        "p95": 683.083,
+        "max": 683.083
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 627.042,
+        "p95": 659.625,
+        "max": 659.625
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00093_matmul.json",
+      "nodes": 29,
+      "group": "synthetic",
+      "setup_us": 154.167,
+      "samples_us": [
+        208.792,
+        189.75,
+        169.834,
+        192.292,
+        175.833,
+        170.5,
+        174.958,
+        199.917,
+        175.208
+      ],
+      "reward_samples_us": [
+        208.5,
+        209.792,
+        163.791,
+        171.708,
+        166.791,
+        162.5,
+        166.125,
+        164.958,
+        174.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "1496b99a3a5a1247d35ca9acd4762058ebb531827564c52640c6b34368576ddf",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15469209.600000003,
+      "timing_us": {
+        "count": 9,
+        "median": 175.833,
+        "p95": 208.792,
+        "max": 208.792
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 166.791,
+        "p95": 209.792,
+        "max": 209.792
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00095_chain.json",
+      "nodes": 113,
+      "group": "synthetic",
+      "setup_us": 422.459,
+      "samples_us": [
+        659.834,
+        718.25,
+        674.5,
+        702.666,
+        652.75,
+        680.625,
+        657.75,
+        634.167,
+        675.708
+      ],
+      "reward_samples_us": [
+        625.167,
+        714.875,
+        680.208,
+        666.416,
+        632.291,
+        635.417,
+        618.959,
+        628.792,
+        668.25
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "24fd303158d60ee69937deca9ca50bf34fc997d4b34afce12e6506ba9a40fa97",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 23697817.59999995,
+      "timing_us": {
+        "count": 9,
+        "median": 674.5,
+        "p95": 718.25,
+        "max": 718.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 635.417,
+        "p95": 714.875,
+        "max": 714.875
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00097_diamond.json",
+      "nodes": 72,
+      "group": "synthetic",
+      "setup_us": 289.0,
+      "samples_us": [
+        433.375,
+        422.25,
+        440.167,
+        438.584,
+        413.542,
+        411.708,
+        429.459,
+        435.125,
+        416.583
+      ],
+      "reward_samples_us": [
+        396.666,
+        430.208,
+        397.459,
+        410.459,
+        394.542,
+        412.875,
+        409.625,
+        425.416,
+        412.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "5754a8fd076756d02a4d42fcd5e601c4351eacea4803c5ff9e89095d8788ae24",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2202009.599999999,
+      "timing_us": {
+        "count": 9,
+        "median": 429.459,
+        "p95": 440.167,
+        "max": 440.167
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 410.459,
+        "p95": 430.208,
+        "max": 430.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/train/00098_matmul.json",
+      "nodes": 26,
+      "group": "synthetic",
+      "setup_us": 177.167,
+      "samples_us": [
+        178.542,
+        164.042,
+        196.916,
+        163.583,
+        163.166,
+        158.5,
+        162.25,
+        159.334,
+        171.0
+      ],
+      "reward_samples_us": [
+        157.666,
+        154.25,
+        178.75,
+        154.625,
+        155.084,
+        150.542,
+        154.625,
+        154.042,
+        162.791
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "54aa10b8cd588e396ce021421e81d72e44ef3bd7d349d108ac4d5f6b66877d27",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 971760.0000000002,
+      "timing_us": {
+        "count": 9,
+        "median": 163.583,
+        "p95": 196.916,
+        "max": 196.916
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 154.625,
+        "p95": 178.75,
+        "max": 178.75
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00001_branch.json",
+      "nodes": 138,
+      "group": "synthetic",
+      "setup_us": 577.959,
+      "samples_us": [
+        806.25,
+        828.208,
+        841.875,
+        830.5,
+        840.791,
+        818.459,
+        840.833,
+        849.334,
+        872.458
+      ],
+      "reward_samples_us": [
+        794.834,
+        837.75,
+        791.042,
+        791.083,
+        832.333,
+        814.333,
+        827.084,
+        827.209,
+        831.291
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "aea7f9f0683ebfad7427c26526739c32ff74783e05d270dd6818f2698dbc1811",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15234047.999999972,
+      "timing_us": {
+        "count": 9,
+        "median": 840.791,
+        "p95": 872.458,
+        "max": 872.458
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 827.084,
+        "p95": 837.75,
+        "max": 837.75
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00006_branch.json",
+      "nodes": 16,
+      "group": "synthetic",
+      "setup_us": 176.125,
+      "samples_us": [
+        96.958,
+        100.25,
+        96.583,
+        103.084,
+        100.583,
+        102.708,
+        98.583,
+        106.917,
+        99.541
+      ],
+      "reward_samples_us": [
+        93.542,
+        93.209,
+        93.042,
+        98.917,
+        92.0,
+        94.125,
+        91.792,
+        101.792,
+        93.0
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3b9a4d785859f86904b12464a52d536b335988feaa676dcdb2c2d64facae75d9",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 109196.80000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 100.25,
+        "p95": 106.917,
+        "max": 106.917
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 93.209,
+        "p95": 101.792,
+        "max": 101.792
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00011_branch.json",
+      "nodes": 8,
+      "group": "synthetic",
+      "setup_us": 121.25,
+      "samples_us": [
+        59.166,
+        57.708,
+        59.958,
+        60.0,
+        62.625,
+        57.125,
+        59.5,
+        55.625,
+        54.5
+      ],
+      "reward_samples_us": [
+        54.625,
+        51.708,
+        53.959,
+        52.5,
+        53.0,
+        51.25,
+        52.583,
+        51.792,
+        51.666
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "f2b96336897e38ec86fb263d6c22a6164d19cc4173606ccdae7d1bd116f9de9e",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 361943.04000000004,
+      "timing_us": {
+        "count": 9,
+        "median": 59.166,
+        "p95": 62.625,
+        "max": 62.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 52.5,
+        "p95": 54.625,
+        "max": 54.625
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00016_branch.json",
+      "nodes": 25,
+      "group": "synthetic",
+      "setup_us": 149.416,
+      "samples_us": [
+        144.875,
+        143.25,
+        160.291,
+        164.25,
+        152.083,
+        148.791,
+        139.875,
+        144.333,
+        149.875
+      ],
+      "reward_samples_us": [
+        148.208,
+        140.625,
+        148.75,
+        156.834,
+        139.75,
+        138.25,
+        143.125,
+        137.667,
+        138.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "6ca34677b313dc3d9d6e26d0c0b1b92a3f95ad89be780bc3c2b618c416efd0e0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 14932.160000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 148.791,
+        "p95": 164.25,
+        "max": 164.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 140.625,
+        "p95": 156.834,
+        "max": 156.834
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00021_branch.json",
+      "nodes": 21,
+      "group": "synthetic",
+      "setup_us": 134.791,
+      "samples_us": [
+        127.75,
+        127.25,
+        123.75,
+        158.75,
+        126.083,
+        121.75,
+        129.042,
+        127.375,
+        137.083
+      ],
+      "reward_samples_us": [
+        120.667,
+        119.709,
+        117.208,
+        140.333,
+        118.625,
+        118.875,
+        118.542,
+        119.75,
+        130.417
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "4f4a7b0c2ec6003d4c2840ed8e1e063aa6327e88b8693aafccb1c68595d02a49",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 2202009.6000000006,
+      "timing_us": {
+        "count": 9,
+        "median": 127.375,
+        "p95": 158.75,
+        "max": 158.75
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 119.709,
+        "p95": 140.333,
+        "max": 140.333
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00026_branch.json",
+      "nodes": 134,
+      "group": "synthetic",
+      "setup_us": 488.75,
+      "samples_us": [
+        812.375,
+        807.75,
+        791.417,
+        882.209,
+        797.083,
+        886.709,
+        822.666,
+        817.041,
+        800.125
+      ],
+      "reward_samples_us": [
+        761.167,
+        791.417,
+        763.292,
+        797.459,
+        785.25,
+        929.208,
+        799.209,
+        806.666,
+        769.583
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "73e30a8dddb909c3be7fd339f496de88492528d29ace4968c073f51ff1023ede",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 14050918.399999967,
+      "timing_us": {
+        "count": 9,
+        "median": 812.375,
+        "p95": 886.709,
+        "max": 886.709
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 791.417,
+        "p95": 929.208,
+        "max": 929.208
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00031_branch.json",
+      "nodes": 69,
+      "group": "synthetic",
+      "setup_us": 303.75,
+      "samples_us": [
+        385.667,
+        440.667,
+        389.834,
+        388.5,
+        418.333,
+        384.125,
+        390.042,
+        414.583,
+        393.541
+      ],
+      "reward_samples_us": [
+        372.875,
+        376.584,
+        403.75,
+        372.458,
+        390.167,
+        373.542,
+        374.792,
+        391.083,
+        378.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "46466fb76333ae8538f9db3d87d90165884db0b8655fe18e6ece54b1443b45ec",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1924505.5999999982,
+      "timing_us": {
+        "count": 9,
+        "median": 390.042,
+        "p95": 440.667,
+        "max": 440.667
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 376.584,
+        "p95": 403.75,
+        "max": 403.75
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00036_branch.json",
+      "nodes": 97,
+      "group": "synthetic",
+      "setup_us": 355.0,
+      "samples_us": [
+        562.625,
+        570.333,
+        554.75,
+        589.875,
+        543.083,
+        551.75,
+        590.333,
+        563.75,
+        572.459
+      ],
+      "reward_samples_us": [
+        546.625,
+        543.209,
+        533.583,
+        544.333,
+        519.708,
+        534.625,
+        563.791,
+        552.458,
+        558.75
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "0e1ccffa19a936fb4c30511f9b9042b96b24213b4e706e991277b02bf2797e55",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 233919.99999999983,
+      "timing_us": {
+        "count": 9,
+        "median": 563.75,
+        "p95": 590.333,
+        "max": 590.333
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 544.333,
+        "p95": 563.791,
+        "max": 563.791
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00041_branch.json",
+      "nodes": 133,
+      "group": "synthetic",
+      "setup_us": 454.625,
+      "samples_us": [
+        777.416,
+        868.958,
+        764.041,
+        793.5,
+        757.208,
+        926.042,
+        813.667,
+        822.875,
+        810.542
+      ],
+      "reward_samples_us": [
+        775.917,
+        806.458,
+        743.375,
+        797.667,
+        737.083,
+        777.084,
+        782.083,
+        804.125,
+        803.834
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "d598c62d3ca9066385442bb8e55ae00b53c642eb33e49c63d79d70645d5bea16",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 3486515.199999992,
+      "timing_us": {
+        "count": 9,
+        "median": 810.542,
+        "p95": 926.042,
+        "max": 926.042
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 782.083,
+        "p95": 806.458,
+        "max": 806.458
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00046_branch.json",
+      "nodes": 123,
+      "group": "synthetic",
+      "setup_us": 438.708,
+      "samples_us": [
+        746.417,
+        718.75,
+        697.875,
+        737.75,
+        789.25,
+        719.334,
+        762.25,
+        729.375,
+        707.958
+      ],
+      "reward_samples_us": [
+        709.875,
+        687.083,
+        689.458,
+        708.792,
+        773.333,
+        704.333,
+        716.0,
+        739.5,
+        687.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "909e8696c5f58d95305bc2662a3af55663ddc883e618eee10f348109201fc412",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 17837506.560000002,
+      "timing_us": {
+        "count": 9,
+        "median": 729.375,
+        "p95": 789.25,
+        "max": 789.25
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 708.792,
+        "p95": 773.333,
+        "max": 773.333
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00051_branch.json",
+      "nodes": 11,
+      "group": "synthetic",
+      "setup_us": 92.792,
+      "samples_us": [
+        74.084,
+        77.125,
+        70.917,
+        72.208,
+        79.0,
+        88.875,
+        73.709,
+        73.167,
+        74.5
+      ],
+      "reward_samples_us": [
+        68.084,
+        72.959,
+        66.541,
+        65.875,
+        73.25,
+        70.667,
+        67.708,
+        67.75,
+        80.542
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "763163c10da6cfad68d19adc227e19b65ba1293fc16a61c242eb8cce877839ab",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 25468.800000000003,
+      "timing_us": {
+        "count": 9,
+        "median": 74.084,
+        "p95": 88.875,
+        "max": 88.875
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 68.084,
+        "p95": 80.542,
+        "max": 80.542
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00056_branch.json",
+      "nodes": 99,
+      "group": "synthetic",
+      "setup_us": 394.917,
+      "samples_us": [
+        560.0,
+        607.917,
+        592.875,
+        578.5,
+        578.375,
+        640.375,
+        573.542,
+        579.208,
+        574.625
+      ],
+      "reward_samples_us": [
+        576.125,
+        562.291,
+        546.125,
+        581.625,
+        556.208,
+        706.042,
+        572.917,
+        571.042,
+        563.958
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "3c7f43c253743d660cf117e1b43b2a54f00c731171f28d063ee4ed69ab4d52b0",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1758003.1999999986,
+      "timing_us": {
+        "count": 9,
+        "median": 578.5,
+        "p95": 640.375,
+        "max": 640.375
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 571.042,
+        "p95": 706.042,
+        "max": 706.042
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00061_branch.json",
+      "nodes": 56,
+      "group": "synthetic",
+      "setup_us": 243.417,
+      "samples_us": [
+        332.166,
+        323.958,
+        345.292,
+        311.667,
+        310.625,
+        303.625,
+        337.709,
+        309.459,
+        320.0
+      ],
+      "reward_samples_us": [
+        301.583,
+        311.333,
+        318.708,
+        298.25,
+        335.042,
+        299.792,
+        311.125,
+        300.542,
+        298.25
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "91b8c906697d087528c723fd0f2e4b131275cbe369807899ae96c1683d758e6c",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 367001.59999999974,
+      "timing_us": {
+        "count": 9,
+        "median": 320.0,
+        "p95": 345.292,
+        "max": 345.292
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 301.583,
+        "p95": 335.042,
+        "max": 335.042
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00066_branch.json",
+      "nodes": 52,
+      "group": "synthetic",
+      "setup_us": 218.375,
+      "samples_us": [
+        305.916,
+        286.375,
+        327.0,
+        284.542,
+        289.958,
+        289.875,
+        294.958,
+        303.584,
+        304.041
+      ],
+      "reward_samples_us": [
+        288.875,
+        296.625,
+        288.5,
+        284.167,
+        281.5,
+        277.209,
+        281.916,
+        302.75,
+        308.791
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "fff27c468154e177ec63aa12db53538eea58c3078c4d23e270527d96789bfabd",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 90620.79999999996,
+      "timing_us": {
+        "count": 9,
+        "median": 294.958,
+        "p95": 327.0,
+        "max": 327.0
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 288.5,
+        "p95": 308.791,
+        "max": 308.791
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00071_branch.json",
+      "nodes": 97,
+      "group": "synthetic",
+      "setup_us": 356.125,
+      "samples_us": [
+        546.5,
+        563.667,
+        553.292,
+        592.583,
+        585.833,
+        582.333,
+        555.625,
+        581.209,
+        581.083
+      ],
+      "reward_samples_us": [
+        559.209,
+        574.25,
+        639.458,
+        554.041,
+        545.0,
+        675.416,
+        542.584,
+        545.0,
+        559.208
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "b125ad64d0754dbb6062fa76f7b07c57593941e9b38c6a98d90439d0c5c0d6d8",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 673305.599999999,
+      "timing_us": {
+        "count": 9,
+        "median": 581.083,
+        "p95": 592.583,
+        "max": 592.583
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 559.208,
+        "p95": 675.416,
+        "max": 675.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00076_branch.json",
+      "nodes": 116,
+      "group": "synthetic",
+      "setup_us": 405.875,
+      "samples_us": [
+        691.625,
+        669.959,
+        664.708,
+        1118.5,
+        675.125,
+        745.708,
+        694.334,
+        707.125,
+        704.042
+      ],
+      "reward_samples_us": [
+        660.0,
+        672.125,
+        684.792,
+        670.333,
+        672.916,
+        878.5,
+        686.375,
+        649.916,
+        692.625
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "c949568309c6c92012249d3b3bf02e3b8a4aa5dc44f149ac3947f7e03527289e",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 1034662.3999999989,
+      "timing_us": {
+        "count": 9,
+        "median": 694.334,
+        "p95": 1118.5,
+        "max": 1118.5
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 672.916,
+        "p95": 878.5,
+        "max": 878.5
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00081_branch.json",
+      "nodes": 10,
+      "group": "synthetic",
+      "setup_us": 93.25,
+      "samples_us": [
+        65.417,
+        84.709,
+        75.583,
+        70.959,
+        70.167,
+        134.209,
+        75.75,
+        73.833,
+        70.292
+      ],
+      "reward_samples_us": [
+        61.208,
+        63.5,
+        69.083,
+        63.333,
+        63.542,
+        93.75,
+        66.5,
+        70.333,
+        63.875
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "818d34375e5b54db92e1fb230329fa06c0abbdb0673f5b1b260cbe6b236e5486",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 103728.64000000001,
+      "timing_us": {
+        "count": 9,
+        "median": 73.833,
+        "p95": 134.209,
+        "max": 134.209
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 63.875,
+        "p95": 93.75,
+        "max": 93.75
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00086_branch.json",
+      "nodes": 18,
+      "group": "synthetic",
+      "setup_us": 116.416,
+      "samples_us": [
+        110.083,
+        108.167,
+        107.791,
+        110.166,
+        108.041,
+        107.959,
+        118.625,
+        109.125,
+        110.5
+      ],
+      "reward_samples_us": [
+        106.75,
+        101.916,
+        102.667,
+        102.167,
+        106.5,
+        102.334,
+        115.125,
+        121.416,
+        108.042
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "79a196061640434dc456593c67e581e534c2508229a847e7f3fbabfc215f6450",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 32553.600000000002,
+      "timing_us": {
+        "count": 9,
+        "median": 109.125,
+        "p95": 118.625,
+        "max": 118.625
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 106.5,
+        "p95": 121.416,
+        "max": 121.416
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00091_branch.json",
+      "nodes": 53,
+      "group": "synthetic",
+      "setup_us": 223.25,
+      "samples_us": [
+        306.083,
+        298.875,
+        303.25,
+        308.083,
+        299.708,
+        305.375,
+        297.875,
+        327.708,
+        312.917
+      ],
+      "reward_samples_us": [
+        287.833,
+        296.166,
+        286.416,
+        291.5,
+        285.708,
+        289.291,
+        287.791,
+        295.708,
+        323.667
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "8dd9b3466dbc9c1c11a075ff485471181808e127a419001f3752a5f7997fb7b3",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 22229811.199999988,
+      "timing_us": {
+        "count": 9,
+        "median": 305.375,
+        "p95": 327.708,
+        "max": 327.708
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 289.291,
+        "p95": 323.667,
+        "max": 323.667
+      }
+    },
+    {
+      "source": "data/generated/synthetic/validation/00096_branch.json",
+      "nodes": 142,
+      "group": "synthetic",
+      "setup_us": 511.75,
+      "samples_us": [
+        849.542,
+        876.25,
+        829.833,
+        892.542,
+        957.125,
+        819.75,
+        847.209,
+        828.334,
+        844.083
+      ],
+      "reward_samples_us": [
+        812.25,
+        862.709,
+        829.667,
+        896.167,
+        825.5,
+        823.041,
+        805.791,
+        813.666,
+        820.917
+      ],
+      "configuration": {
+        "model_id": "vnrc-1f19c2f-validated-v1",
+        "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+        "cost_convention": "vnrc_base_cost_amortized_over_k_passes",
+        "traversal_policy": "raster",
+        "problem_sha256": "a2bf34dbaa33bd6b736be2aac9a8d94528259a95322644f274202e680e729794",
+        "reward_id": "baseline-over-baseline-plus-latency-v1",
+        "official_equivalence_verified": false
+      },
+      "baseline_latency": 15630335.99999997,
+      "timing_us": {
+        "count": 9,
+        "median": 847.209,
+        "p95": 957.125,
+        "max": 957.125
+      },
+      "reward_timing_us": {
+        "count": 9,
+        "median": 823.041,
+        "p95": 896.167,
+        "max": 896.167
+      }
+    }
+  ]
+}

@@ -1,0 +1,3087 @@
+{
+  "vnrc_revision": "1f19c2ffeae394ab7c5f1d92c06795debf667758",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "binary_sha256": "ac660a4e982cc226ee669cb8ffe3c76b167fa7c2d44c8d822a25405a6152500f",
+  "assessment_completed_is_not_approval": true,
+  "examples": [
+    {
+      "name": "examples/00",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 6553.6,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "label": "Example 1: Baseline / Strategy A: Always Spill to Slow Memory",
+      "expected": 6553.6,
+      "actual": 6553.6,
+      "matches": true
+    },
+    {
+      "name": "examples/01",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3276.8,
+        "ref_total": 3276.8,
+        "bare_total": 3276.8,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 1: Baseline / Strategy B: Mega-Group with Large Granularity (128 x 128)",
+      "expected": 3276.8,
+      "actual": 3276.8,
+      "matches": true
+    },
+    {
+      "name": "examples/02",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4400.0,
+        "ref_total": 4400.0,
+        "bare_total": 3276.8,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 1: Baseline / Strategy C: Mega-Group with Small Granularity (64 x 64)",
+      "expected": 4400.0,
+      "actual": 4400.0,
+      "matches": true
+    },
+    {
+      "name": "examples/03",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 26214.4,
+        "ref_total": 26214.4,
+        "bare_total": 26214.4,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "label": "Example 2: Larger Tensors / Strategy A: Always Spill to Slow Memory",
+      "expected": 26214.4,
+      "actual": 26214.4,
+      "matches": true
+    },
+    {
+      "name": "examples/04",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 13107.2,
+        "ref_total": 13107.2,
+        "bare_total": 13107.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 2: Larger Tensors / Strategy B: Mega-Group with Small Granularity (128 x 128)",
+      "expected": 13107.2,
+      "actual": 13107.2,
+      "matches": true
+    },
+    {
+      "name": "examples/05",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 11468.8,
+        "ref_total": 11468.8,
+        "bare_total": 11468.8,
+        "num_steps": 3
+      },
+      "non_json_stdout": false,
+      "label": "Example 3: Spilling vs. Recomputation / Strategy A: Spilling (The \"Cache\" Approach)",
+      "expected": 11468.8,
+      "actual": 11468.8,
+      "matches": true
+    },
+    {
+      "name": "examples/06",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6276.8,
+        "ref_total": 6276.8,
+        "bare_total": 8192.0,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "label": "Example 3: Spilling vs. Recomputation / Strategy B: Recomputation (The \"Flash\" Approach)",
+      "expected": 6276.8,
+      "actual": 6276.8,
+      "matches": true
+    },
+    {
+      "name": "examples/07",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4638.4,
+        "ref_total": 4638.4,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "label": "Example 3: Spilling vs. Recomputation / Strategy C: Selective Residency (The \"Hybrid\" Approach)",
+      "expected": 4638.4,
+      "actual": 4638.4,
+      "matches": true
+    },
+    {
+      "name": "examples/08",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6548.0,
+        "ref_total": 7096.0,
+        "bare_total": 4915.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 4: Revisit / Strategy A: Naive Tiling (High Revisit)",
+      "expected": 7096,
+      "actual": 6548.0,
+      "matches": false,
+      "explicit_raster_result": {
+        "name": "examples/08_explicit_raster",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 7096.0,
+          "ref_total": 7096.0,
+          "bare_total": 4915.2,
+          "num_steps": 1
+        },
+        "non_json_stdout": false
+      }
+    },
+    {
+      "name": "examples/09",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6548.0,
+        "ref_total": 6548.0,
+        "bare_total": 4915.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 4: Revisit / Strategy B: Optimized Traversal (Data Reuse)",
+      "expected": 6548,
+      "actual": 6548.0,
+      "matches": true
+    },
+    {
+      "name": "examples/10",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6915.2,
+        "ref_total": 6915.2,
+        "bare_total": 6915.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "label": "Example 5: Chained Matrix Multiplication (Split-K) / Strategy B: Split-K Pipelining (Small K)",
+      "expected": 6915.2,
+      "actual": 6915.2,
+      "matches": true
+    }
+  ],
+  "adversarial": [
+    {
+      "name": "adversarial/valid_chain",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 6553.6,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": true,
+      "matches": true
+    },
+    {
+      "name": "adversarial/consumer_before_producer",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 6553.6,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/retain_graph_input",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 6553.6,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/false_reported_latencies",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 2.0,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/missing_required_latencies",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 0.0,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/mismatched_array_lengths",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": true
+    },
+    {
+      "name": "adversarial/uncovered_op",
+      "accepted": false,
+      "returncode": 1,
+      "result": {
+        "feasible": true,
+        "coverage": false,
+        "our_total": 3276.8,
+        "ref_total": 3276.8,
+        "bare_total": 3276.8,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": true
+    },
+    {
+      "name": "adversarial/out_of_memory",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "expected_accept": false,
+      "matches": true
+    },
+    {
+      "name": "adversarial/duplicate_op_within_step",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 6553.6,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/duplicate_traversal_indices",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 7096.0,
+        "ref_total": 7096.0,
+        "bare_total": 4915.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    },
+    {
+      "name": "adversarial/zero_tile_width",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "expected_accept": false,
+      "matches": true
+    },
+    {
+      "name": "adversarial/arbitrary_valid_traversal",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 7096.0,
+        "ref_total": 7644.0,
+        "bare_total": 4915.2,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "expected_accept": true,
+      "matches": true,
+      "expected_total": 7644,
+      "matches_cost": false
+    },
+    {
+      "name": "adversarial/unavailable_ephemeral_tensor",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6553.6,
+        "ref_total": 0.0,
+        "bare_total": 6553.6,
+        "num_steps": 2
+      },
+      "non_json_stdout": false,
+      "expected_accept": false,
+      "matches": false
+    }
+  ],
+  "cost_semantics": [
+    {
+      "name": "cost_semantics/K128",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2000.0,
+        "ref_total": 2000.0,
+        "bare_total": 2000.0,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "archive_native_tile_convention_total": 2000.0
+    },
+    {
+      "name": "cost_semantics/K256",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2000.0,
+        "ref_total": 4000.0,
+        "bare_total": 2000.0,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "archive_native_tile_convention_total": 4000.0
+    },
+    {
+      "name": "cost_semantics/K512",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2000.0,
+        "ref_total": 8000.0,
+        "bare_total": 2000.0,
+        "num_steps": 1
+      },
+      "non_json_stdout": false,
+      "archive_native_tile_convention_total": 8000.0
+    }
+  ],
+  "corpus": [
+    {
+      "name": "corpus/000",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 739788.8,
+        "ref_total": 0.0,
+        "bare_total": 419430.4,
+        "num_steps": 5
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-1.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/001",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 25952256.0,
+        "ref_total": 0.0,
+        "bare_total": 14208204.8,
+        "num_steps": 28
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-10.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/002",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4412416.0,
+        "ref_total": 0.0,
+        "bare_total": 2181990.4,
+        "num_steps": 26
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-11.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/003",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 7906263.04,
+        "ref_total": 0.0,
+        "bare_total": 4550819.84,
+        "num_steps": 31
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-12.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/004",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 43976294.4,
+        "ref_total": 0.0,
+        "bare_total": 22165913.6,
+        "num_steps": 63
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-13.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/005",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 11053824.0,
+        "ref_total": 0.0,
+        "bare_total": 3343104.0,
+        "num_steps": 63
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-14.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/006",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5353552.46,
+        "ref_total": 0.0,
+        "bare_total": 2261928.23,
+        "num_steps": 61
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-15.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/007",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 22136192.0,
+        "ref_total": 0.0,
+        "bare_total": 9022506.67,
+        "num_steps": 63
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-16.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/008",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 19865600.0,
+        "ref_total": 0.0,
+        "bare_total": 5081850.88,
+        "num_steps": 103
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-17.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/009",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5670400.0,
+        "ref_total": 0.0,
+        "bare_total": 1480857.6,
+        "num_steps": 96
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-18.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/010",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 7979008.0,
+        "ref_total": 0.0,
+        "bare_total": 2418850.13,
+        "num_steps": 103
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-19.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/011",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 104000.0,
+        "ref_total": 0.0,
+        "bare_total": 52428.8,
+        "num_steps": 5
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-2.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/012",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 20915200.0,
+        "ref_total": 0.0,
+        "bare_total": 5715733.26,
+        "num_steps": 103
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-20.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/013",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 8409600.0,
+        "ref_total": 0.0,
+        "bare_total": 2158100.48,
+        "num_steps": 152
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-21.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/014",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 12480000.0,
+        "ref_total": 0.0,
+        "bare_total": 3404288.0,
+        "num_steps": 150
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-22.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/015",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 13740800.0,
+        "ref_total": 0.0,
+        "bare_total": 3659622.4,
+        "num_steps": 121
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-23.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/016",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 10105600.0,
+        "ref_total": 0.0,
+        "bare_total": 2661601.28,
+        "num_steps": 112
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-24.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/017",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 144179.2,
+        "ref_total": 0.0,
+        "bare_total": 91750.4,
+        "num_steps": 4
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-3.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/018",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 46694.4,
+        "ref_total": 0.0,
+        "bare_total": 27033.6,
+        "num_steps": 5
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-4.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/019",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1485482.67,
+        "ref_total": 0.0,
+        "bare_total": 990685.87,
+        "num_steps": 19
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-5.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/020",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 384477.87,
+        "ref_total": 0.0,
+        "bare_total": 244667.73,
+        "num_steps": 17
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-6.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/021",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 308667.73,
+        "ref_total": 0.0,
+        "bare_total": 200977.07,
+        "num_steps": 15
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-7.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/022",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 167936.0,
+        "ref_total": 0.0,
+        "bare_total": 102400.0,
+        "num_steps": 20
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-8.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/023",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 91285422.08,
+        "ref_total": 0.0,
+        "bare_total": 48318382.08,
+        "num_steps": 32
+      },
+      "non_json_stdout": false,
+      "source": "benchmarks/mlsys-2026-9.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/024",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 122214400.0,
+        "ref_total": 0.0,
+        "bare_total": 73576422.4,
+        "num_steps": 91
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00004_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/025",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 27495884.8,
+        "ref_total": 0.0,
+        "bare_total": 15178048.0,
+        "num_steps": 112
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00009_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/026",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 18438835.2,
+        "ref_total": 0.0,
+        "bare_total": 10481190.4,
+        "num_steps": 135
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00014_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/027",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5712934.4,
+        "ref_total": 0.0,
+        "bare_total": 2577888.0,
+        "num_steps": 100
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00019_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/028",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 15772057.6,
+        "ref_total": 0.0,
+        "bare_total": 4136369.6,
+        "num_steps": 60
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00024_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/029",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2034892.8,
+        "ref_total": 0.0,
+        "bare_total": 1143603.2,
+        "num_steps": 9
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00029_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/030",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4186070.4,
+        "ref_total": 0.0,
+        "bare_total": 1597560.0,
+        "num_steps": 99
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00034_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/031",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1746609.6,
+        "ref_total": 0.0,
+        "bare_total": 771138.4,
+        "num_steps": 107
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00039_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/032",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4453209.6,
+        "ref_total": 0.0,
+        "bare_total": 2026268.8,
+        "num_steps": 91
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00044_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/033",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 22724851.2,
+        "ref_total": 0.0,
+        "bare_total": 11107554.8,
+        "num_steps": 102
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00049_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/034",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3337019.52,
+        "ref_total": 0.0,
+        "bare_total": 915320.0,
+        "num_steps": 109
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00054_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/035",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6635238.4,
+        "ref_total": 0.0,
+        "bare_total": 3399116.8,
+        "num_steps": 60
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00059_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/036",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 16113984.0,
+        "ref_total": 0.0,
+        "bare_total": 10238475.2,
+        "num_steps": 90
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00064_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/037",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 12291358.72,
+        "ref_total": 0.0,
+        "bare_total": 3867371.52,
+        "num_steps": 72
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00069_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/038",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1719244.8,
+        "ref_total": 0.0,
+        "bare_total": 674073.6,
+        "num_steps": 35
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00074_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/039",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 28031641.6,
+        "ref_total": 0.0,
+        "bare_total": 16105150.4,
+        "num_steps": 146
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00079_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/040",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 10072419.2,
+        "ref_total": 0.0,
+        "bare_total": 3487488.0,
+        "num_steps": 54
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00084_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/041",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 16097318.4,
+        "ref_total": 0.0,
+        "bare_total": 8312044.8,
+        "num_steps": 152
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00089_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/042",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1989721.6,
+        "ref_total": 0.0,
+        "bare_total": 1153433.6,
+        "num_steps": 21
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00094_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/043",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 14662983.68,
+        "ref_total": 0.0,
+        "bare_total": 4251555.84,
+        "num_steps": 39
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/test/00099_mixed.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/044",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 22224076.8,
+        "ref_total": 0.0,
+        "bare_total": 21390950.4,
+        "num_steps": 51
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00000_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/045",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3674931.2,
+        "ref_total": 0.0,
+        "bare_total": 1670041.6,
+        "num_steps": 53
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00002_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/046",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6381247.2,
+        "ref_total": 0.0,
+        "bare_total": 2036415.2,
+        "num_steps": 105
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00003_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/047",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 673036.8,
+        "ref_total": 0.0,
+        "bare_total": 481689.6,
+        "num_steps": 147
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00005_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/048",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 267161.6,
+        "ref_total": 0.0,
+        "bare_total": 255590.4,
+        "num_steps": 17
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00007_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/049",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 8065955.2,
+        "ref_total": 0.0,
+        "bare_total": 3086905.6,
+        "num_steps": 141
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00008_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/050",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1060697.6,
+        "ref_total": 0.0,
+        "bare_total": 664697.6,
+        "num_steps": 149
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00010_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/051",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 639411.2,
+        "ref_total": 0.0,
+        "bare_total": 375411.2,
+        "num_steps": 35
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00012_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/052",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 94540042.24,
+        "ref_total": 0.0,
+        "bare_total": 28850503.68,
+        "num_steps": 75
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00013_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/053",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1031680.0,
+        "ref_total": 0.0,
+        "bare_total": 681574.4,
+        "num_steps": 52
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00015_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/054",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1088537.6,
+        "ref_total": 0.0,
+        "bare_total": 779878.4,
+        "num_steps": 51
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00017_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/055",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 26328576.0,
+        "ref_total": 0.0,
+        "bare_total": 12037219.2,
+        "num_steps": 14
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00018_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/056",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 7270400.0,
+        "ref_total": 0.0,
+        "bare_total": 2071316.48,
+        "num_steps": 57
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00020_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/057",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 198937.6,
+        "ref_total": 0.0,
+        "bare_total": 71321.6,
+        "num_steps": 9
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00022_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/058",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2486110.08,
+        "ref_total": 0.0,
+        "bare_total": 743307.52,
+        "num_steps": 47
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00023_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/059",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2041600.0,
+        "ref_total": 0.0,
+        "bare_total": 615229.44,
+        "num_steps": 72
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00025_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/060",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 8911462.4,
+        "ref_total": 0.0,
+        "bare_total": 8703180.8,
+        "num_steps": 71
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00027_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/061",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 68607272.96,
+        "ref_total": 0.0,
+        "bare_total": 19144030.72,
+        "num_steps": 98
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00028_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/062",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 272947.2,
+        "ref_total": 0.0,
+        "bare_total": 255590.4,
+        "num_steps": 39
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00030_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/063",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 234620.8,
+        "ref_total": 0.0,
+        "bare_total": 119400.0,
+        "num_steps": 122
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00032_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/064",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 33920774.4,
+        "ref_total": 0.0,
+        "bare_total": 13825490.8,
+        "num_steps": 113
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00033_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/065",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 15341158.4,
+        "ref_total": 0.0,
+        "bare_total": 9453158.4,
+        "num_steps": 131
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00035_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/066",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 9947750.4,
+        "ref_total": 0.0,
+        "bare_total": 9646899.2,
+        "num_steps": 79
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00037_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/067",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 22493593.6,
+        "ref_total": 0.0,
+        "bare_total": 7158705.6,
+        "num_steps": 18
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00038_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/068",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4058726.4,
+        "ref_total": 0.0,
+        "bare_total": 3827302.4,
+        "num_steps": 73
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00040_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/069",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4345036.8,
+        "ref_total": 0.0,
+        "bare_total": 2313216.0,
+        "num_steps": 33
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00042_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/070",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 84968601.6,
+        "ref_total": 0.0,
+        "bare_total": 44217382.4,
+        "num_steps": 119
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00043_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/071",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5328793.6,
+        "ref_total": 0.0,
+        "bare_total": 3748659.2,
+        "num_steps": 143
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00045_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/072",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 433939.2,
+        "ref_total": 0.0,
+        "bare_total": 152414.4,
+        "num_steps": 126
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00047_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/073",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 48660006.4,
+        "ref_total": 0.0,
+        "bare_total": 16138197.6,
+        "num_steps": 82
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00048_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/074",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2180966.4,
+        "ref_total": 0.0,
+        "bare_total": 1006003.2,
+        "num_steps": 73
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00050_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/075",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1047859.2,
+        "ref_total": 0.0,
+        "bare_total": 792985.6,
+        "num_steps": 52
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00052_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/076",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 14192652.8,
+        "ref_total": 0.0,
+        "bare_total": 6961200.0,
+        "num_steps": 56
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00053_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/077",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5130649.6,
+        "ref_total": 0.0,
+        "bare_total": 2606080.0,
+        "num_steps": 95
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00055_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/078",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 16940687.36,
+        "ref_total": 0.0,
+        "bare_total": 5301493.76,
+        "num_steps": 147
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00057_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/079",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1149798.4,
+        "ref_total": 0.0,
+        "bare_total": 325953.92,
+        "num_steps": 24
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00058_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/080",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 30077747.2,
+        "ref_total": 0.0,
+        "bare_total": 18874368.0,
+        "num_steps": 45
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00060_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/081",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 812664.32,
+        "ref_total": 0.0,
+        "bare_total": 423560.96,
+        "num_steps": 105
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00062_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/082",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 12406731.52,
+        "ref_total": 0.0,
+        "bare_total": 3421126.72,
+        "num_steps": 94
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00063_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/083",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1801600.0,
+        "ref_total": 0.0,
+        "bare_total": 542529.28,
+        "num_steps": 127
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00065_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/084",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 423833.6,
+        "ref_total": 0.0,
+        "bare_total": 139753.6,
+        "num_steps": 107
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00067_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/085",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 21403104.0,
+        "ref_total": 0.0,
+        "bare_total": 7486622.4,
+        "num_steps": 123
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00068_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/086",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4123443.2,
+        "ref_total": 0.0,
+        "bare_total": 3984588.8,
+        "num_steps": 19
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00070_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/087",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2168115.2,
+        "ref_total": 0.0,
+        "bare_total": 2110259.2,
+        "num_steps": 138
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00072_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/088",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 6003097.6,
+        "ref_total": 0.0,
+        "bare_total": 2443550.72,
+        "num_steps": 9
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00073_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/089",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 38515.2,
+        "ref_total": 0.0,
+        "bare_total": 21734.4,
+        "num_steps": 13
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00075_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/090",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 43004723.2,
+        "ref_total": 0.0,
+        "bare_total": 41523609.6,
+        "num_steps": 85
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00077_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/091",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 24132697.6,
+        "ref_total": 0.0,
+        "bare_total": 8183745.6,
+        "num_steps": 88
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00078_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/092",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1679257.6,
+        "ref_total": 0.0,
+        "bare_total": 893286.4,
+        "num_steps": 55
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00080_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/093",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 36898406.4,
+        "ref_total": 0.0,
+        "bare_total": 35232153.6,
+        "num_steps": 36
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00082_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/094",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 28894822.4,
+        "ref_total": 0.0,
+        "bare_total": 15008256.0,
+        "num_steps": 40
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00083_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/095",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 176576.0,
+        "ref_total": 0.0,
+        "bare_total": 66768.0,
+        "num_steps": 32
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00085_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/096",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 13307904.0,
+        "ref_total": 0.0,
+        "bare_total": 12845056.0,
+        "num_steps": 105
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00087_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/097",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 166047539.2,
+        "ref_total": 0.0,
+        "bare_total": 80547347.2,
+        "num_steps": 68
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00088_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/098",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 361600.0,
+        "ref_total": 0.0,
+        "bare_total": 186417.92,
+        "num_steps": 48
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00090_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/099",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 204640.64,
+        "ref_total": 0.0,
+        "bare_total": 63152.32,
+        "num_steps": 111
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00092_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/100",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 27221504.0,
+        "ref_total": 0.0,
+        "bare_total": 15457740.8,
+        "num_steps": 29
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00093_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/101",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 32572620.8,
+        "ref_total": 0.0,
+        "bare_total": 23697817.6,
+        "num_steps": 113
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00095_chain.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/102",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3018291.2,
+        "ref_total": 0.0,
+        "bare_total": 2202009.6,
+        "num_steps": 72
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00097_diamond.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/103",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2354812.8,
+        "ref_total": 0.0,
+        "bare_total": 971760.0,
+        "num_steps": 26
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/train/00098_matmul.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/104",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 33044889.6,
+        "ref_total": 0.0,
+        "bare_total": 15234048.0,
+        "num_steps": 138
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00001_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/105",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 146214.4,
+        "ref_total": 0.0,
+        "bare_total": 109196.8,
+        "num_steps": 16
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00006_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/106",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1382400.0,
+        "ref_total": 0.0,
+        "bare_total": 361943.04,
+        "num_steps": 8
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00011_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/107",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 50800.0,
+        "ref_total": 0.0,
+        "bare_total": 14932.16,
+        "num_steps": 25
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00016_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/108",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 2794291.2,
+        "ref_total": 0.0,
+        "bare_total": 2202009.6,
+        "num_steps": 21
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00021_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/109",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 14930329.6,
+        "ref_total": 0.0,
+        "bare_total": 14050918.4,
+        "num_steps": 134
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00026_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/110",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4486860.8,
+        "ref_total": 0.0,
+        "bare_total": 1924505.6,
+        "num_steps": 69
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00031_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/111",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 732083.2,
+        "ref_total": 0.0,
+        "bare_total": 233920.0,
+        "num_steps": 97
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00036_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/112",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3660083.2,
+        "ref_total": 0.0,
+        "bare_total": 3486515.2,
+        "num_steps": 133
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00041_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/113",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 60108800.0,
+        "ref_total": 0.0,
+        "bare_total": 17837506.56,
+        "num_steps": 123
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00046_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/114",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 72153.6,
+        "ref_total": 0.0,
+        "bare_total": 25468.8,
+        "num_steps": 11
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00051_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/115",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5204787.2,
+        "ref_total": 0.0,
+        "bare_total": 1758003.2,
+        "num_steps": 99
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00056_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/116",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 546393.6,
+        "ref_total": 0.0,
+        "bare_total": 367001.6,
+        "num_steps": 56
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00061_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/117",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 218406.4,
+        "ref_total": 0.0,
+        "bare_total": 90620.8,
+        "num_steps": 52
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00066_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/118",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1514572.8,
+        "ref_total": 0.0,
+        "bare_total": 673305.6,
+        "num_steps": 97
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00071_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/119",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 3147315.2,
+        "ref_total": 0.0,
+        "bare_total": 1034662.4,
+        "num_steps": 116
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00076_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/120",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 384000.0,
+        "ref_total": 0.0,
+        "bare_total": 103728.64,
+        "num_steps": 10
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00081_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/121",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 60896.0,
+        "ref_total": 0.0,
+        "bare_total": 32553.6,
+        "num_steps": 18
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00086_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/122",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 23710924.8,
+        "ref_total": 0.0,
+        "bare_total": 22229811.2,
+        "num_steps": 53
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00091_branch.json",
+      "feasible_and_covered": true
+    },
+    {
+      "name": "corpus/123",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 33812889.6,
+        "ref_total": 0.0,
+        "bare_total": 15630336.0,
+        "num_steps": 142
+      },
+      "non_json_stdout": false,
+      "source": "data/generated/synthetic/validation/00096_branch.json",
+      "feasible_and_covered": true
+    }
+  ],
+  "archive": [
+    {
+      "name": "archive/prog-large-11.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 49985913.93684206,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 93,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-11.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-large-14.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 5474776.62,
+        "ref_total": 5474776.62,
+        "bare_total": 5474776.62,
+        "num_steps": 19
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 5474776.615384616,
+      "archive_errors": [],
+      "relative_difference": 8.430269357569941e-10,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-14.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 5474776.62,
+          "ref_total": 5474776.62,
+          "bare_total": 5474776.62,
+          "num_steps": 19
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 8.430269357569941e-10
+    },
+    {
+      "name": "archive/prog-large-17.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 29959314.29,
+        "ref_total": 29959314.29,
+        "bare_total": 29959314.29,
+        "num_steps": 14
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 29959314.285714284,
+      "archive_errors": [],
+      "relative_difference": 1.4305118867241618e-10,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-17.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 29959314.29,
+          "ref_total": 29959314.29,
+          "bare_total": 29959314.29,
+          "num_steps": 14
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 1.4305118867241618e-10
+    },
+    {
+      "name": "archive/prog-large-2.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 14723754.67,
+        "ref_total": 14723754.67,
+        "bare_total": 14723754.67,
+        "num_steps": 23
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 14723754.666666664,
+      "archive_errors": [],
+      "relative_difference": 2.2639169273179914e-10,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-2.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 14723754.67,
+          "ref_total": 14723754.67,
+          "bare_total": 14723754.67,
+          "num_steps": 23
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 2.2639169273179914e-10
+    },
+    {
+      "name": "archive/prog-large-20.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 9755177.411764702,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 16,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-20.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-large-23.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 4699867.43,
+        "ref_total": 4699867.43,
+        "bare_total": 4699867.43,
+        "num_steps": 20
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 4699867.428571428,
+      "archive_errors": [],
+      "relative_difference": 3.039599629985052e-10,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-23.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 4699867.43,
+          "ref_total": 4699867.43,
+          "bare_total": 4699867.43,
+          "num_steps": 20
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 3.039599629985052e-10
+    },
+    {
+      "name": "archive/prog-large-5.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": true,
+      "archive_total": 17938139.42857143,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 5,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-5.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-large-8.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 16870546.28571429,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 17,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-large-8.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-1.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 929296.0,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 8,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-1.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-10.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 856337.07,
+        "ref_total": 856337.07,
+        "bare_total": 856337.07,
+        "num_steps": 10
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 856337.0666666667,
+      "archive_errors": [],
+      "relative_difference": 3.892548188539584e-09,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-10.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 856337.07,
+          "ref_total": 856337.07,
+          "bare_total": 856337.07,
+          "num_steps": 10
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 3.892548188539584e-09
+    },
+    {
+      "name": "archive/prog-medium-13.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 1085846.3999999994,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 11,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-13.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-16.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 450013.87,
+        "ref_total": 450013.87,
+        "bare_total": 450013.87,
+        "num_steps": 14
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 450013.8666666666,
+      "archive_errors": [],
+      "relative_difference": 7.407179335913701e-09,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-16.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 450013.87,
+          "ref_total": 450013.87,
+          "bare_total": 450013.87,
+          "num_steps": 14
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 7.407179335913701e-09
+    },
+    {
+      "name": "archive/prog-medium-19.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 277144.69565217395,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 2,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-19.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-22.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 664364.5714285712,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 17,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-22.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-4.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 1445967.515151515,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 8,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-4.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-medium-7.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 1073782.15,
+        "ref_total": 1073782.15,
+        "bare_total": 1073782.15,
+        "num_steps": 20
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 1073782.1538461538,
+      "archive_errors": [],
+      "relative_difference": 3.581875370119919e-09,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-medium-7.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 1073782.15,
+          "ref_total": 1073782.15,
+          "bare_total": 1073782.15,
+          "num_steps": 20
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 3.581875370119919e-09
+    },
+    {
+      "name": "archive/prog-small-0.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 104857.60000000003,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 2,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-0.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-small-12.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 239445.9130434783,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 2,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-12.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-small-15.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 482176.0,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 1,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-15.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-small-18.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 198009.6,
+        "ref_total": 203072.0,
+        "bare_total": 198009.6,
+        "num_steps": 8
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 203072.0,
+      "archive_errors": [],
+      "relative_difference": 0.024929089190040943,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-18.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 198009.6,
+          "ref_total": 203072.0,
+          "bare_total": 198009.6,
+          "num_steps": 8
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 0.024929089190040943
+    },
+    {
+      "name": "archive/prog-small-21.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 72980.05,
+        "ref_total": 76455.95,
+        "bare_total": 72742.09,
+        "num_steps": 47
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 76455.95348837212,
+      "archive_errors": [],
+      "relative_difference": 0.04546282309984865,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-21.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 72980.05,
+          "ref_total": 76455.95,
+          "bare_total": 72742.09,
+          "num_steps": 47
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 0.04546282309984865
+    },
+    {
+      "name": "archive/prog-small-3.opt",
+      "accepted": true,
+      "returncode": 0,
+      "result": {
+        "feasible": true,
+        "coverage": true,
+        "our_total": 69176.89,
+        "ref_total": 72588.44,
+        "bare_total": 69176.89,
+        "num_steps": 7
+      },
+      "non_json_stdout": false,
+      "strict_graph_valid": true,
+      "archive_total": 72588.44444444445,
+      "archive_errors": [],
+      "relative_difference": 0.04699858869486431,
+      "super_native_steps": 0,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-3.opt",
+        "accepted": true,
+        "returncode": 0,
+        "result": {
+          "feasible": true,
+          "coverage": true,
+          "our_total": 69176.89,
+          "ref_total": 72588.44,
+          "bare_total": 69176.89,
+          "num_steps": 7
+        },
+        "non_json_stdout": false
+      },
+      "explicit_raster_relative_difference": 0.04699858869486431
+    },
+    {
+      "name": "archive/prog-small-6.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": true,
+      "archive_total": 56599.27272727272,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 2,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-6.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    },
+    {
+      "name": "archive/prog-small-9.opt",
+      "accepted": false,
+      "returncode": 1,
+      "result": null,
+      "non_json_stdout": true,
+      "strict_graph_valid": false,
+      "archive_total": 476306.2857142857,
+      "archive_errors": [],
+      "relative_difference": null,
+      "super_native_steps": 2,
+      "explicit_raster_result": {
+        "name": "archive_explicit_raster/prog-small-9.opt",
+        "accepted": false,
+        "returncode": 1,
+        "result": null,
+        "non_json_stdout": true
+      },
+      "explicit_raster_relative_difference": null
+    }
+  ],
+  "upstream_tests": {
+    "assertions_enabled": true,
+    "initial_passed": 47,
+    "initial_timeout_seconds": 45,
+    "initial_timed_out": [
+      "constructed_optima_test"
+    ],
+    "rerun_passed": [
+      "constructed_optima_test"
+    ],
+    "rerun_timeout_seconds": 120,
+    "rerun_elapsed_seconds": 47.51,
+    "problem_example_checks_passed": 65,
+    "problem_example_checks_failed": 0
+  },
+  "compiler": "Apple clang version 16.0.0 (clang-1600.0.26.6)",
+  "cmake": "cmake version 4.0.3",
+  "source_repo": "https://github.com/huawei-csl/mlsys-2026-graph-scheduling-vnrc-submission",
+  "build_flags": "-O2 -UNDEBUG; nlohmann/json v3.11.3 in external/deps",
+  "assessment_date": "2026-10-28"
+}

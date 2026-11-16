@@ -1,0 +1,1101 @@
+{
+  "date": "2026-10-30",
+  "model_id": "vnrc-1f19c2f-validated-v1",
+  "schedules": 24,
+  "scores_matched": 24,
+  "method": "24 official benchmark inputs; identical deterministic no-fusion schedules with explicit raster permutations and correct latency labels. 9 shuffled rounds, one warm-up per approach; randomized approach order. CLI includes process startup, IO, diagnostics and best_cost search; API reuses its problem context and includes validation, permutation/label checks and native scoring. Normal desktop background load uncontrolled.",
+  "summary": {
+    "original_cli_ms": {
+      "count": 216,
+      "median": 4.819833,
+      "p95": 9.788209,
+      "max": 15.400333
+    },
+    "wrapper_api_ms": {
+      "count": 216,
+      "median": 0.5372915,
+      "p95": 1.334375,
+      "max": 1.64525
+    },
+    "median_time_ratio": 8.9706109253543
+  },
+  "cases": [
+    {
+      "source": "benchmarks/mlsys-2026-1.json",
+      "nodes": 5,
+      "original_total": 419430.4,
+      "wrapper_total": 419430.4,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        3.071625,
+        2.575291,
+        9.32125,
+        2.803417,
+        2.7365,
+        2.969916,
+        3.347708,
+        2.874791,
+        3.032083
+      ],
+      "wrapper_ms": [
+        0.065541,
+        0.129458,
+        0.243458,
+        0.082166,
+        0.129667,
+        0.216791,
+        0.127083,
+        0.21325,
+        0.156792
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 2.969916,
+        "p95": 9.32125,
+        "max": 9.32125
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.129667,
+        "p95": 0.243458,
+        "max": 0.243458
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-10.json",
+      "nodes": 28,
+      "original_total": 14208204.8,
+      "wrapper_total": 14208204.799999995,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        4.241875,
+        3.837917,
+        11.217958,
+        4.639875,
+        3.702084,
+        3.701,
+        3.494083,
+        3.670666,
+        3.418834
+      ],
+      "wrapper_ms": [
+        0.448917,
+        0.472667,
+        1.269542,
+        0.447917,
+        0.413333,
+        0.39775,
+        0.330334,
+        0.326334,
+        0.420084
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.702084,
+        "p95": 11.217958,
+        "max": 11.217958
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.420084,
+        "p95": 1.269542,
+        "max": 1.269542
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-11.json",
+      "nodes": 26,
+      "original_total": 2181990.4,
+      "wrapper_total": 2181990.4000000004,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        3.33725,
+        3.502958,
+        4.709208,
+        3.9365,
+        4.143292,
+        3.24925,
+        4.047084,
+        3.636708,
+        3.306375
+      ],
+      "wrapper_ms": [
+        0.245792,
+        0.390417,
+        0.382458,
+        0.378875,
+        0.30275,
+        0.24525,
+        0.358167,
+        0.427833,
+        0.299958
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.636708,
+        "p95": 4.709208,
+        "max": 4.709208
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.358167,
+        "p95": 0.427833,
+        "max": 0.427833
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-12.json",
+      "nodes": 31,
+      "original_total": 4550819.84,
+      "wrapper_total": 4550819.839999999,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        4.087875,
+        3.816167,
+        4.432084,
+        3.61325,
+        3.718417,
+        4.149625,
+        4.1325,
+        3.835334,
+        3.200209
+      ],
+      "wrapper_ms": [
+        0.355,
+        0.419125,
+        0.461875,
+        0.376917,
+        0.285833,
+        0.31125,
+        0.377584,
+        0.29225,
+        0.366541
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.835334,
+        "p95": 4.432084,
+        "max": 4.432084
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.366541,
+        "p95": 0.461875,
+        "max": 0.461875
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-13.json",
+      "nodes": 63,
+      "original_total": 22165913.6,
+      "wrapper_total": 22165913.599999968,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        5.723291,
+        5.617416,
+        6.13525,
+        5.881792,
+        5.560583,
+        5.878166,
+        6.284458,
+        6.331583,
+        5.757292
+      ],
+      "wrapper_ms": [
+        0.525959,
+        0.504125,
+        0.630458,
+        0.607958,
+        0.659292,
+        0.502291,
+        0.523167,
+        0.632125,
+        0.616709
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 5.878166,
+        "p95": 6.331583,
+        "max": 6.331583
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.607958,
+        "p95": 0.659292,
+        "max": 0.659292
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-14.json",
+      "nodes": 63,
+      "original_total": 3343104.0,
+      "wrapper_total": 3343104.000000001,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        5.504041,
+        5.026,
+        6.293375,
+        6.2035,
+        5.282334,
+        6.473125,
+        5.259333,
+        4.933125,
+        4.934875
+      ],
+      "wrapper_ms": [
+        0.539125,
+        0.547667,
+        0.671792,
+        0.71175,
+        0.535458,
+        0.714167,
+        0.670792,
+        0.613958,
+        0.608792
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 5.282334,
+        "p95": 6.473125,
+        "max": 6.473125
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.613958,
+        "p95": 0.714167,
+        "max": 0.714167
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-15.json",
+      "nodes": 61,
+      "original_total": 2261928.23,
+      "wrapper_total": 2261928.228571427,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        5.436208,
+        4.76575,
+        4.901208,
+        6.196625,
+        4.568583,
+        4.957667,
+        5.378167,
+        4.700583,
+        4.844167
+      ],
+      "wrapper_ms": [
+        0.485416,
+        0.496792,
+        0.579916,
+        0.685791,
+        0.604125,
+        0.513667,
+        0.659,
+        0.486542,
+        0.597583
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 4.901208,
+        "p95": 6.196625,
+        "max": 6.196625
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.579916,
+        "p95": 0.685791,
+        "max": 0.685791
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-16.json",
+      "nodes": 63,
+      "original_total": 9022506.67,
+      "wrapper_total": 9022506.666666664,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        6.762,
+        5.194916,
+        4.803916,
+        4.993459,
+        5.605334,
+        4.841959,
+        5.701042,
+        4.924334,
+        4.644416
+      ],
+      "wrapper_ms": [
+        0.724541,
+        0.652583,
+        0.663083,
+        0.712209,
+        0.60325,
+        0.624666,
+        0.693,
+        0.676958,
+        0.657333
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 4.993459,
+        "p95": 6.762,
+        "max": 6.762
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.663083,
+        "p95": 0.724541,
+        "max": 0.724541
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-17.json",
+      "nodes": 103,
+      "original_total": 5081850.88,
+      "wrapper_total": 5081850.880000006,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        8.749583,
+        8.329083,
+        15.400333,
+        7.659167,
+        8.4155,
+        8.138542,
+        8.556625,
+        8.008667,
+        7.502542
+      ],
+      "wrapper_ms": [
+        1.139041,
+        0.998958,
+        1.008834,
+        0.999083,
+        0.95575,
+        0.949083,
+        1.042,
+        0.93775,
+        0.815333
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 8.329083,
+        "p95": 15.400333,
+        "max": 15.400333
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.998958,
+        "p95": 1.139041,
+        "max": 1.139041
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-18.json",
+      "nodes": 96,
+      "original_total": 1480857.6,
+      "wrapper_total": 1480857.5999999992,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        8.638459,
+        7.804708,
+        7.601208,
+        8.450041,
+        7.899334,
+        8.083708,
+        7.684417,
+        6.840583,
+        6.853125
+      ],
+      "wrapper_ms": [
+        0.8775,
+        0.936041,
+        0.850125,
+        0.889458,
+        0.881542,
+        0.89425,
+        0.874709,
+        0.839125,
+        0.815083
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 7.804708,
+        "p95": 8.638459,
+        "max": 8.638459
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.8775,
+        "p95": 0.936041,
+        "max": 0.936041
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-19.json",
+      "nodes": 103,
+      "original_total": 2418850.13,
+      "wrapper_total": 2418850.1333333324,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        7.264792,
+        6.275333,
+        6.781208,
+        6.281,
+        6.944041,
+        7.54625,
+        6.554292,
+        6.32675,
+        6.269833
+      ],
+      "wrapper_ms": [
+        0.927417,
+        0.917458,
+        0.977959,
+        0.924708,
+        0.949375,
+        1.033917,
+        0.937,
+        0.947292,
+        0.907375
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 6.554292,
+        "p95": 7.54625,
+        "max": 7.54625
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.937,
+        "p95": 1.033917,
+        "max": 1.033917
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-2.json",
+      "nodes": 5,
+      "original_total": 52428.8,
+      "wrapper_total": 52428.8,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        2.701333,
+        3.415708,
+        2.761959,
+        2.866167,
+        3.041375,
+        2.901458,
+        2.510375,
+        2.585709,
+        3.531291
+      ],
+      "wrapper_ms": [
+        0.128084,
+        0.100583,
+        0.117333,
+        0.1455,
+        0.291959,
+        0.165542,
+        0.15525,
+        0.1515,
+        0.098916
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 2.866167,
+        "p95": 3.531291,
+        "max": 3.531291
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.1455,
+        "p95": 0.291959,
+        "max": 0.291959
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-20.json",
+      "nodes": 103,
+      "original_total": 5715733.26,
+      "wrapper_total": 5715733.257142861,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        7.04625,
+        6.461333,
+        7.026958,
+        9.024333,
+        7.225,
+        8.252209,
+        6.918834,
+        6.615208,
+        7.194542
+      ],
+      "wrapper_ms": [
+        1.044375,
+        1.001417,
+        1.012416,
+        1.157292,
+        0.932042,
+        0.985958,
+        1.008042,
+        0.868875,
+        0.927208
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 7.04625,
+        "p95": 9.024333,
+        "max": 9.024333
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 1.001417,
+        "p95": 1.157292,
+        "max": 1.157292
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-21.json",
+      "nodes": 152,
+      "original_total": 2158100.48,
+      "wrapper_total": 2158100.48,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        10.786834,
+        9.788209,
+        9.917208,
+        10.124125,
+        11.040166,
+        11.255958,
+        11.1485,
+        10.138875,
+        9.847709
+      ],
+      "wrapper_ms": [
+        1.313,
+        1.187667,
+        1.388834,
+        1.334375,
+        1.438167,
+        1.390833,
+        1.400084,
+        1.345583,
+        1.286542
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 10.138875,
+        "p95": 11.255958,
+        "max": 11.255958
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 1.345583,
+        "p95": 1.438167,
+        "max": 1.438167
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-22.json",
+      "nodes": 150,
+      "original_total": 3404288.0,
+      "wrapper_total": 3404287.9999999986,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        8.756417,
+        8.439833,
+        8.948041,
+        8.91,
+        9.573584,
+        8.428917,
+        9.171166,
+        8.99225,
+        8.959208
+      ],
+      "wrapper_ms": [
+        1.273333,
+        1.284458,
+        1.251916,
+        1.515583,
+        1.344583,
+        1.291334,
+        1.64525,
+        1.401291,
+        1.212792
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 8.948041,
+        "p95": 9.573584,
+        "max": 9.573584
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 1.291334,
+        "p95": 1.64525,
+        "max": 1.64525
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-23.json",
+      "nodes": 121,
+      "original_total": 3659622.4,
+      "wrapper_total": 3659622.4000000027,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        7.740292,
+        8.503166,
+        9.636208,
+        8.696542,
+        8.454833,
+        8.976417,
+        8.288625,
+        7.624833,
+        8.186833
+      ],
+      "wrapper_ms": [
+        1.221292,
+        1.0305,
+        1.289833,
+        1.03975,
+        1.171791,
+        1.217625,
+        1.186959,
+        0.995625,
+        1.2585
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 8.454833,
+        "p95": 9.636208,
+        "max": 9.636208
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 1.186959,
+        "p95": 1.289833,
+        "max": 1.289833
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-24.json",
+      "nodes": 112,
+      "original_total": 2661601.28,
+      "wrapper_total": 2661601.279999997,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        8.4525,
+        7.851958,
+        7.590584,
+        7.471125,
+        7.866208,
+        7.0665,
+        7.717542,
+        7.495875,
+        7.526375
+      ],
+      "wrapper_ms": [
+        1.11675,
+        1.029208,
+        1.009625,
+        1.007959,
+        0.931209,
+        0.944834,
+        1.005084,
+        0.980709,
+        1.370834
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 7.590584,
+        "p95": 8.4525,
+        "max": 8.4525
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 1.007959,
+        "p95": 1.370834,
+        "max": 1.370834
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-3.json",
+      "nodes": 4,
+      "original_total": 144179.2,
+      "wrapper_total": 144179.2,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        2.594,
+        2.428167,
+        2.333583,
+        3.265709,
+        3.020167,
+        3.52025,
+        2.668334,
+        2.531084,
+        2.326042
+      ],
+      "wrapper_ms": [
+        0.126875,
+        0.127708,
+        0.110083,
+        0.15075,
+        0.157666,
+        0.237667,
+        0.146792,
+        0.1495,
+        0.054583
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 2.594,
+        "p95": 3.52025,
+        "max": 3.52025
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.146792,
+        "p95": 0.237667,
+        "max": 0.237667
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-4.json",
+      "nodes": 5,
+      "original_total": 27033.6,
+      "wrapper_total": 27033.6,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        2.807084,
+        2.351958,
+        3.318625,
+        3.118125,
+        2.916084,
+        3.028209,
+        2.724375,
+        2.905083,
+        2.518125
+      ],
+      "wrapper_ms": [
+        0.123459,
+        0.126792,
+        0.2005,
+        0.182,
+        0.209041,
+        0.182416,
+        0.060583,
+        0.137958,
+        0.113333
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 2.905083,
+        "p95": 3.318625,
+        "max": 3.318625
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.137958,
+        "p95": 0.209041,
+        "max": 0.209041
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-5.json",
+      "nodes": 19,
+      "original_total": 1336516.27,
+      "wrapper_total": 1336516.266666666,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        3.31425,
+        3.297209,
+        3.130458,
+        3.861917,
+        3.304208,
+        3.512292,
+        3.506375,
+        3.346875,
+        3.113583
+      ],
+      "wrapper_ms": [
+        0.323916,
+        0.295167,
+        0.336167,
+        0.370125,
+        0.301958,
+        0.309125,
+        0.311083,
+        0.28025,
+        0.274458
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.31425,
+        "p95": 3.861917,
+        "max": 3.861917
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.309125,
+        "p95": 0.370125,
+        "max": 0.370125
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-6.json",
+      "nodes": 17,
+      "original_total": 314572.8,
+      "wrapper_total": 314572.80000000005,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        3.950083,
+        3.400917,
+        3.262167,
+        3.169792,
+        3.303417,
+        4.787208,
+        3.68125,
+        3.335667,
+        4.034084
+      ],
+      "wrapper_ms": [
+        0.2745,
+        0.227334,
+        0.155584,
+        0.301709,
+        0.22475,
+        0.330916,
+        0.278708,
+        0.233209,
+        0.308417
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.400917,
+        "p95": 4.787208,
+        "max": 4.787208
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.2745,
+        "p95": 0.330916,
+        "max": 0.330916
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-7.json",
+      "nodes": 15,
+      "original_total": 244667.73,
+      "wrapper_total": 244667.73333333334,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        3.787625,
+        3.5615,
+        3.405875,
+        3.309209,
+        3.431875,
+        3.31525,
+        2.934541,
+        3.034291,
+        3.139042
+      ],
+      "wrapper_ms": [
+        0.26975,
+        0.247417,
+        0.202,
+        0.131958,
+        0.238208,
+        0.255792,
+        0.205417,
+        0.132375,
+        0.218416
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.31525,
+        "p95": 3.787625,
+        "max": 3.787625
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.218416,
+        "p95": 0.26975,
+        "max": 0.26975
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-8.json",
+      "nodes": 20,
+      "original_total": 159744.0,
+      "wrapper_total": 159744.00000000003,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        4.2825,
+        3.40625,
+        4.202041,
+        3.995958,
+        3.651125,
+        3.620167,
+        3.886208,
+        3.232708,
+        3.380375
+      ],
+      "wrapper_ms": [
+        0.327458,
+        0.242875,
+        0.274667,
+        0.282042,
+        0.176834,
+        0.289208,
+        0.265083,
+        0.241,
+        0.240667
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 3.651125,
+        "p95": 4.2825,
+        "max": 4.2825
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.265083,
+        "p95": 0.327458,
+        "max": 0.327458
+      }
+    },
+    {
+      "source": "benchmarks/mlsys-2026-9.json",
+      "nodes": 32,
+      "original_total": 48318382.08,
+      "wrapper_total": 48318382.08,
+      "scores_match_within_stdout_rounding": true,
+      "original_ms": [
+        4.084959,
+        4.83575,
+        4.862791,
+        5.177459,
+        4.289666,
+        4.658792,
+        4.534834,
+        3.941042,
+        3.924708
+      ],
+      "wrapper_ms": [
+        0.533666,
+        0.797333,
+        0.704542,
+        0.763833,
+        0.661292,
+        0.669917,
+        0.542375,
+        0.57475,
+        0.627791
+      ],
+      "original_stats_ms": {
+        "count": 9,
+        "median": 4.534834,
+        "p95": 5.177459,
+        "max": 5.177459
+      },
+      "wrapper_stats_ms": {
+        "count": 9,
+        "median": 0.661292,
+        "p95": 0.797333,
+        "max": 0.797333
+      }
+    }
+  ],
+  "validation_comparison": [
+    {
+      "case": "adversarial/valid_chain",
+      "expected_accept_under_reference": true,
+      "original_cli_accepted": true,
+      "wrapper_accepted": true,
+      "wrapper_code": null
+    },
+    {
+      "case": "adversarial/consumer_before_producer",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "unavailable_tensor"
+    },
+    {
+      "case": "adversarial/retain_graph_input",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "invalid_retention"
+    },
+    {
+      "case": "adversarial/false_reported_latencies",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "latency_mismatch"
+    },
+    {
+      "case": "adversarial/missing_required_latencies",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "invalid_schema"
+    },
+    {
+      "case": "adversarial/mismatched_array_lengths",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": false,
+      "wrapper_accepted": false,
+      "wrapper_code": "invalid_schema"
+    },
+    {
+      "case": "adversarial/uncovered_op",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": false,
+      "wrapper_accepted": false,
+      "wrapper_code": "incomplete_coverage"
+    },
+    {
+      "case": "adversarial/out_of_memory",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": false,
+      "wrapper_accepted": false,
+      "wrapper_code": "out_of_memory"
+    },
+    {
+      "case": "adversarial/duplicate_op_within_step",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "duplicate_index"
+    },
+    {
+      "case": "adversarial/duplicate_traversal_indices",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "duplicate_index"
+    },
+    {
+      "case": "adversarial/zero_tile_width",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": false,
+      "wrapper_accepted": false,
+      "wrapper_code": "invalid_tiling"
+    },
+    {
+      "case": "adversarial/arbitrary_valid_traversal",
+      "expected_accept_under_reference": true,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "unsupported_traversal"
+    },
+    {
+      "case": "adversarial/unavailable_ephemeral_tensor",
+      "expected_accept_under_reference": false,
+      "original_cli_accepted": true,
+      "wrapper_accepted": false,
+      "wrapper_code": "unavailable_tensor"
+    }
+  ]
+}

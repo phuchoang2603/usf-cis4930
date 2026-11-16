@@ -1,3 +1,9 @@
+# Project evaluator
+
+The project now provides a validated raster-first Python/C++ evaluator for RL.
+See [setup, API, reward, tests, and model limitations](evaluator/README.md).
+The competition documentation below is retained as a reference.
+
 # Important Dates
 
 | Date | Event |

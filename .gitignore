@@ -15,3 +15,7 @@
 # Python
 __pycache__/
 *.pyc
+
+# Reproducible evaluator assessment: clones, dependencies, binaries and raw logs
+/external/
+/build/
