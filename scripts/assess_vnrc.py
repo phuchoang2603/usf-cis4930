@@ -11,15 +11,14 @@ import math
 from pathlib import Path
 import platform
 import re
-import runpy
 import subprocess
 import sys
-import types
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from evaluator import Evaluator
 from evaluator.problem import validate
-from tools.setup_vnrc import REVISION
+from scripts.setup_vnrc import REVISION
 
 
 def solution(groups, granularities, latencies=None, traversal=None, retain=None):
@@ -33,15 +32,16 @@ def solution(groups, granularities, latencies=None, traversal=None, retain=None)
 def explicit_raster(problem, schedule):
     """Make null's documented meaning explicit, for supported equal-shape sinks."""
     result = copy.deepcopy(schedule)
+    traversals = result.setdefault("traversal_orders", [None] * len(result["subgraphs"]))
     for i, group in enumerate(result["subgraphs"]):
-        if result["traversal_orders"][i] is not None:
+        if traversals[i] is not None:
             continue
         consumed = {t for op in group for t in problem["inputs"][op]}
         sinks = [t for op in group for t in problem["outputs"][op] if t not in consumed]
         out = sinks[0]
         w, h, _ = result["granularities"][i]
         tiles = math.ceil(problem["widths"][out] / w) * math.ceil(problem["heights"][out] / h)
-        result["traversal_orders"][i] = list(range(tiles))
+        traversals[i] = list(range(tiles))
     return result
 
 
@@ -164,31 +164,18 @@ class Assessment:
             raise ValueError("expected all 24 official benchmarks")
         for path in paths:
             p = json.loads(path.read_text())
-            order = validate(p)
-            grans = []
-            for i in order:
-                out = p["outputs"][i][0]
-                w, h = math.gcd(64, p["widths"][out]), math.gcd(64, p["heights"][out])
-                mm = p["op_types"][i] == "MatMul"
-                k = math.gcd(64, p["widths"][p["inputs"][i][0]]) if mm else 1
-                while ((w * k + h * k + w * h) if mm else
-                       (len(set(p["inputs"][i])) + 1) * w * h) > p["fast_memory_capacity"]:
-                    if w >= h and w > 1:
-                        w //= 2
-                    elif h > 1:
-                        h //= 2
-                    elif k > 1:
-                        k //= 2
-                    else:
-                        raise ValueError("No minimum tile fits")
-                grans.append([w, h, k])
-            s = solution([[i] for i in order], grans)
+            with Evaluator(p) as evaluator:
+                s = explicit_raster(p, evaluator.baseline()["schedule"])
+                wrapped = evaluator.evaluate(s, submission=True)
             name = f"corpus/{len(rows):03d}"
             row = self.evaluate(name, p, s)
-            row["source"] = str(path.relative_to(ROOT))
-            # Smoke test only: upstream ignores these deliberately zero labels.
-            row["feasible_and_covered"] = row["accepted"] and all(
-                (row["result"] or {}).get(k) is True for k in ("feasible", "coverage"))
+            cli = row["result"] or {}
+            actual = cli.get("our_total")
+            row.update(source=str(path.relative_to(ROOT)), wrapper_total=wrapped["total_latency"],
+                       feasible_and_covered=row["accepted"] and all(
+                           cli.get(k) is True for k in ("feasible", "coverage")),
+                       matches_cost=row["accepted"] and wrapped["valid"] and actual is not None
+                       and math.isclose(actual, wrapped["total_latency"], abs_tol=0.011))
             rows.append(row)
         return rows
 
@@ -209,9 +196,9 @@ class Assessment:
         return rows
 
     def archive(self):
-        # The former ZIP is unpacked under scripts/ in the current repository.
+        from scripts.hlo2mlsys import sim
+
         directory = ROOT / "scripts/hlo2mlsys"
-        sim = types.SimpleNamespace(**runpy.run_path(str(directory / "sim.py")))
         rows = []
         for path in sorted((directory / "examples/solutions").glob("*.solution.json")):
             stem = path.name.removesuffix(".solution.json")
@@ -243,8 +230,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--binary", type=Path, default=ROOT / "build/vnrc/evaluate")
     parser.add_argument("--output", type=Path, default=ROOT / "build/vnrc-assessment")
-    parser.add_argument("--compare-compiler", "--compare-archive", dest="compare_archive", action="store_true",
-                        help="compare scripts/hlo2mlsys examples (requires NumPy); --compare-archive is a compatibility alias")
+    parser.add_argument("--compare-compiler", action="store_true",
+                        help="compare scripts/hlo2mlsys examples (requires NumPy)")
     args = parser.parse_args()
     actual_revision = subprocess.check_output(
         ["git", "-C", str(ROOT / "external/vnrc"), "rev-parse", "HEAD"], text=True).strip()
@@ -259,7 +246,7 @@ def main():
                          ("corpus", a.corpus)):
         report[name] = method()
         print(f"Completed {name}: {len(report[name])} cases", flush=True)
-    if args.compare_archive:
+    if args.compare_compiler:
         report["archive"] = a.archive()
         print(f"Completed archive: {len(report['archive'])} cases", flush=True)
     target = a.output / "summary.json"

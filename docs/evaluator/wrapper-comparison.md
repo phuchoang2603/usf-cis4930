@@ -72,16 +72,15 @@ visible and consistent; it does not resolve the external convention disagreement
 with the existing ZIP simulator. Record `vnrc-1f19c2f-validated-v1` with training
 results and use the same evaluator for every baseline and policy.
 
-## Reproduce
+## Current checks
 
 ```sh
-python3 tools/setup_vnrc.py
-python3 -m unittest discover -s tests -v
-python3 tools/compare_evaluators.py
+python3 scripts/setup_vnrc.py
+bash scripts/check.sh
+python3 scripts/assess_vnrc.py
 ```
 
-The matched benchmark writes `build/evaluator-comparison/results.json`. The saved
-snapshot `wrapper-comparison.json` also includes the validation-probe comparison.
-The current wrapper passed 26 test methods, covering all 11 official worked
-examples (snake opt-in where required), all 124 workload baselines, state
-validation counterexamples, malformed actions, rewards, and lifecycle handling.
+The assessment compares CLI and wrapper scores on the same raster baseline
+schedule for each official benchmark. Its summary records both scores and
+`matches_cost`. The historical `wrapper-comparison.json` preserves the paired
+timings and validation probes reported here.

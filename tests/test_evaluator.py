@@ -259,13 +259,6 @@ class EvaluatorTests(unittest.TestCase):
             results = list(pool.map(lambda _: self.ev.reward(plan()), range(32)))
         self.assertTrue(all(r["reward"] == 0.5 for r in results))
 
-    def test_terminal_rl_integration_demo(self):
-        from tools.rl_evaluator_demo import demo
-        result = demo()
-        self.assertEqual(result["results"]["baseline"]["reward"], 0.5)
-        self.assertGreaterEqual(result["results"]["fused"]["reward"], 0.5)
-        self.assertEqual(result["results"]["invalid_order"]["reward"], -1)
-
     def test_malformed_problem_rejected(self):
         for update in (dict(widths=[0] * 3), dict(native_granularity=[128, 64]),
                        dict(outputs=[[1, 2], [2]]), dict(inputs=[[99], [1]]),

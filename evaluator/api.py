@@ -29,11 +29,11 @@ def _library(path):
     try:
         lib = ctypes.CDLL(path)
     except OSError as error:
-        raise RuntimeError(f"Cannot load evaluator backend; rerun tools/setup_vnrc.py: {error}") from error
+        raise RuntimeError(f"Cannot load evaluator backend; rerun scripts/setup_vnrc.py: {error}") from error
     lib.evaluator_abi_version.restype = ctypes.c_int
     lib.evaluator_revision.restype = ctypes.c_char_p
     if lib.evaluator_abi_version() != 1 or lib.evaluator_revision().decode() != REVISION:
-        raise RuntimeError("Evaluator backend version mismatch; rerun tools/setup_vnrc.py")
+        raise RuntimeError("Evaluator backend version mismatch; rerun scripts/setup_vnrc.py")
     lib.evaluator_create.argtypes = [ctypes.c_char_p, ctypes.POINTER(ctypes.c_void_p)]
     lib.evaluator_create.restype = ctypes.c_void_p
     lib.evaluator_score.argtypes = [ctypes.c_void_p, ctypes.c_char_p]
@@ -117,7 +117,7 @@ class Evaluator:
         suffix = ".dylib" if sys.platform == "darwin" else ".so"
         path = Path(library) if library else ROOT / f"build/evaluator/libevaluator_backend{suffix}"
         if not path.is_file():
-            raise RuntimeError("Evaluator backend is missing; run python3 tools/setup_vnrc.py")
+            raise RuntimeError("Evaluator backend is missing; run python3 scripts/setup_vnrc.py")
         self._lib = _library(str(path.resolve()))
         error = ctypes.c_void_p()
         self._handle = self._lib.evaluator_create(encoded_problem, ctypes.byref(error))

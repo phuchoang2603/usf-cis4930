@@ -136,22 +136,23 @@ not external validation of those graphs or latency labels.
 From the repository root, with Git, CMake, a C++20 compiler, and Python available:
 
 ```sh
-python3 tools/setup_vnrc.py
+python3 scripts/setup_vnrc.py
 ctest --test-dir build/vnrc -j2 --output-on-failure --timeout 120
-python3 tools/assess_vnrc.py
+python3 scripts/assess_vnrc.py
 ```
 
-The optional comparison executes `sim.py` directly from the existing ZIP and
+The optional compiler comparison runs `scripts/hlo2mlsys/sim.py` and
 requires NumPy. Use a Python environment containing NumPy (tested with 2.3.5):
 
 ```sh
-python3 tools/assess_vnrc.py --compare-archive
+python3 scripts/assess_vnrc.py --compare-compiler
 ```
 
 The assessment writes inputs, schedules, stdout/stderr, and `summary.json` under
 `build/vnrc-assessment/`. Exit 0 means the assessment completed, not that the
 candidate evaluator passed every acceptance criterion. Inspect the recorded
-`matches`, `matches_cost`, and cost-comparison fields. The checked-in
+`matches`, `matches_cost`, and cost-comparison fields. The current corpus
+compares the CLI and Python evaluator on identical raster baseline schedules. The checked-in
 `vnrc-results.json` preserves the assessed results; raw logs stay in the local
 build directory. The setup script requires a clean checkout at the pinned
 revision and verifies the downloaded header checksum.

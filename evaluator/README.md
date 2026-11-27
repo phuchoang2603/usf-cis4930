@@ -15,9 +15,8 @@ Opt in to row/column snake with `allow_snake=True` or `--allow-snake`.
 From the repository root, with Git, Python 3.10+, CMake, and a C++20 compiler:
 
 ```sh
-python3 tools/setup_vnrc.py --backend-only
-python3 -m unittest discover -s tests -v
-python3 tools/rl_evaluator_demo.py
+python3 scripts/setup_vnrc.py --backend-only
+bash scripts/check.sh
 ```
 
 Setup clones the pinned VNRC revision and downloads a checksum-verified
@@ -27,11 +26,10 @@ programs. Artifacts are stored under `build/`. No pip packages or system package
 are required for the Python wrapper. macOS arm64 is tested; Linux build support
 is provided by CMake but has not been exercised here.
 
-Graph schema and DAG validation live in `evaluator/problem.py`; the evaluator
-does not depend on a synthetic-data generator. Compiler sources and examples
-from the former ZIP are under `scripts/hlo2mlsys/`. The optional comparison
-command is `python3 tools/assess_vnrc.py --compare-compiler` (requires NumPy);
-`--compare-archive` remains an alias for existing scripts.
+Graph schema and DAG validation live in `evaluator/problem.py`. The synthetic
+workload generator uses this evaluator to check each graph's baseline. To compare
+the compiler examples under `scripts/hlo2mlsys/`, run
+`python3 scripts/assess_vnrc.py --compare-compiler` (requires NumPy).
 
 Upstream VNRC is Apache 2.0; nlohmann/json is MIT licensed. Their original licenses
 are kept with the downloaded sources in `external/`. Upstream remains unmodified.
@@ -96,12 +94,6 @@ the earlier proposed unbounded negative-ratio reward did not have that property.
 An alternative invalid penalty must be finite and negative. Initialization,
 baseline generation, and problem parsing should remain outside the policy's
 inner scoring loop where practical.
-
-The integration demo exercises a deterministic 8-operation chain through this
-same API. It writes the problem, candidate schedules, configuration, and results
-to `build/rl-evaluator-demo.json`. The baseline earns 0.5, the fused schedule
-earns approximately 0.8563, and an invalid reverse-order schedule earns -1. This
-is a wiring example, not a trained policy or evidence of transfer to real models.
 
 ## Validate competition-format submissions
 
@@ -176,18 +168,17 @@ bounds. This is a supported subset rather than a complete official evaluator.
 ## Verification and timing
 
 ```sh
-python3 -m unittest discover -s tests -v
-python3 tools/benchmark_evaluator.py
-python3 tools/rl_evaluator_demo.py
+bash scripts/check.sh
+python3 scripts/benchmark_evaluator.py
 ```
 
-All 32 test methods pass. They include all 11 official example schedules, all 24 official workload baselines,
+The tests cover all 11 official example schedules, all 24 official workload baselines,
 and feasible baselines for the 12 compatible unpacked compiler graphs. The other
 12 compiler graphs are explicitly rejected for incompatible Pointwise shapes.
 The suite also covers
 the original invalid-schedule counterexamples, reported-label manipulation,
 nonfinite inputs, context cleanup, concurrent reuse, backend-fault handling,
-configuration compatibility, and the terminal-schedule reward demo. The optional snake mode
+model identity checks, and reward behavior. The optional snake mode
 is enabled only for fixtures that need it; raster remains the training default.
 The benchmark measures the complete reusable Python-to-C++ evaluation path,
 including strict validation and native subgraph construction, not just the core
@@ -199,7 +190,7 @@ normalization, measured 0.32 ms and 0.43 ms respectively. Each uses nine rounds
 over all 124 singleton baseline schedules; setup/baseline generation is excluded.
 These October 30 measurements include 100 legacy synthetic fixtures that were
 removed by the later repository restructuring; they are historical results.
-The current `tools/benchmark_evaluator.py` runs the 24 official workloads and
+The current `scripts/benchmark_evaluator.py` runs the 24 official workloads and
 records the actual UTC measurement timestamp.
 The timing script records both paths separately. A separate earlier matched-schedule comparison measured
 0.54 ms for this wrapper versus 4.82 ms for the original CLI, with identical

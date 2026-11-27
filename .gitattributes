@@ -1,0 +1,2 @@
+scripts/hlo2mlsys/examples/** linguist-generated=true
+docs/evaluator/*.json linguist-generated=true

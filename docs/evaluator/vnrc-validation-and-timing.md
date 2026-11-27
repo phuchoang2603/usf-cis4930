@@ -94,7 +94,7 @@ The slowest schedule by median CLI time is `mlsys-2026-21`, with 152 operations:
 
 ### Prepared core cost calculation
 
-`tools/vnrc_timing_driver.cpp` links the same unmodified static library and
+`scripts/vnrc_timing_driver.cpp` links the same unmodified static library and
 preconstructs the problem, DAG, subgraphs, tile configurations, and retention
 sets. It then times only a complete schedule's repeated `compute_cost()` calls
 and retention propagation. It mirrors the current CLI's traversal semantics,
@@ -128,13 +128,13 @@ and should not be read as the evaluator's execution time.
 ## Reproduce
 
 ```sh
-python3 tools/setup_vnrc.py
-python3 tools/assess_vnrc.py
-python3 tools/benchmark_vnrc.py --repeats 9
+python3 scripts/setup_vnrc.py
+python3 scripts/assess_vnrc.py
+python3 scripts/benchmark_vnrc.py --repeats 9
 ```
 
 To include the optional compiler-archive comparison/timing, run the assessment
-with `--compare-archive` using a Python environment containing NumPy before
+with `--compare-compiler` using a Python environment containing NumPy before
 running the benchmark. The benchmark itself uses Python's standard library.
 
 Raw timing samples and aggregate statistics are in

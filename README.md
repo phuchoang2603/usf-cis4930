@@ -1,8 +1,27 @@
-# Project evaluator
+# MLSys graph scheduling project
 
-The project now provides a validated raster-first Python/C++ evaluator for RL.
-See [setup, API, reward, tests, and model limitations](evaluator/README.md).
-The competition documentation below is retained as a reference.
+- [Evaluator](evaluator/README.md) for setup, schedule scoring and RL rewards.
+- [RL experiment](rl_scheduler/reproducible_experiment.ipynb).
+- [Compiler workloads](scripts/hlo2mlsys/README.md) from JAX and XLA.
+- [Project PDFs](docs/) and [evaluator reports](docs/evaluator/).
+
+## Synthetic workloads
+
+Run from the repository root with Python 3.10+, Git, CMake and a C++20 compiler.
+
+```sh
+python3 scripts/setup_vnrc.py --backend-only
+python3 -m scripts.generate_synthetic --seed 4930 --output build/synthetic
+bash scripts/check.sh
+```
+
+The generator writes 80 training, 10 validation and 10 test problem files by
+default. Use `--train`, `--validation` and `--test` to set the counts. Each split
+draws from the same size ranges and graph building blocks, with each sequence of
+blocks sampled once across the dataset. The evaluator checks a feasible raster
+baseline for each graph before the dataset is published. `manifest.json` records
+the split paths, block sequences, seed and evaluator model. The official
+competition benchmarks remain in [benchmarks/](benchmarks/).
 
 # Important Dates
 

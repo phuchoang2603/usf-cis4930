@@ -3,7 +3,7 @@ project(project_evaluator LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(NOT VNRC_SOURCE OR NOT JSON_INCLUDE)
-  message(FATAL_ERROR "Set VNRC_SOURCE and JSON_INCLUDE; use tools/setup_vnrc.py")
+  message(FATAL_ERROR "Set VNRC_SOURCE and JSON_INCLUDE; use scripts/setup_vnrc.py")
 endif()
 add_library(evaluator_backend SHARED bridge.cpp
   "${VNRC_SOURCE}/src/core/subgraph.cpp"

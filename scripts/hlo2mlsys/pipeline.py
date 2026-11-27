@@ -11,17 +11,16 @@ Subcommands
   all      gen + compile + convert + check, for N seeds
 
 Examples
-  python3 pipeline.py all --count 20 --size medium --out out/
-  python3 pipeline.py gen --seed 7 --size large --out prog.py
-  python3 pipeline.py compile prog.py --out-dir hlo/
-  python3 pipeline.py convert hlo/prog.pre.hlo --out prog.json
-  python3 pipeline.py check prog.json
+  python3 -m scripts.hlo2mlsys.pipeline all --count 20 --size medium --out out/
+  python3 -m scripts.hlo2mlsys.pipeline gen --seed 7 --size large --out prog.py
+  python3 -m scripts.hlo2mlsys.pipeline compile prog.py --out-dir hlo/
+  python3 -m scripts.hlo2mlsys.pipeline convert hlo/prog.pre.hlo --out prog.json
+  python3 -m scripts.hlo2mlsys.pipeline check prog.json
 """
 import argparse, importlib.util, json, math, os, random, re, sys
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import sim  # noqa: E402  (cost simulator, sim.py next to this file)
 from collections import defaultdict
+
+from . import sim
 
 # ======================================================================
 # 1. PROGRAM GENERATOR
@@ -522,7 +521,7 @@ def check(problem, meta=None):
 # CLI
 # ======================================================================
 
-def xla_groups(meta, n_ops):
+def xla_groups(meta):
     """Ops grouped the way XLA fused them, in XLA's execution order. Ops XLA ran
     as standalone kernels become single-op groups."""
     groups, cur, cur_key = [], [], None
@@ -543,7 +542,7 @@ def xla_solution(problem, meta):
     A fusion that cannot fit fast memory at any granularity is split into single ops."""
     P = sim.Problem(problem)
     groups, split = [], []
-    for g in xla_groups(meta, P.n_ops):
+    for g in xla_groups(meta):
         if len(g) > 1 and sim.best_subgraph(P, g)[1] is None:
             split.append(g)
             groups += [[i] for i in g]

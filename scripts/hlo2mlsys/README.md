@@ -21,15 +21,17 @@ Python 3.10+. A GPU or TPU is optional. The `opt` graph is whatever XLA produces
 
 ## Quick start
 
+Run these commands from the repository root.
+
 ```bash
 # 20 programs of mixed sizes, both XLA stages -> out/problems/*.json
-python3 pipeline.py all --count 20 --out out
+python3 -m scripts.hlo2mlsys.pipeline all --count 20 --stage both --out out
 
 # one step at a time
-python3 pipeline.py gen --seed 7 --size large --family transformer --out prog.py
-python3 pipeline.py compile prog.py --out-dir hlo          # hlo/prog.pre.hlo, hlo/prog.opt.hlo
-python3 pipeline.py convert hlo/prog.opt.hlo --out prog.json
-python3 pipeline.py check prog.json
+python3 -m scripts.hlo2mlsys.pipeline gen --seed 7 --size large --family transformer --out prog.py
+python3 -m scripts.hlo2mlsys.pipeline compile prog.py --out-dir hlo          # hlo/prog.pre.hlo, hlo/prog.opt.hlo
+python3 -m scripts.hlo2mlsys.pipeline convert hlo/prog.opt.hlo --out prog.json
+python3 -m scripts.hlo2mlsys.pipeline check prog.json
 ```
 
 `convert` also works on any HLO text you dump yourself, for example from your own JAX/TensorFlow model with `XLA_FLAGS=--xla_dump_to=dir`. It works as long as the graph is 2-D matmuls plus elementwise and reduce ops (see Limits below).
@@ -91,11 +93,15 @@ XLA decides **which ops run together** (its fusions) and **in what order** (the 
 - `sim.py` reproduces every number in the PROBLEM.md examples (fusion, padding, split-K, snake reuse, OOM).
 - If an XLA fusion can't fit fast memory at any granularity, it is split into single ops. Such splits are recorded in the `.info.json` file.
 - `X.opt.solution.info.json` holds the XLA latency, the no-fusion latency and the speedup.
-- `python3 pipeline.py evaluate problem.json solution.json` recomputes any solution's latency and checks coverage, order and memory.
+- `python3 -m scripts.hlo2mlsys.pipeline evaluate problem.json solution.json` recomputes any solution's latency and checks coverage, order and memory.
 
 **What to expect.** On the CPU backend, XLA leaves most matmuls as separate kernels, so its schedule is close to the no-fusion baseline (about 0.95-1.03x). It is a real compiler baseline, not an optimal answer. XLA's GPU and TPU backends fuse more aggressively. To get their decisions, run on a GPU/TPU machine (for example a Colab TPU runtime) with `JAX_PLATFORMS=tpu` or `cuda`; that path is untested here and may hit HLO ops the converter doesn't support yet.
 
 ## Output files
+
+The checked-in examples include optimized HLO, problems and their metadata,
+schedules, and the batch summary. Run `all --stage both` to produce the source
+programs, pre-optimization HLO, diagrams, and per-schedule latency summaries.
 
 For each problem `X.json`:
 

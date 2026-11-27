@@ -1,6 +1,6 @@
 """Time unchanged VNRC CLI and prepared core scoring on assessment fixtures.
 
-Run tools/assess_vnrc.py first. This measures wall time, not simulated latency.
+Run scripts/assess_vnrc.py first. This measures wall time, not simulated latency.
 """
 import argparse
 import hashlib
@@ -49,11 +49,10 @@ def main():
     compiler = "clang++" if platform.system() == "Darwin" else "c++"
     subprocess.run([compiler, "-std=c++20", "-O2", "-UNDEBUG", "-pthread",
                     f"-I{ROOT / 'external/vnrc/src'}", f"-I{ROOT / 'external/deps'}",
-                    str(ROOT / "tools/vnrc_timing_driver.cpp"),
+                    str(ROOT / "scripts/vnrc_timing_driver.cpp"),
                     str(ROOT / "build/vnrc/libsolver_lib.a"), "-o", str(driver)], check=True)
     candidates = [("official_examples", r) for r in assessment["examples"]]
-    candidates += [("official_benchmarks" if r["source"].startswith("benchmarks/")
-                    else "synthetic", r) for r in assessment["corpus"]]
+    candidates += [("official_benchmarks", r) for r in assessment["corpus"]]
     candidates += [("compiler_archive", r) for r in assessment.get("archive", []) if r["accepted"]]
     rows = []
     for group, case in candidates:
